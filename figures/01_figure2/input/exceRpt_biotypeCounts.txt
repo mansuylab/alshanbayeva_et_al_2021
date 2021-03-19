@@ -1,0 +1,1 @@
+../../../../../data/short-RNA-Seq/anara_EV/raw/run4_miRNAsfirst_caudaEVs_ExceRpt_2020-09-22--14-28-47/Excerpt_Report/processed_output/exceRpt_biotypeCounts.txt
