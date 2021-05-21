@@ -1,0 +1,218 @@
+raw data uploaded
+Will delete all files in /web/de//share/de/plasma_all_60a243166c4b6
+3
+Submitted batch job 43812
+Submitted batch job 43813
+Submitted batch job 43814
+Submitted batch job 43815
+Submitted batch job 43816
+Submitted batch job 43817
+Submitted batch job 43818
+Submitted batch job 43819
+Submitted batch job 43820
+Submitted batch job 43821
+Submitted batch job 43822
+Submitted batch job 43823
+Submitted batch job 43824
+Submitted batch job 43825
+Submitted batch job 43826
+Submitted batch job 43827
+Submitted batch job 43828
+Submitted batch job 43829
+Submitted batch job 43830
+Submitted batch job 43831
+#Starting miRDeep2
+/home/vsac/pipelines2/programs/mirdeep2/new_miRDeep3.pl /share/de/plasma_all_60a243166c4b6/prediction//seqs_colapsed.fa /home/vsac/database2/mm10/bowtie/mm10.fa /share/de/plasma_all_60a243166c4b6/prediction//seqs.arf none /home/vsac/database2/mirbase/mature.fa none -t Mouse -a 50
+
+miRDeep2 started at 16:50:06
+
+
+mkdir /share/de/plasma_all_60a243166c4b6/prediction/mirdeep_runs/run_17_05_2021_t_16_50_06
+
+#testing input files
+started: 16:50:34
+sanity_check_mature_ref.pl /home/vsac/database2/mirbase/mature.fa
+
+
+ended: 16:50:35
+total:0h:0m:1s
+
+sanity_check_reads_ready_file.pl /share/de/plasma_all_60a243166c4b6/prediction//seqs_colapsed.fa
+
+started: 16:50:35
+
+ended: 16:50:55
+total:0h:0m:20s
+
+started: 16:50:55
+sanity_check_genome.pl /home/vsac/database2/mm10/bowtie/mm10.fa
+
+
+ended: 16:51:30
+total:0h:0m:35s
+
+started: 16:51:30
+sanity_check_mapping_file.pl /share/de/plasma_all_60a243166c4b6/prediction//seqs.arf
+
+
+ended: 16:51:35
+total:0h:0m:5s
+
+Pre-quantitation is skipped caused by missing file with known precursor miRNAs
+
+
+rna2dna.pl /home/vsac/database2/mirbase/mature.fa > /share/de/plasma_all_60a243166c4b6/prediction/mirdeep_runs/run_17_05_2021_t_16_50_06/tmp/mature
+
+
+ended: 16:51:35
+total:0h:0m:5s
+
+#parsing genome mappings
+parse_mappings.pl /share/de/plasma_all_60a243166c4b6/prediction//seqs.arf -a 0 -b 18 -c 25 -i 5 > /share/de/plasma_all_60a243166c4b6/prediction/mirdeep_runs/run_17_05_2021_t_16_50_06/tmp/seqs.arf_parsed.arf
+
+started: 16:51:35
+
+ended: 16:52:14
+total:0h:0m:39s
+
+#excising precursors
+started: 16:52:14
+excise_precursors.pl /home/vsac/database2/mm10/bowtie/mm10.fa /share/de/plasma_all_60a243166c4b6/prediction/mirdeep_runs/run_17_05_2021_t_16_50_06/tmp/seqs.arf_parsed.arf /share/de/plasma_all_60a243166c4b6/prediction/mirdeep_runs/run_17_05_2021_t_16_50_06/tmp/precursors.coords -a 50 > /share/de/plasma_all_60a243166c4b6/prediction/mirdeep_runs/run_17_05_2021_t_16_50_06/tmp/precursors.fa
+
+
+ended: 16:54:17
+total:0h:2m:3s
+
+#preparing signature
+new_prepare_signature.pl /share/de/plasma_all_60a243166c4b6/prediction//seqs_colapsed.fa /share/de/plasma_all_60a243166c4b6/prediction/mirdeep_runs/run_17_05_2021_t_16_50_06/tmp/precursors.fa 1 -o /share/de/plasma_all_60a243166c4b6/prediction/mirdeep_runs/run_17_05_2021_t_16_50_06/tmp/signature.arf 2>>/share/de/plasma_all_60a243166c4b6/prediction/error_17_05_2021_t_16_50_06.log
+
+started: 16:54:17
+
+ended: 16:54:50
+total:0h:0m:33s
+
+#folding precursors
+RNAfold < /share/de/plasma_all_60a243166c4b6/prediction/mirdeep_runs/run_17_05_2021_t_16_50_06/tmp/precursors.fa -noPS > /share/de/plasma_all_60a243166c4b6/prediction/mirdeep_runs/run_17_05_2021_t_16_50_06/tmp/precursors.str
+
+started: 16:54:50
+
+ended: 16:54:59
+total:0h:0m:9s
+
+#computing randfold p-values
+select_for_randfold.pl /share/de/plasma_all_60a243166c4b6/prediction/mirdeep_runs/run_17_05_2021_t_16_50_06/tmp/signature.arf /share/de/plasma_all_60a243166c4b6/prediction/mirdeep_runs/run_17_05_2021_t_16_50_06/tmp/precursors.str > /share/de/plasma_all_60a243166c4b6/prediction/mirdeep_runs/run_17_05_2021_t_16_50_06/tmp/precursors_for_randfold.ids
+
+started: 16:54:59
+
+ended: 16:55:05
+total:0h:0m:6s
+
+started: 16:55:05
+fastaselect.pl /share/de/plasma_all_60a243166c4b6/prediction/mirdeep_runs/run_17_05_2021_t_16_50_06/tmp/precursors.fa /share/de/plasma_all_60a243166c4b6/prediction/mirdeep_runs/run_17_05_2021_t_16_50_06/tmp/precursors_for_randfold.ids > /share/de/plasma_all_60a243166c4b6/prediction/mirdeep_runs/run_17_05_2021_t_16_50_06/tmp/precursors_for_randfold.fa
+
+
+ended: 16:55:05
+total:0h:0m:0s
+
+started: 16:55:05
+randfold -s /share/de/plasma_all_60a243166c4b6/prediction/mirdeep_runs/run_17_05_2021_t_16_50_06/tmp/precursors_for_randfold.fa 99 > /share/de/plasma_all_60a243166c4b6/prediction/mirdeep_runs/run_17_05_2021_t_16_50_06/tmp/precursors_for_randfold.rand
+
+
+ended: 16:59:21
+total:0h:4m:16s
+
+#running miRDeep core algorithm
+started: 16:59:21
+miRDeep2_core_algorithm.pl /share/de/plasma_all_60a243166c4b6/prediction/mirdeep_runs/run_17_05_2021_t_16_50_06/tmp/signature.arf /share/de/plasma_all_60a243166c4b6/prediction/mirdeep_runs/run_17_05_2021_t_16_50_06/tmp/precursors.str -s /share/de/plasma_all_60a243166c4b6/prediction/mirdeep_runs/run_17_05_2021_t_16_50_06/tmp/mature -v -50 -l 40 -y /share/de/plasma_all_60a243166c4b6/prediction/mirdeep_runs/run_17_05_2021_t_16_50_06/tmp/precursors_for_randfold.rand > /share/de/plasma_all_60a243166c4b6/prediction/mirdeep_runs/run_17_05_2021_t_16_50_06/output.mrd
+
+ended: 16:59:28
+total:0h:0m:7s
+
+#running permuted controls
+started: 16:59:28
+echo 'miRDeep2_core_algorithm.pl /share/de/plasma_all_60a243166c4b6/prediction/mirdeep_runs/run_17_05_2021_t_16_50_06/tmp/signature.arf /share/de/plasma_all_60a243166c4b6/prediction/mirdeep_runs/run_17_05_2021_t_16_50_06/tmp/precursors.str -s /share/de/plasma_all_60a243166c4b6/prediction/mirdeep_runs/run_17_05_2021_t_16_50_06/tmp/mature -v -50 -y /share/de/plasma_all_60a243166c4b6/prediction/mirdeep_runs/run_17_05_2021_t_16_50_06/tmp/precursors_for_randfold.rand > /share/de/plasma_all_60a243166c4b6/prediction/mirdeep_runs/run_17_05_2021_t_16_50_06/output.mrd' > /share/de/plasma_all_60a243166c4b6/prediction/mirdeep_runs/run_17_05_2021_t_16_50_06/tmp/command_line
+
+perform_controls.pl /share/de/plasma_all_60a243166c4b6/prediction/mirdeep_runs/run_17_05_2021_t_16_50_06/tmp/command_line /share/de/plasma_all_60a243166c4b6/prediction/mirdeep_runs/run_17_05_2021_t_16_50_06/tmp/precursors.str 100 -a > /share/de/plasma_all_60a243166c4b6/prediction/mirdeep_runs/run_17_05_2021_t_16_50_06/tmp/output_permuted.mrd 2>>/share/de/plasma_all_60a243166c4b6/prediction/error_17_05_2021_t_16_50_06.log
+
+
+ended: 16:59:30
+total:0h:0m:2s
+
+#doing survey of accuracy
+survey.pl /share/de/plasma_all_60a243166c4b6/prediction/mirdeep_runs/run_17_05_2021_t_16_50_06/output.mrd -a /share/de/plasma_all_60a243166c4b6/prediction/mirdeep_runs/run_17_05_2021_t_16_50_06/tmp/output_permuted.mrd -d 50 > /share/de/plasma_all_60a243166c4b6/prediction/mirdeep_runs/run_17_05_2021_t_16_50_06/survey.csv
+
+started: 16:59:30
+Use of uninitialized value in subroutine entry at /home/vsac/pipelines2/programs/mirdeep2/survey.pl line 421, <FILE> line 200.
+
+ended: 16:59:30
+total:0h:0m:0s
+
+#producing graphic results
+started: 16:59:30
+new_make_html3.pl -f /share/de/plasma_all_60a243166c4b6/prediction/mirdeep_runs/run_17_05_2021_t_16_50_06/output.mrd -p /share/de/plasma_all_60a243166c4b6/prediction/mirdeep_runs/run_17_05_2021_t_16_50_06/tmp/precursors.coords -v 0 -s /share/de/plasma_all_60a243166c4b6/prediction/mirdeep_runs/run_17_05_2021_t_16_50_06/survey.csv -c -e -r /home/vsac/pipelines2/programs/mirdeep2/Rfam_for_miRDeep.fa -y 17_05_2021_t_16_50_06 -o  -a -t Mouse -V 2.0.0.5
+
+parsing input file finished
+checking Rfam for hits to precursors
+Build bowtie index of Rfam entries
+
+Mapping mature,star and loop sequences against index
+# reads processed: 415
+# reads with at least one reported alignment: 29 (6.99%)
+# reads that failed to align: 386 (93.01%)
+Reported 5902 alignments to 1 output stream(s)
+creating PDF files
+creating pdf for chr16_600 finished
+creating pdf for chr5_1135 finished
+creating pdf for chr10_188 finished
+creating pdf for chr11_246 finished
+creating pdf for chr3_1005 finished
+creating pdf for chr5_1109 finished
+creating pdf for chr9_1504 finished
+creating pdf for chr10_189 finished
+creating pdf for chr19_816 finished
+creating pdf for chr14_511 finished
+creating pdf for chr2_917 finished
+creating pdf for chr15_555 finished
+creating pdf for chr12_362 finished
+creating pdf for chr17_717 finished
+creating pdf for chr12_345 finished
+creating pdf for chr12_344 finished
+creating pdf for chr5_1148 finished
+creating pdf for chr10_181 finished
+creating pdf for chr3_1003 finished
+creating pdf for chr1_13 finished
+creating pdf for chr17_661 finished
+creating pdf for chrX_1619 finished
+creating pdf for chr1_96 finished
+creating pdf for chr2_914 finished
+creating pdf for chr11_290 finished
+creating pdf for chr4_1024 finished
+creating pdf for chr5_1112 finished
+creating pdf for chr7_1332 finished
+creating pdf for chr1_97 finished
+creating pdf for chr2_867 finished
+creating pdf for chrX_1580 finished
+creating pdf for chr17_620 finished
+creating pdf for chr10_184 finished
+creating pdf for chr8_1404 finished
+creating pdf for chr5_1162 finished
+creating pdf for chr7_1303 finished
+creating pdf for chr12_375 finished
+creating pdf for chr1_22 finished
+creating pdf for chr13_404 finished
+creating pdf for chr1_76 finished
+creating pdf for chr2_884 finished
+creating pdf for chr8_1425 finished
+creating pdf for chr3_951 finished
+
+ended: 17:0:14
+total:0h:0m:44s
+
+
+
+miRDeep runtime: 
+
+started: 16:50:06
+ended: 17:0:15
+total:0h:10m:9s
+

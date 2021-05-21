@@ -1,0 +1,250 @@
+You are running cutadapt 1.7.1 with Python 2.7.6
+Command line parameters: -a GATCGGAAGAGCACACGTCTGAACTCCAGTCAC /share/de/plasma_all_60a243166c4b6/plasma_all_60a243166c4b6/20190110sample5/20190110sample5_cat.fastq.gz
+Maximum error rate: 10.00%
+   No. of adapters: 1
+   Processed reads:     15779803
+   Processed bases:   1988255178 bp (1988.3 Mbp)
+     Trimmed reads:     15013916 (95.1%)
+     Trimmed bases:   1232497598 bp (1232.5 Mbp) (61.99% of total)
+   Too short reads:            0 (0.0% of processed reads)
+    Too long reads:            0 (0.0% of processed reads)
+        Total time:    303.97 s
+     Time per read:      0.019 ms
+
+=== Adapter 1 ===
+
+Sequence: GATCGGAAGAGCACACGTCTGAACTCCAGTCAC; Type: regular 3'; Length: 33; Trimmed: 15013916 times.
+
+No. of allowed errors:
+0-9 bp: 0; 10-19 bp: 1; 20-29 bp: 2; 30-33 bp: 3
+
+Bases preceding removed adapters:
+  A: 99.2%
+  C: 0.1%
+  G: 0.2%
+  T: 0.5%
+  none/other: 0.0%
+WARNING:
+    The adapter is preceded by "A" extremely often.
+    The provided adapter sequence may be incomplete.
+    To fix the problem, add "A" to the beginning of the adapter sequence.
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+3	16808	246559.4	0	16808
+4	5070	61639.9	0	5070
+5	8646	15410.0	0	8646
+6	8221	3852.5	0	8221
+7	8586	963.1	0	8586
+8	8436	240.8	0	8436
+9	8011	60.2	0	7799 212
+10	18873	15.0	1	13396 5477
+11	23426	3.8	1	17575 5851
+12	22868	0.9	1	16566 6302
+13	14739	0.2	1	8753 5986
+14	17649	0.1	1	12545 5104
+15	19049	0.0	1	12338 6711
+16	18239	0.0	1	13545 4694
+17	14328	0.0	1	10269 4059
+18	19163	0.0	1	14483 3408 1272
+19	24238	0.0	1	5880 14924 3434
+20	22573	0.0	2	13106 7071 2396
+21	14648	0.0	2	4654 6563 3431
+22	13650	0.0	2	6315 4575 2760
+23	16037	0.0	2	9110 4127 2800
+24	33284	0.0	2	17786 10017 5481
+25	26117	0.0	2	17486 5958 2673
+26	18039	0.0	2	9645 5894 2500
+27	25091	0.0	2	15901 5868 2820 502
+28	32411	0.0	2	13580 4977 6512 7342
+29	30132	0.0	2	15296 8924 4525 1387
+30	18338	0.0	3	10295 4705 2239 1099
+31	21763	0.0	3	8012 8364 3659 1728
+32	21818	0.0	3	6219 9333 4323 1943
+33	26044	0.0	3	13871 6974 3660 1539
+34	28379	0.0	3	13940 8324 4062 2053
+35	35157	0.0	3	21457 7941 3621 2138
+36	31234	0.0	3	20237 6696 2740 1561
+37	30772	0.0	3	20904 6047 2510 1311
+38	45182	0.0	3	31103 8678 3530 1871
+39	45328	0.0	3	32800 7888 3104 1536
+40	30489	0.0	3	22448 5262 1852 927
+41	31773	0.0	3	23913 5177 1791 892
+42	40090	0.0	3	29872 6815 2319 1084
+43	53745	0.0	3	40587 8904 2835 1419
+44	74665	0.0	3	56773 12010 3924 1958
+45	70977	0.0	3	54529 11067 3616 1765
+46	57739	0.0	3	44929 8833 2736 1241
+47	69876	0.0	3	55110 10205 3119 1442
+48	61705	0.0	3	49394 8566 2504 1241
+49	248076	0.0	3	196849 35604 10342 5281
+50	299855	0.0	3	241628 40987 11855 5385
+51	178991	0.0	3	145916 23247 6765 3063
+52	226640	0.0	3	185797 28776 8315 3752
+53	206663	0.0	3	172988 23882 6516 3277
+54	124024	0.0	3	104247 14025 3909 1843
+55	86944	0.0	3	72489 10382 2808 1265
+56	75219	0.0	3	62947 8837 2366 1069
+57	111481	0.0	3	94997 11926 3101 1457
+58	100481	0.0	3	85443 10977 2732 1329
+59	80079	0.0	3	67966 8851 2273 989
+60	83237	0.0	3	71083 8777 2383 994
+61	139645	0.0	3	119467 14854 3673 1651
+62	187321	0.0	3	160953 19347 4839 2182
+63	169632	0.0	3	146166 17464 4278 1724
+64	239770	0.0	3	207660 24209 5592 2309
+65	136724	0.0	3	118335 13669 3273 1447
+66	109396	0.0	3	95049 10794 2515 1038
+67	83427	0.0	3	72543 8147 1875 862
+68	114398	0.0	3	99381 11305 2526 1186
+69	113679	0.0	3	98558 11192 2767 1162
+70	75637	0.0	3	66042 7236 1636 723
+71	122803	0.0	3	107320 11682 2663 1138
+72	89104	0.0	3	78419 8156 1769 760
+73	73539	0.0	3	64535 6874 1523 607
+74	91386	0.0	3	80183 8466 1913 824
+75	115283	0.0	3	100990 10868 2396 1029
+76	123453	0.0	3	108222 11625 2582 1024
+77	94299	0.0	3	83190 8574 1800 735
+78	117560	0.0	3	103717 10613 2299 931
+79	116872	0.0	3	102772 10757 2377 966
+80	140625	0.0	3	123928 12652 2887 1158
+81	194036	0.0	3	171185 17313 3951 1587
+82	205721	0.0	3	181485 18264 4142 1830
+83	239560	0.0	3	211477 21112 4771 2200
+84	661808	0.0	3	584354 57292 13394 6768
+85	313839	0.0	3	276809 27262 6533 3235
+86	178315	0.0	3	156938 15887 3778 1712
+87	198081	0.0	3	174338 17845 3944 1954
+88	338146	0.0	3	298814 29066 6866 3400
+89	357454	0.0	3	315999 30434 7366 3655
+90	311730	0.0	3	274159 27389 6816 3366
+91	251569	0.0	3	220386 23161 5497 2525
+92	263084	0.0	3	230315 24239 5905 2625
+93	314395	0.0	3	276243 28451 6656 3045
+94	607465	0.0	3	530347 56279 14152 6687
+95	521564	0.0	3	456259 48641 11502 5162
+96	265926	0.0	3	232849 24905 5785 2387
+97	265146	0.0	3	231519 25015 6065 2547
+98	176365	0.0	3	155212 16018 3590 1545
+99	177266	0.0	3	156117 16096 3588 1465
+100	172328	0.0	3	152603 15121 3229 1375
+101	140811	0.0	3	124557 12416 2671 1167
+102	208810	0.0	3	184285 18573 4206 1746
+103	315309	0.0	3	279125 27685 6022 2477
+104	228815	0.0	3	202607 20244 4277 1687
+105	212631	0.0	3	188841 18106 3966 1718
+106	165175	0.0	3	146230 14608 3081 1256
+107	208220	0.0	3	184541 18253 3825 1601
+108	166130	0.0	3	146935 14713 3181 1301
+109	193929	0.0	3	171776 17249 3548 1356
+110	144585	0.0	3	128408 12583 2610 984
+111	226427	0.0	3	200819 19760 4094 1754
+112	138575	0.0	3	122541 12597 2480 957
+113	118744	0.0	3	105375 10394 2080 895
+114	137173	0.0	3	121767 11927 2496 983
+115	89981	0.0	3	79648 8143 1591 599
+116	121352	0.0	3	106616 11115 2516 1105
+117	43448	0.0	3	38541 3870 760 277
+118	42661	0.0	3	38022 3689 680 270
+119	23396	0.0	3	20912 1983 383 118
+120	13988	0.0	3	12464 1224 225 75
+121	6158	0.0	3	5371 616 122 49
+122	4971	0.0	3	4367 450 110 44
+123	3847	0.0	3	3419 340 66 22
+124	8294	0.0	3	7392 743 109 50
+125	476321	0.0	3	424747 42959 6526 2089
+126	718	0.0	3	572 96 32 18
+
+WARNING:
+    One or more of your adapter sequences may be incomplete.
+    Please see the detailed output above.
+Started analysis of 20190110sample5-trimmed.fastq
+Approx 5% complete for 20190110sample5-trimmed.fastq
+Approx 10% complete for 20190110sample5-trimmed.fastq
+Approx 15% complete for 20190110sample5-trimmed.fastq
+Approx 20% complete for 20190110sample5-trimmed.fastq
+Approx 25% complete for 20190110sample5-trimmed.fastq
+Approx 30% complete for 20190110sample5-trimmed.fastq
+Approx 35% complete for 20190110sample5-trimmed.fastq
+Approx 40% complete for 20190110sample5-trimmed.fastq
+Approx 45% complete for 20190110sample5-trimmed.fastq
+Approx 50% complete for 20190110sample5-trimmed.fastq
+Approx 55% complete for 20190110sample5-trimmed.fastq
+Approx 60% complete for 20190110sample5-trimmed.fastq
+Approx 65% complete for 20190110sample5-trimmed.fastq
+Approx 70% complete for 20190110sample5-trimmed.fastq
+Approx 75% complete for 20190110sample5-trimmed.fastq
+Approx 80% complete for 20190110sample5-trimmed.fastq
+Approx 85% complete for 20190110sample5-trimmed.fastq
+Approx 90% complete for 20190110sample5-trimmed.fastq
+Approx 95% complete for 20190110sample5-trimmed.fastq
+Approx 100% complete for 20190110sample5-trimmed.fastq
+Started analysis of 20190110sample5-nofilt-trimmed.fastq
+Approx 5% complete for 20190110sample5-nofilt-trimmed.fastq
+Approx 10% complete for 20190110sample5-nofilt-trimmed.fastq
+Approx 15% complete for 20190110sample5-nofilt-trimmed.fastq
+Approx 20% complete for 20190110sample5-nofilt-trimmed.fastq
+Approx 25% complete for 20190110sample5-nofilt-trimmed.fastq
+Approx 30% complete for 20190110sample5-nofilt-trimmed.fastq
+Approx 35% complete for 20190110sample5-nofilt-trimmed.fastq
+Approx 40% complete for 20190110sample5-nofilt-trimmed.fastq
+Approx 45% complete for 20190110sample5-nofilt-trimmed.fastq
+Approx 50% complete for 20190110sample5-nofilt-trimmed.fastq
+Approx 55% complete for 20190110sample5-nofilt-trimmed.fastq
+Approx 60% complete for 20190110sample5-nofilt-trimmed.fastq
+Approx 65% complete for 20190110sample5-nofilt-trimmed.fastq
+Approx 70% complete for 20190110sample5-nofilt-trimmed.fastq
+Approx 75% complete for 20190110sample5-nofilt-trimmed.fastq
+Approx 80% complete for 20190110sample5-nofilt-trimmed.fastq
+Approx 85% complete for 20190110sample5-nofilt-trimmed.fastq
+Approx 90% complete for 20190110sample5-nofilt-trimmed.fastq
+Approx 95% complete for 20190110sample5-nofilt-trimmed.fastq
+Approx 100% complete for 20190110sample5-nofilt-trimmed.fastq
+mac2unix: converting file /share/de/plasma_all_60a243166c4b6/plasma_all_60a243166c4b6/20190110sample5/error.log to Unix format ...
+mac2unix: converting file /share/de/plasma_all_60a243166c4b6/plasma_all_60a243166c4b6/20190110sample5/output.log to Unix format ...
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.4.6
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           S /share/de/plasma_all_60a243166c4b6/2019011 ... ||
+||                                                                            ||
+||             Output file : /share/de/plasma_all_60a243166c4b6/plasma_al ... ||
+||             Annotations : /home/vsac/database2/all/saf/all.saf (SAF)       ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : no                                               ||
+||         Strand specific : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /home/vsac/database2/all/saf/all.saf ...              ||
+||    Features : 23571                                                        ||
+||    Meta-features : 23571                                                   ||
+||    Chromosomes : 23571                                                     ||
+||                                                                            ||
+|| Process BAM file /share/de/plasma_all_60a243166c4b6/20190110sample5-al ... ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 1884943                                                   ||
+||    Successfully assigned reads : 27 (0.0%)                                 ||
+||    Running time : 0.05 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+cat: 20190110sample5: No such file or directory

@@ -1,0 +1,186 @@
+html {
+  text-align: center;
+}
+
+body {
+    background: linear-gradient(to right, #f2f6fc, #bfd3f2) repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+
+table{
+	border: 2px solid #FFFFFF;
+	    text-align: center;
+    width: 100%;
+}
+
+td{
+	border: 2px solid #FFFFFF;
+	padding:2px;
+}
+
+
+#srna_detection,#novel_mirna_prediction,#other_mirna_expression,#send,#pipeline_end{
+    background-color: lightgrey;
+    width: 113px;
+    padding: 16px;
+    border: 2px solid black;
+    margin: 25px;
+   float: left;
+	box-shadow: 10px 10px 5px #888888;
+border-radius: 20px;	
+height: 100px;
+}
+#pipeline_end{
+	width: 200px;
+}
+
+.step_wait{
+	opacity: 0.4;
+	filter: alpha(opacity=60);
+}
+nav {
+    background:url(../images/background.png) repeat-x scroll center top transparent;
+    height: 86px;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+#menu-in {
+    background: no-repeat scroll center top transparent;
+    height: 86px;
+    margin: 0 auto;
+    padding: 0 10px 0 9px;
+    width: 961px;
+}
+
+.menu-logo {
+    background: url(../images/oasis-logo.png) no-repeat scroll left top transparent;
+    float: left;
+    height: 90px;
+    width: 217px;
+}
+.menu-logo span {
+    display: none;
+}
+.menu-links {
+    float: right;
+}
+.menu-links li {
+    float: left;
+    height: 34px;
+    margin: 29px 2px 0 0;
+}
+.menu-links li a {
+    color: #ffffff;
+    font-family: Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 34px;
+    text-shadow: 0 -2px 1px #1d1d1d;
+        text-decoration:none;
+}
+
+.menu-links li a:hover {
+    color: #d0dff5;
+        cursor:pointer;
+}
+
+.menu-m {
+        background: repeat-x scroll left top transparent;
+    float: left;
+    height: 34px;
+    padding: 1px 15px 0 15px;
+}
+.menu-link-sel .menu-m {
+        background: none repeat scroll 0 0 #3e4141;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 2px #2b2b2b inset;
+}
+
+.menu-link-sel .menu-m a {
+    color: #d0dff5 !important;
+    cursor: pointer;
+    text-shadow: 0 -1px 1px #050303;
+}
+#Sample_20190110sample11-trimming{background-image: url("../images/Ok.png");}
+#Sample_20190110sample11-qc{background-image: url("../images/Ok.png");}
+#Sample_20190110sample11-mapping{background-image: url("../images/Ok.png");}
+#Sample_20190110sample11-counting{background-image: url("../images/Ok.png");}
+#Sample_20190110sample14-trimming{background-image: url("../images/Ok.png");}
+#Sample_20190110sample14-qc{background-image: url("../images/Ok.png");}
+#Sample_20190110sample14-mapping{background-image: url("../images/Ok.png");}
+#Sample_20190110sample14-counting{background-image: url("../images/Ok.png");}
+#Sample_20190110sample2-trimming{background-image: url("../images/Ok.png");}
+#Sample_20190110sample2-qc{background-image: url("../images/Ok.png");}
+#Sample_20190110sample2-mapping{background-image: url("../images/Ok.png");}
+#Sample_20190110sample2-counting{background-image: url("../images/Ok.png");}
+#Sample_20190110sample3-trimming{background-image: url("../images/Ok.png");}
+#Sample_20190110sample3-qc{background-image: url("../images/Ok.png");}
+#Sample_20190110sample3-mapping{background-image: url("../images/Ok.png");}
+#Sample_20190110sample3-counting{background-image: url("../images/Ok.png");}
+#Sample_20190110sample4-trimming{background-image: url("../images/Ok.png");}
+#Sample_20190110sample4-qc{background-image: url("../images/Ok.png");}
+#Sample_20190110sample5-trimming{background-image: url("../images/Ok.png");}
+#Sample_20190110sample5-qc{background-image: url("../images/Ok.png");}
+#Sample_20190110sample4-mapping{background-image: url("../images/Ok.png");}
+#Sample_20190110sample5-mapping{background-image: url("../images/Ok.png");}
+#Sample_20190110sample4-counting{background-image: url("../images/Ok.png");}
+#Sample_20190110sample5-counting{background-image: url("../images/Ok.png");}
+#Sample_20190110sample6-trimming{background-image: url("../images/Ok.png");}
+#Sample_20190110sample6-qc{background-image: url("../images/Ok.png");}
+#Sample_20190110sample6-mapping{background-image: url("../images/Ok.png");}
+#Sample_20190110sample7-trimming{background-image: url("../images/Ok.png");}
+#Sample_20190110sample7-qc{background-image: url("../images/Ok.png");}
+#Sample_20190110sample7-mapping{background-image: url("../images/Ok.png");}
+#Sample_20190110sample6-counting{background-image: url("../images/Ok.png");}
+#Sample_20190110sample7-counting{background-image: url("../images/Ok.png");}
+#Sample_20190110sample8-trimming{background-image: url("../images/Ok.png");}
+#Sample_20190110sample8-qc{background-image: url("../images/Ok.png");}
+#Sample_20190110sample9-trimming{background-image: url("../images/Ok.png");}
+#Sample_20190110sample9-qc{background-image: url("../images/Ok.png");}
+#Sample_20190110sample8-mapping{background-image: url("../images/Ok.png");}
+#Sample_20190110sample9-mapping{background-image: url("../images/Ok.png");}
+#Sample_20190110sample8-counting{background-image: url("../images/Ok.png");}
+#Sample_20190308sample11-trimming{background-image: url("../images/Ok.png");}
+#Sample_20190308sample11-qc{background-image: url("../images/Ok.png");}
+#Sample_20190308sample11-mapping{background-image: url("../images/Ok.png");}
+#Sample_20190110sample9-counting{background-image: url("../images/Ok.png");}
+#Sample_20190308sample14-trimming{background-image: url("../images/Ok.png");}
+#Sample_20190308sample14-qc{background-image: url("../images/Ok.png");}
+#Sample_20190308sample14-mapping{background-image: url("../images/Ok.png");}
+#Sample_20190308sample11-counting{background-image: url("../images/Ok.png");}
+#Sample_20190308sample14-counting{background-image: url("../images/Ok.png");}
+#Sample_20190308sample2-trimming{background-image: url("../images/Ok.png");}
+#Sample_20190308sample2-qc{background-image: url("../images/Ok.png");}
+#Sample_20190308sample3-trimming{background-image: url("../images/Ok.png");}
+#Sample_20190308sample3-qc{background-image: url("../images/Ok.png");}
+#Sample_20190308sample2-mapping{background-image: url("../images/Ok.png");}
+#Sample_20190308sample3-mapping{background-image: url("../images/Ok.png");}
+#Sample_20190308sample2-counting{background-image: url("../images/Ok.png");}
+#Sample_20190308sample4-trimming{background-image: url("../images/Ok.png");}
+#Sample_20190308sample3-counting{background-image: url("../images/Ok.png");}
+#Sample_20190308sample4-qc{background-image: url("../images/Ok.png");}
+#Sample_20190308sample5-trimming{background-image: url("../images/Ok.png");}
+#Sample_20190308sample5-qc{background-image: url("../images/Ok.png");}
+#Sample_20190308sample5-mapping{background-image: url("../images/Ok.png");}
+#Sample_20190308sample4-mapping{background-image: url("../images/Ok.png");}
+#Sample_20190308sample5-counting{background-image: url("../images/Ok.png");}
+#Sample_20190308sample6-trimming{background-image: url("../images/Ok.png");}
+#Sample_20190308sample6-qc{background-image: url("../images/Ok.png");}
+#Sample_20190308sample4-counting{background-image: url("../images/Ok.png");}
+#Sample_20190308sample6-mapping{background-image: url("../images/Ok.png");}
+#Sample_20190308sample7-trimming{background-image: url("../images/Ok.png");}
+#Sample_20190308sample7-qc{background-image: url("../images/Ok.png");}
+#Sample_20190308sample7-mapping{background-image: url("../images/Ok.png");}
+#Sample_20190308sample6-counting{background-image: url("../images/Ok.png");}
+#Sample_20190308sample8-trimming{background-image: url("../images/Ok.png");}
+#Sample_20190308sample8-qc{background-image: url("../images/Ok.png");}
+#Sample_20190308sample8-mapping{background-image: url("../images/Ok.png");}
+#Sample_20190308sample7-counting{background-image: url("../images/Ok.png");}
+#Sample_20190308sample9-trimming{background-image: url("../images/Ok.png");}
+#Sample_20190308sample9-qc{background-image: url("../images/Ok.png");}
+#Sample_20190308sample9-mapping{background-image: url("../images/Ok.png");}
+#Sample_20190308sample8-counting{background-image: url("../images/Ok.png");}
+#Sample_20190308sample9-counting{background-image: url("../images/Ok.png");}
+#srna_detection{opacity:0.4;background-color: green;color: white;}#novel_mirna_prediction{opacity:1;}
+#novel_mirna_prediction{opacity:0.4;background-color: green;color: white;}#other_mirna_expression{opacity:1;}
+#other_mirna_expression{opacity:0.4;background-color: green;color: white;}#send{opacity:1;}

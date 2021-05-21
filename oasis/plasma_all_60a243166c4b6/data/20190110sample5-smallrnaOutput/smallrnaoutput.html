@@ -1,0 +1,527 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="shortcut icon" type="image/x-icon" href="../summary/img/favicon.ico">
+<link rel="stylesheet" type="text/css"  href="stylesheet/grafstyle.css" />
+<link rel="stylesheet" type="text/css"  href="stylesheet/main.css" />
+<title>Smallrna data output</title>
+
+
+
+<!-- show / hide -->
+<script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script>
+
+$( document ).ready(function() {
+              jQuery('.targetDiv').hide();
+              jQuery('#div1').show();
+              jQuery('#option1_1').show();
+              jQuery('#option1_2').show();
+        });
+
+jQuery(function(){
+				
+         jQuery('#showall').click(function(){
+               jQuery('.targetDiv').show();
+			   jQuery('.targetDivOption').show();
+        });
+		 
+        jQuery('.showSingle').click(function(){
+              jQuery('.targetDiv').hide();
+              jQuery('#div'+$(this).attr('target')).show();
+              jQuery('.targetDivOption').show();
+        });
+		
+		//option 1-1 and 1-2
+		 
+        jQuery('.uno').click(function(){
+              jQuery('.targetDiv').hide();
+              jQuery('#div1').show();
+              jQuery('.targetDivOption').hide();
+              jQuery('#option1_'+$(this).attr('target')).show();
+        });
+		
+		//option 2-1 and 2-2
+		 
+        jQuery('.dos').click(function(){
+              jQuery('.targetDiv').hide();
+              jQuery('#div2').show();
+              jQuery('.targetDivOption').hide();
+              jQuery('#option2_'+$(this).attr('target')).show();
+        });
+		
+		//option 3-1 and 3-2
+		 
+        jQuery('.tres').click(function(){
+              jQuery('.targetDiv').hide();
+              jQuery('#div3').show();
+              jQuery('.targetDivOption').hide();
+              jQuery('#option3_'+$(this).attr('target')).show();
+        });
+		
+		
+		
+		
+		
+		
+		
+		<!-- lightbox -->
+		jQuery('.lightbox').click(function(){
+	
+			jQuery('#over_'+$(this).attr('target')).show();
+			jQuery('#fade').show();
+		});
+		jQuery('.overbox').click(function(){
+	
+			jQuery('#over_'+$(this).attr('target')).hide();
+			jQuery('#fade').hide();
+		});
+		jQuery('#fade').click(function(){
+			jQuery('#over_1').hide();
+			jQuery('#over_2').hide();
+			jQuery('#over_3').hide();
+			jQuery('#fade').hide();
+		});
+});
+
+
+function cambiar(evt){
+	
+	var elements = document.getElementsByClassName('menu-m');
+	var segundo = document.getElementsByClassName('showSingle');
+	
+	for (x = 0; x < elements.length; x++){
+		elements[x].style.borderRadius = "0px";
+		elements[x].style.boxShadow = "none";
+		elements[x].style.background = "repeat-x scroll left top transparent";
+	}
+	for (y = 0; y < segundo.length; y++){
+		segundo[y].style.color = "#ffffff";
+	}
+
+	var valor = evt;
+	var valordos = evt+'-a';
+	
+	
+	document.getElementById(valor).style.borderRadius = "10px";
+	document.getElementById(valor).style.boxShadow = "2px 2px 2px 2px #2b2b2b inset";
+	document.getElementById(valor).style.background = "none repeat scroll 0 0 #3e4141";
+	document.getElementById(valordos).style.color = "#d0dff5";
+	
+}
+
+function inicial(){
+	document.getElementById('menu-m-1').style.borderRadius = "10px";
+	document.getElementById('menu-m-1').style.boxShadow = "2px 2px 2px 2px #2b2b2b inset";
+	document.getElementById('menu-m-1').style.background = "none repeat scroll 0 0 #3e4141";
+	document.getElementById('menu-m-1-a').style.color = "#d0dff5";
+}
+
+
+</script>
+
+
+
+
+<!-- drop down jquery -->
+<script src="js/jquery-drop.js"></script>
+<script type="text/javascript" src="js/dropdown.js"></script>
+
+</head>
+
+<body onload="inicial()">
+
+
+<nav style="text-align:center">
+        		<ul class="menu-links" style="display:inline-block;float:none">
+		    <li style="margin-top:0px">
+			<a class="menu-logo" href="https://oasis.dzne.de/" target="_blank"><span>Oasis</span></a>
+			</li>
+                    <li class="">
+                        <span class="menu-m" id="menu-m-1">
+                        	<a class="showSingle" id="menu-m-1-a" target="1" onClick="cambiar('menu-m-1')">Basic Statistics</a>
+                        </span>
+                    </li>
+                  
+                  
+                    <li class="" id="has-sub">
+                    	
+                        <span class="menu-m" id="menu-m-2">
+                    		<a class="showSingle" id="menu-m-2-a" target="2" onClick="javascript:cambiar('menu-m-2')">Trimming</a>
+                    	</span>
+                        
+                        <ul>
+                        	<img src="images/arrow.png" alt="trimming">
+         					<li><a class="dos" id="menu-m-2-a" target="1" onClick="cambiar('menu-m-2')"><span>Percentage of reads too short/long</span></a></li>
+         					<li class='last'><a class="dos" id="menu-m-2-a" target="2" onClick="cambiar('menu-m-2')"><span>Sequence length distribution</span></a></li>
+         				</ul>
+                        
+                    </li>
+                    
+                    
+                  
+                    <li class="" id="has-sub">
+                    
+                    	<span class="menu-m" id="menu-m-3">
+                    		<a class="showSingle" target="3" id="menu-m-3-a" onClick="cambiar('menu-m-3')">Mapping</a>
+                    	</span>
+                    
+                    	<ul id="mapping">
+                        	<img src="images/arrow.png" alt="mapping">
+         					<li><a class="tres" target="1" onClick="cambiar('menu-m-3')"><span>Mapped reads</span></a></li>
+         					<li class='last'><a class="tres" target="2" onClick="cambiar('menu-m-3')"><span>Number of reads</span></a></li>
+         				</ul>
+                    
+                    </li>
+                    
+                    
+                    
+                    <li class="">
+                        <span class="menu-m" id="menu-m-4">
+                        	<a class="showSingle" target="4" id="menu-m-4-a" onClick="cambiar('menu-m-4')">Counting</a>
+                        </span>
+                    </li>
+
+<li class="">
+                        <span class="menu-m" id="menu-m-8">
+                                <a class="showSingle" target="8" id="menu-m-8-a" onClick="cambiar('menu-m-8')">Contamination</a>
+                        </span>
+                    </li>
+                    
+
+                    <li style="margin-right:20px">
+                        <span>
+                        	<a target="_blank" href="qcRawData/fastqc_report.html" title="QC of raw data">QC</a>
+                        </span>
+                    </li>
+
+                    <li>
+                        <span>
+                        	<a target="_blank" href="images/all_plots.pdf" title="Download all plots as PDF">PDF export</a>
+                        </span>
+                    </li>
+                    
+                    
+                    <li class="">
+                        <span class="menu-m" id="menu-m-6">
+                        	<a class="showSingle" target="6" id="menu-m-6-a" onClick="cambiar('menu-m-6')">Tools & DBs </a>
+                        </span>
+                    </li>
+                    
+                    
+                    <li class="">
+                        <span class="menu-m" id="menu-m-7">
+                        	<a class="showSingle" target="7" id="menu-m-7-a" onClick="cambiar('menu-m-7')">Citations</a>
+                        </span>
+                    </li>
+                    
+                </ul>
+        </nav>
+        
+        
+        
+
+
+<!-- LEFT COLUMN -->
+
+<div id="content">
+
+<noscript>
+ <div style="border: 3px solid red; margin: 4px; text-align: center; padding: 15px; margin-bottom: 10px;">
+  <p style="font-size: large; font-weight: bold">Dear Oasis user, please enable JavaScript in your browser. Otherwise it is not possible to display all results.</p>
+ </div>
+</noscript>
+
+
+<!---------------------------------------------------------------   BASICS STATISTICS  ----------------------------->
+
+<div id="div1" class="targetDiv">
+
+<div id="option1_1" class="targetDivOption">
+<p class="title" style="margin-top:0px;">Basic Statistics: Overview</p>
+<!-- iframe table -->
+<center><iframe src="stylesheet/tableBasicStatistics.html" id="frame-table"> </iframe></center>
+</div>
+
+<div id="option1_2" class="targetDivOption">
+<p class="title" style="margin-top:0px;">Basic Statistics: Main plots</p>
+
+<p>
+	<a class="lightbox" target="3"><img src="images/sequence_length_distribution_nofilt.png" /></a>	
+	<a class="lightbox" target="1"><img src="images/number_reads.png" /></a>
+	<a class="lightbox" target="2"><img src="images/smallrna.png" /></a>
+
+</p>
+
+
+<!-- lightbox 01 -->
+<div id="over_1" class="overbox" target="1">
+	<div id="content-light">
+	<img src="images/number_reads.png" class="lbox"><br><br><br>
+    <!-- description -->
+This plot shows the initial number of reads that remain after the main processing steps of the analysis workflow. The first bar 'Initial number of reads' shows the total amount of reads produced by the sequencer for this sample (100%). The second bar 'Length filtering' depicts the number of reads left after filtering for reads that are too short or too long (default thresholds for removal are <32 nt and >15 nt). The third bar 'Unique mapping' shows the number of reads that are uniquely mapped to one of the five small RNA databases or the respective genome (reads shorter than 20 nt with 0 mismatches, longer than 20 nt with 1 mismatch).
+	</div>
+</div>
+<div id="fade" target="1" class="fadebox">&nbsp;</div>
+
+<!-- lightbox 02 -->
+<div id="over_2" class="overbox" target="2">
+	<div id="content-light">
+	<img src="images/smallrna.png" class="lbox"><br><br><br>
+    <!-- description -->
+This plot shows the percentage of uniquely aligned reads per small RNA species. RNA species considered are miRNAs, piRNAs, snoRNAs, snRNAs, and rRNAs. Additionally, RNAs that could not be aligned to known small RNA species but that map uniquely to the genome are shown in the 'miscRNA' bar. These RNAs are either fragmented long or short RNA species, editing variants of small RNAs (isoMIRs), or might represent as yet unknown small RNA species. An analysis routine for the classification of 'miscRNAs' will be included in the second version of the software.
+	</div>
+</div>
+
+<!-- lightbox 03 -->
+<div id="over_3" class="overbox" target="3">
+	<div id="content-light">
+	<img src="images/sequence_length_distribution_nofilt.png" class="lbox"><br><br><br>
+    <!-- description -->
+This plot shows the distribution of sequence length after adapter removal (trimming) and before length filtering. This plot allows you to draw general conclusions about the success of your sequencing experiment. Peaks that you should be seeing, depending on the sample source, might be a prominent peak around 20-23 bases, which is the general size distribution of miRNAs. Other small RNA species show peaks around 31-32 bases for snoRNAs and piRNA. A prominent peak at 0-1 bases would indicate adapter ligations without insert, this would mean that your DNA input into the ligation reaction was too low or the amount of adapters was too high, parameters that should be adjusted in the next library preparation. A prominent peak around 14-15 bases might indicate degradation products, either real degradation products in the cell or fragments of RNA due to the sample preparation. Peaks that appear around 50 bases indicate that the size selection reaction was bad or did not take place and in general represent regular, larger RNA species.
+	</div>
+</div>
+<div id="fade" class="fadebox">&nbsp;</div>
+
+</div>
+
+</div>
+
+
+
+<!---------------------------------------------------------------   TRIMMING  -------------------------------------->
+
+<div id="div2" class="targetDiv">
+<div id="option2_1" class="targetDivOption">
+<p class="title">Percentage of reads too short/long</p>
+	<p style="float:left; text-align:center; width:100%">
+	<img src="images/trimmed_reads_discarded.png" alt="" class="inside">
+    <span class="imgdescr">After the trimming of the adaptor the pipeline discards the reads with length smaller than 15 and greater than 32 nucleotides. The y-axis show the percentage of the total reads, the number of reads in millions are shown in bracket</span>
+	</p>
+</div>
+<div id="option2_2" class="targetDivOption">
+<p class="title">Sequence length distribution before and after filter</p>
+	<p style="float:left; text-align:center; width:100%">
+	<img src="images/sequence_length_distribution_nofilt.png" alt="" class="inside"> <img src="images/sequence_length_distribution.png" alt="" class="inside"> 
+    <span class="imgdescr">
+
+
+
+This plot shows the distribution of sequence length after adapter removal (trimming) and before length filtering. This plot allows you to draw general conclusions about the success of your sequencing experiment. Peaks that you should be seeing, depending on the sample source, might be a prominent peak around 20-23 bases, which is the general size distribution of miRNAs. Other small RNA species show peaks around 31-32 bases for snoRNAs and piRNA. A prominent peak at 0-1 bases would indicate adapter ligations without insert, this would mean that your DNA input into the ligation reaction was too low or the amount of adapters was too high, parameters that should be adjusted in the next library preparation. A prominent peak around 14-15 bases might indicate degradation products, either real degradation products in the cell or fragments of RNA due to the sample preparation. Peaks that appear around 50 bases indicate that the size selection reaction was bad or did not take place and in general represent regular, larger RNA species</span>
+    </p>
+</div>
+</div>
+
+
+<!---------------------------------------------------------------   MAPPING  --------------------------------------->
+
+
+<div id="div3" class="targetDiv">
+<div id="option3_1" class="targetDivOption">
+<p class="title">Mapped reads</p>
+<p style="float:left; text-align:center; width:100%"><img src="images/mapped_reads.png" alt="" align="middle" class="inside">
+<span class="imgdescr">The x-axis is the division of the reads according with their characteristics during the mapping phase: the blue bar is percentage of reads mapped in just one region of the genome. The middle bar represents the percentage of reads mapped on multiple loci of the genome and the light blue bar is the percentage of the reads too short and discarded from the analysis.  </span>
+</p>
+</div>
+
+<div id="option3_2" class="targetDivOption">
+<p class="title">Number of reads</p>
+<p style="float:left; text-align:center; width:100%"><img src="images/number_reads.png" alt="" class="inside">
+<span class="imgdescr">
+This plot shows the initial number of reads that remain after the main processing steps of the analysis workflow. The first bar 'Initial number of reads' shows the total amount of reads produced by the sequencer for this sample (100%). The second bar 'Length filtering' depicts the number of reads left after filtering for reads that are too short or too long (default thresholds for removal are <32 nt and >15 nt). The third bar 'Unique mapping' shows the number of reads that are uniquely mapped to one of the five small RNA databases or the respective genome (reads shorter than 20 nt with 0 mismatches, longer than 20 nt with 1 mismatch). </span>
+</p>
+</div>
+</div>
+
+
+
+<!---------------------------------------------------------------   COUNTING  -------------------------------------->
+
+
+<div id="div4" class="targetDiv">
+<div id="option4_1" class="targetDivOption">
+<p class="title">Density of small RNA species</p>
+<p style="float:left; text-align:center; width:100%"><img src="images/smallrna.png" alt="" class="inside">
+<span class="imgdescr">
+
+This plot shows the percentage of uniquely aligned reads per small RNA species. RNA species considered are miRNAs, piRNAs, snoRNAs, snRNAs, and rRNAs. Additionally, RNAs that could not be aligned to known small RNA species but that map uniquely to the genome are shown in the 'miscRNA' bar. These RNAs are either fragmented long or short RNA species, editing variants of small RNAs (isoMIRs), or might represent as yet unknown small RNA species. An analysis routine for the classification of 'miscRNAs' will be included in the second version of the software. <br><br>
+    <span>Please click to hide the graphic.</span>
+</p>
+</div>
+</div>
+
+<!---------------------------------------------------------------   CONTAMINATION  -------------------------------------->
+<div id="div8" class="targetDiv">
+<div id="option8_1" class="targetDivOption">
+<p class="title">Pathogen (Contaminant) Kingdom</p>
+<p style="float:left; text-align:center; width:100%"><img src="images/contamination_domain.png" alt="" align="middle" class="inside">
+<span class="imgdescr">This plot shows total reads (the number of reads that did not align to
+the target organism (TO) transcript and target organism genome) and
+the number of reads aligned to different pathogen genomes such as
+viral,bacterial and  archaeal genomes. The first bar 'initial reads' shows
+the number of reads not aligned to the TO transcript and TO genome. The
+following bars show number of reads mapping to particular 'pathogen
+genome' such Bacteria,Viruses and Archaea. </span>
+</p>
+</div>
+
+<div id="option8_2" class="targetDivOption">
+<p class="title">Pathogen (Contaminant) Species</p>
+<p style="float:left; text-align:center; width:100%"><img src="images/contamination_species.png" alt="" class="inside">
+<span class="imgdescr">
+This plot shows the number of reads that did not align to the target
+organism (TO) transcript and target organism genome but aligned to
+pathogen genomes.Only top five contaminants based on the read counts are
+shown.</span>
+</p>
+</div>
+</div>
+
+
+
+<!---------------------------------------------------------   OTHER RESULTS  -------------------------------------->
+
+
+<div id="div5" class="targetDiv">
+<div id="option5_1" class="targetDivOption">
+<p class="title">QC of raw data</p>
+<p style="float:left; text-align:center; width:100%">
+	<a href="qcRawData/fastqc_report.html" target="_blank" class="qc-html"><img src="images/qc-html.png"></a>
+    <br><br>
+    To see the QC Raw Report, click over the image or <a href="qcRawData/fastqc_report.html" target="_blank">in this link</a>.
+   
+</p>
+</div>
+
+
+</div>
+
+
+
+<!---------------------------------------------------------------   METHODS  ---------------------------------------->
+
+<div id="div6" class="targetDiv">
+<div id="option6_1" class="targetDivOption">
+<p class="title">Tools and Databases version</p>
+
+<center><iframe src="stylesheet/tools_versions.html" id="frame-table" style="min-height:600px"> </iframe></center>
+</div>
+
+
+
+</div>
+
+
+
+
+<!---------------------------------------------------------------   CITATIONS  -------------------------------------->
+
+
+<div id="div7" class="targetDiv">
+	<div id="option7_1" class="targetDivOption">
+	<p class="title">Citations</p>
+
+
+	<p class="publications">
+        <a target="_blank" href="http://www.ncbi.nlm.nih.gov/pubmed/25701573"><em>Oasis: online analysis of small RNA deep sequencing data</em>.</a><br><br>
+
+Capece V, Garcia Vizcaino JC, Vidal R, Rahman RU, Pena Centeno T, Shomroni O, Suberviola I, Fischer A, Bonn S.<br>
+        <b>Bioinformatics</b>. 2015
+
+            <span><a target="_blank" href="http://www.ncbi.nlm.nih.gov/pubmed/25701573">See online<img src="images/icon-publications-donwload.png"></a></span>
+        </p>
+	
+	<p class="publications">  
+    	<a target="_blank" href="http://journal.embnet.org/index.php/embnetjournal/article/view/200"><em>Cutadapt removes adapter sequences from high-throughput sequencing reads</em>.</a><br><br>
+    
+	    Marcel Martin<br>
+    
+    	<b>EMBnet.journal</b>. 2011
+    
+	    <span><a target="_blank" href="http://journal.embnet.org/index.php/embnetjournal/article/view/200">See online<img src="images/icon-publications-donwload.png"></a></span>   
+	</p>
+
+	<p class="publications"> 
+    	<a target="_blank" href="http://bioinformatics.oxfordjournals.org/content/early/2012/10/25/bioinformatics.bts635"><em>STAR: ultrafast universal RNA-seq aligner</em></a><br><br>
+    
+	    
+    Alexander Dobin1,Carrie A. Davis1,Felix Schlesinger1,Jorg Drenkow1,Chris Zaleski1,Sonali Jha1,Philippe Batut1,Mark Chaisson2 and Thomas R. Gingeras1
+<br>
+    
+    	<b>Bioinformatics</b> first published online October 25, 2012 doi:10.1093/bioinformatics/bts635 
+    
+	    <span><a target="_blank" href="http://bioinformatics.oxfordjournals.org/content/early/2012/10/25/bioinformatics.bts635">See online<img src="images/icon-publications-donwload.png"></a></span>
+	</p>
+
+       <p class="publications"> 
+    	<a target="_blank" href="http://bioinformatics.oxfordjournals.org/content/early/2013/11/13/bioinformatics.btt656.abstract"><em>featureCounts: an efficient general-purpose program for assigning sequence reads to genomic features</em></a><br><br>
+
+Liao Y, Smyth GK and Shi W (2013)	    
+<br>
+Bioinformatics, 30(7):923-30, 2014    
+    
+	    <span><a target="_blank" href="http://bioinformatics.oxfordjournals.org/content/early/2013/11/13/bioinformatics.btt656.abstract">See online<img src="images/icon-publications-donwload.png"></a></span>
+	</p>
+
+        <p class="publications"> 
+    	<a target="_blank" href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/"><em>fastQC: a quality control tool for high throughput sequence data.</em></a><br><br>
+    
+	    
+    Simon Andrews
+<br>
+      
+	    <span><a target="_blank" href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/">See online<img src="images/icon-publications-donwload.png"></a></span>
+	</p>
+
+<p class="publications">
+
+	<a target="_blank" href="http://www.ncbi.nlm.nih.gov/pubmed/18392026"><em>Discovering microRNAs from deep sequencing data using miRDeep</em></a><br><br>
+
+
+    Friedländer, M.R., Chen, W., Adamidi, C., Maaskola, J., Einspanier, R., Knespel, S., Rajewsky, N.
+<br>
+
+            <span><a target="_blank" href="http://www.ncbi.nlm.nih.gov/pubmed/18392026">See online<img src="images/icon-publications-donwload.png"></a></span>
+        </p>
+
+        <p class="publications"> 
+    	<a target="_blank" href="http://www.mirbase.org/"><em>miRbase</em></a><br><br>
+    
+     <b>NetWatch</b> - Science 303:1741 (2004)  
+	    <span><a target="_blank" href="http://www.mirbase.org/">See online<img src="images/icon-publications-donwload.png"></a></span>
+	</p>
+
+        <p class="publications"> 
+    	<a target="_blank" href="http://nar.oxfordjournals.org/content/36/suppl_1/D173.full"><em>piRNAbank</em></a><br><br>
+
+    Sai Lakshmi S, Shipra Agrawal</br>
+
+     <b>Nucleic Acids Research</b> 2008 January; 36 (Database issue): D173–D177.  [PMCID: PMC2238943]  
+	    <span><a target="_blank" href="http://nar.oxfordjournals.org/content/36/suppl_1/D173.full">See online<img src="images/icon-publications-donwload.png"></a></span>
+	</p>
+
+<p class="publications">
+        <a target="_blank" href="https://genomebiology.biomedcentral.com/articles/10.1186/gb-2014-15-3-r46"><em>Kraken: ultrafast metagenomic sequence classification using exact alignments</em></a><br><br>
+
+    Derrick E Wood and Steven L Salzberg</br>
+
+     <b>Genome Biology</b> Wood and Salzberg Genome Biology 2014
+		 <span><a target="_blank" href="https://genomebiology.biomedcentral.com/articles/10.1186/gb-2014-15-3-r46">See online<img src="images/icon-publications-donwload.png"></a></span>
+        </p>
+
+
+	</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<!-- end content --></div>
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+PASS	Basic Statistics	20190110sample2-trimmed.fastq
+PASS	Per base sequence quality	20190110sample2-trimmed.fastq
+PASS	Per sequence quality scores	20190110sample2-trimmed.fastq
+FAIL	Per base sequence content	20190110sample2-trimmed.fastq
+FAIL	Per base GC content	20190110sample2-trimmed.fastq
+FAIL	Per sequence GC content	20190110sample2-trimmed.fastq
+PASS	Per base N content	20190110sample2-trimmed.fastq
+WARN	Sequence Length Distribution	20190110sample2-trimmed.fastq
+FAIL	Sequence Duplication Levels	20190110sample2-trimmed.fastq
+FAIL	Overrepresented sequences	20190110sample2-trimmed.fastq
+FAIL	Kmer Content	20190110sample2-trimmed.fastq

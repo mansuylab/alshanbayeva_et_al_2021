@@ -1,0 +1,2352 @@
+STAR version=STAR_2.4.1d
+STAR compilation time,server,dir=Tue May 19 18:14:49 EDT 2015 modena.cshl.edu:/sonas-hs/gingeras/nlsas_norepl/user/dobin/STAR/Releases/STAR_2.4.1d/source
+##### DEFAULT parameters:
+versionSTAR                       20201
+versionGenome                     20101   20200   
+parametersFiles                   -   
+sysShell                          -
+runMode                           alignReads
+runThreadN                        1
+runDirPerm                        User_RWX
+genomeDir                         ./GenomeDir/
+genomeLoad                        NoSharedMemory
+genomeFastaFiles                  -   
+genomeSAindexNbases               14
+genomeChrBinNbits                 18
+genomeSAsparseD                   1
+readFilesIn                       Read1   Read2   
+readFilesCommand                  -   
+readMatesLengthsIn                NotEqual
+readMapNumber                     18446744073709551615
+inputBAMfile                      -
+bamRemoveDuplicatesType           -
+bamRemoveDuplicatesMate2basesN    0
+limitGenomeGenerateRAM            31000000000
+limitIObufferSize                 150000000
+limitOutSAMoneReadBytes           100000
+limitOutSJcollapsed               1000000
+limitOutSJoneRead                 1000
+limitBAMsortRAM                   0
+limitSjdbInsertNsj                1000000
+outTmpDir                         -
+outReadsUnmapped                  None
+outQSconversionAdd                0
+outSAMtype                        SAM   
+outSAMmode                        Full
+outSAMstrandField                 None
+outSAMattributes                  Standard   
+outSAMunmapped                    None
+outSAMorder                       Paired
+outSAMprimaryFlag                 OneBestScore
+outSAMreadID                      Standard
+outSAMmapqUnique                  255
+outSAMflagOR                      0
+outSAMflagAND                     65535
+outSAMattrRGline                  -   
+outSAMheaderHD                    -   
+outSAMheaderPG                    -   
+outSAMheaderCommentFile           -
+outBAMcompression                 1
+outBAMsortingThreadN              0
+outSJfilterReads                  All
+outSJfilterCountUniqueMin         3   1   1   1   
+outSJfilterCountTotalMin          3   1   1   1   
+outSJfilterOverhangMin            30   12   12   12   
+outSJfilterDistToOtherSJmin       10   0   5   10   
+outSJfilterIntronMaxVsReadN       50000   100000   200000   
+outWigType                        None   
+outWigStrand                      Stranded   
+outWigReferencesPrefix            -
+outWigNorm                        RPM   
+outFilterType                     Normal
+outFilterMultimapNmax             10
+outFilterMultimapScoreRange       1
+outFilterScoreMin                 0
+outFilterScoreMinOverLread        0.66
+outFilterMatchNmin                0
+outFilterMatchNminOverLread       0.66
+outFilterMismatchNmax             10
+outFilterMismatchNoverLmax        0.3
+outFilterMismatchNoverReadLmax    1
+outFilterIntronMotifs             None
+clip5pNbases                      0   
+clip3pNbases                      0   
+clip3pAfterAdapterNbases          0   
+clip3pAdapterSeq                  -   
+clip3pAdapterMMp                  0.1   
+winBinNbits                       16
+winAnchorDistNbins                9
+winFlankNbins                     4
+winAnchorMultimapNmax             50
+scoreGap                          0
+scoreGapNoncan                    -8
+scoreGapGCAG                      -4
+scoreGapATAC                      -8
+scoreStitchSJshift                1
+scoreGenomicLengthLog2scale       -0.25
+scoreDelBase                      -2
+scoreDelOpen                      -2
+scoreInsOpen                      -2
+scoreInsBase                      -2
+seedSearchLmax                    0
+seedSearchStartLmax               50
+seedSearchStartLmaxOverLread      1
+seedPerReadNmax                   1000
+seedPerWindowNmax                 50
+seedNoneLociPerWindow             10
+seedMultimapNmax                  10000
+alignIntronMin                    21
+alignIntronMax                    0
+alignMatesGapMax                  0
+alignTranscriptsPerReadNmax       10000
+alignSJoverhangMin                5
+alignSJDBoverhangMin              3
+alignSplicedMateMapLmin           0
+alignSplicedMateMapLminOverLmate    0.66
+alignWindowsPerReadNmax           10000
+alignTranscriptsPerWindowNmax     100
+alignEndsType                     Local
+alignSoftClipAtReferenceEnds      Yes
+chimSegmentMin                    0
+chimScoreMin                      0
+chimScoreDropMax                  20
+chimScoreSeparation               10
+chimScoreJunctionNonGTAG          -1
+chimJunctionOverhangMin           20
+chimOutType                       SeparateSAMold
+sjdbFileChrStartEnd               -   
+sjdbGTFfile                       -
+sjdbGTFchrPrefix                  -
+sjdbGTFfeatureExon                exon
+sjdbGTFtagExonParentTranscript    transcript_id
+sjdbGTFtagExonParentGene          gene_id
+sjdbOverhang                      100
+sjdbScore                         2
+sjdbInsertSave                    Basic
+quantMode                         -   
+quantTranscriptomeBAMcompression    1
+quantTranscriptomeBan             IndelSoftclipSingleend
+twopass1readsN                    18446744073709551615
+twopassMode                       None
+##### Command Line:
+STAR_2.4.1d --genomeDir /home/vsac/database2/mm10/smallrna/mirna/star --runThreadN 8 --outFileNamePrefix /share/de/plasma_all_60a243166c4b6/plasma_all_60a243166c4b6/20190308sample8/20190308sample8-smallrnaOutput/mapping/20190308sample8--mirna --readFilesIn /share/de/plasma_all_60a243166c4b6/plasma_all_60a243166c4b6/20190308sample8/20190308sample8-trimmed.fastq --outFilterMismatchNoverLmax 0.05 --alignIntronMax 1 --outFilterMatchNmin 15 --outFilterScoreMinOverLread 0 --outFilterMatchNminOverLread 0 --outSAMtype BAM SortedByCoordinate --outStd BAM_SortedByCoordinate --outSAMunmapped Within --limitBAMsortRAM 10369680498
+##### Initial USER parameters from Command Line:
+outFileNamePrefix                 /share/de/plasma_all_60a243166c4b6/plasma_all_60a243166c4b6/20190308sample8/20190308sample8-smallrnaOutput/mapping/20190308sample8--mirna
+outStd                            BAM_SortedByCoordinate
+###### All USER parameters from Command Line:
+genomeDir                     /home/vsac/database2/mm10/smallrna/mirna/star     ~RE-DEFINED
+runThreadN                    8     ~RE-DEFINED
+outFileNamePrefix             /share/de/plasma_all_60a243166c4b6/plasma_all_60a243166c4b6/20190308sample8/20190308sample8-smallrnaOutput/mapping/20190308sample8--mirna     ~RE-DEFINED
+readFilesIn                   /share/de/plasma_all_60a243166c4b6/plasma_all_60a243166c4b6/20190308sample8/20190308sample8-trimmed.fastq        ~RE-DEFINED
+outFilterMismatchNoverLmax    0.05     ~RE-DEFINED
+alignIntronMax                1     ~RE-DEFINED
+outFilterMatchNmin            15     ~RE-DEFINED
+outFilterScoreMinOverLread    0     ~RE-DEFINED
+outFilterMatchNminOverLread   0     ~RE-DEFINED
+outSAMtype                    BAM   SortedByCoordinate        ~RE-DEFINED
+outStd                        BAM_SortedByCoordinate     ~RE-DEFINED
+outSAMunmapped                Within     ~RE-DEFINED
+limitBAMsortRAM               10369680498     ~RE-DEFINED
+##### Finished reading parameters from all sources
+
+##### Final user re-defined parameters-----------------:
+runThreadN                        8
+genomeDir                         /home/vsac/database2/mm10/smallrna/mirna/star
+readFilesIn                       /share/de/plasma_all_60a243166c4b6/plasma_all_60a243166c4b6/20190308sample8/20190308sample8-trimmed.fastq   
+limitBAMsortRAM                   10369680498
+outFileNamePrefix                 /share/de/plasma_all_60a243166c4b6/plasma_all_60a243166c4b6/20190308sample8/20190308sample8-smallrnaOutput/mapping/20190308sample8--mirna
+outStd                            BAM_SortedByCoordinate
+outSAMtype                        BAM   SortedByCoordinate   
+outSAMunmapped                    Within
+outFilterScoreMinOverLread        0
+outFilterMatchNmin                15
+outFilterMatchNminOverLread       0
+outFilterMismatchNoverLmax        0.05
+alignIntronMax                    1
+
+-------------------------------
+##### Final effective command line:
+STAR_2.4.1d   --runThreadN 8   --genomeDir /home/vsac/database2/mm10/smallrna/mirna/star   --readFilesIn /share/de/plasma_all_60a243166c4b6/plasma_all_60a243166c4b6/20190308sample8/20190308sample8-trimmed.fastq      --limitBAMsortRAM 10369680498   --outFileNamePrefix /share/de/plasma_all_60a243166c4b6/plasma_all_60a243166c4b6/20190308sample8/20190308sample8-smallrnaOutput/mapping/20190308sample8--mirna   --outStd BAM_SortedByCoordinate   --outSAMtype BAM   SortedByCoordinate      --outSAMunmapped Within   --outFilterScoreMinOverLread 0   --outFilterMatchNmin 15   --outFilterMatchNminOverLread 0   --outFilterMismatchNoverLmax 0.05   --alignIntronMax 1
+
+##### Final parameters after user input--------------------------------:
+versionSTAR                       20201
+versionGenome                     20101   20200   
+parametersFiles                   -   
+sysShell                          -
+runMode                           alignReads
+runThreadN                        8
+runDirPerm                        User_RWX
+genomeDir                         /home/vsac/database2/mm10/smallrna/mirna/star
+genomeLoad                        NoSharedMemory
+genomeFastaFiles                  -   
+genomeSAindexNbases               14
+genomeChrBinNbits                 18
+genomeSAsparseD                   1
+readFilesIn                       /share/de/plasma_all_60a243166c4b6/plasma_all_60a243166c4b6/20190308sample8/20190308sample8-trimmed.fastq   
+readFilesCommand                  -   
+readMatesLengthsIn                NotEqual
+readMapNumber                     18446744073709551615
+inputBAMfile                      -
+bamRemoveDuplicatesType           -
+bamRemoveDuplicatesMate2basesN    0
+limitGenomeGenerateRAM            31000000000
+limitIObufferSize                 150000000
+limitOutSAMoneReadBytes           100000
+limitOutSJcollapsed               1000000
+limitOutSJoneRead                 1000
+limitBAMsortRAM                   10369680498
+limitSjdbInsertNsj                1000000
+outFileNamePrefix                 /share/de/plasma_all_60a243166c4b6/plasma_all_60a243166c4b6/20190308sample8/20190308sample8-smallrnaOutput/mapping/20190308sample8--mirna
+outTmpDir                         -
+outStd                            BAM_SortedByCoordinate
+outReadsUnmapped                  None
+outQSconversionAdd                0
+outSAMtype                        BAM   SortedByCoordinate   
+outSAMmode                        Full
+outSAMstrandField                 None
+outSAMattributes                  Standard   
+outSAMunmapped                    Within
+outSAMorder                       Paired
+outSAMprimaryFlag                 OneBestScore
+outSAMreadID                      Standard
+outSAMmapqUnique                  255
+outSAMflagOR                      0
+outSAMflagAND                     65535
+outSAMattrRGline                  -   
+outSAMheaderHD                    -   
+outSAMheaderPG                    -   
+outSAMheaderCommentFile           -
+outBAMcompression                 1
+outBAMsortingThreadN              0
+outSJfilterReads                  All
+outSJfilterCountUniqueMin         3   1   1   1   
+outSJfilterCountTotalMin          3   1   1   1   
+outSJfilterOverhangMin            30   12   12   12   
+outSJfilterDistToOtherSJmin       10   0   5   10   
+outSJfilterIntronMaxVsReadN       50000   100000   200000   
+outWigType                        None   
+outWigStrand                      Stranded   
+outWigReferencesPrefix            -
+outWigNorm                        RPM   
+outFilterType                     Normal
+outFilterMultimapNmax             10
+outFilterMultimapScoreRange       1
+outFilterScoreMin                 0
+outFilterScoreMinOverLread        0
+outFilterMatchNmin                15
+outFilterMatchNminOverLread       0
+outFilterMismatchNmax             10
+outFilterMismatchNoverLmax        0.05
+outFilterMismatchNoverReadLmax    1
+outFilterIntronMotifs             None
+clip5pNbases                      0   
+clip3pNbases                      0   
+clip3pAfterAdapterNbases          0   
+clip3pAdapterSeq                  -   
+clip3pAdapterMMp                  0.1   
+winBinNbits                       16
+winAnchorDistNbins                9
+winFlankNbins                     4
+winAnchorMultimapNmax             50
+scoreGap                          0
+scoreGapNoncan                    -8
+scoreGapGCAG                      -4
+scoreGapATAC                      -8
+scoreStitchSJshift                1
+scoreGenomicLengthLog2scale       -0.25
+scoreDelBase                      -2
+scoreDelOpen                      -2
+scoreInsOpen                      -2
+scoreInsBase                      -2
+seedSearchLmax                    0
+seedSearchStartLmax               50
+seedSearchStartLmaxOverLread      1
+seedPerReadNmax                   1000
+seedPerWindowNmax                 50
+seedNoneLociPerWindow             10
+seedMultimapNmax                  10000
+alignIntronMin                    21
+alignIntronMax                    1
+alignMatesGapMax                  0
+alignTranscriptsPerReadNmax       10000
+alignSJoverhangMin                5
+alignSJDBoverhangMin              3
+alignSplicedMateMapLmin           0
+alignSplicedMateMapLminOverLmate    0.66
+alignWindowsPerReadNmax           10000
+alignTranscriptsPerWindowNmax     100
+alignEndsType                     Local
+alignSoftClipAtReferenceEnds      Yes
+chimSegmentMin                    0
+chimScoreMin                      0
+chimScoreDropMax                  20
+chimScoreSeparation               10
+chimScoreJunctionNonGTAG          -1
+chimJunctionOverhangMin           20
+chimOutType                       SeparateSAMold
+sjdbFileChrStartEnd               -   
+sjdbGTFfile                       -
+sjdbGTFchrPrefix                  -
+sjdbGTFfeatureExon                exon
+sjdbGTFtagExonParentTranscript    transcript_id
+sjdbGTFtagExonParentGene          gene_id
+sjdbOverhang                      100
+sjdbScore                         2
+sjdbInsertSave                    Basic
+quantMode                         -   
+quantTranscriptomeBAMcompression    1
+quantTranscriptomeBan             IndelSoftclipSingleend
+twopass1readsN                    18446744073709551615
+twopassMode                       None
+----------------------------------------
+
+Finished loading and checking parameters
+Reading genome generation parameters:
+versionGenome                 20201        ~RE-DEFINED
+genomeFastaFiles              /home/vsac/pipelines2/createDailyDB/2017-03-13/mmu/mmu.fa        ~RE-DEFINED
+genomeSAindexNbases           4     ~RE-DEFINED
+genomeChrBinNbits             18     ~RE-DEFINED
+genomeSAsparseD               1     ~RE-DEFINED
+sjdbOverhang                  0     ~RE-DEFINED
+sjdbFileChrStartEnd           -        ~RE-DEFINED
+sjdbGTFfile                   -     ~RE-DEFINED
+sjdbGTFchrPrefix              -     ~RE-DEFINED
+sjdbGTFfeatureExon            exon     ~RE-DEFINED
+sjdbGTFtagExonParentTranscripttranscript_id     ~RE-DEFINED
+sjdbGTFtagExonParentGene      gene_id     ~RE-DEFINED
+sjdbInsertSave                Basic     ~RE-DEFINED
+Genome version is compatible with current STAR version
+--sjdbOverhang = 0 taken from the generated genome
+Started loading the genome: Mon May 17 15:42:35 2021
+
+checking Genome sizefile size: 516423680 bytes; state: good=1 eof=0 fail=0 bad=0
+checking SA sizefile size: 355724 bytes; state: good=1 eof=0 fail=0 bad=0
+checking /SAindex sizefile size: 1539 bytes; state: good=1 eof=0 fail=0 bad=0
+Read from SAindex: genomeSAindexNbases=4  nSAi=340
+nGenome=516423680;  nSAbyte=355724
+GstrandBit=32   SA number of indices=86236
+Shared memory is not used for genomes. Allocated a private copy of the genome.
+Genome file size: 516423680 bytes; state: good=1 eof=0 fail=0 bad=0
+Loading Genome ... done! state: good=1 eof=0 fail=0 bad=0; loaded 516423680 bytes
+SA file size: 355727 bytes; state: good=1 eof=0 fail=0 bad=0
+Loading SA ... done! state: good=0 eof=1 fail=1 bad=0; loaded 355724 bytes
+Loading SAindex ... done: 1539 bytes
+Finished loading the genome: Mon May 17 15:42:39 2021
+
+Number of real (reference) chromosmes= 1970
+1	mmu-miR-181a-5p	23	0
+2	mmu-miR-181b-5p	23	262144
+3	mmu-miR-199a-3p__mmu-miR-199b-3p	22	524288
+4	mmu-miR-669o-3p__mmu-miR-669a-3p	23	786432
+5	mmu-miR-669d-5p	22	1048576
+6	mmu-miR-103-3p	23	1310720
+7	mmu-miR-3070-5p	23	1572864
+8	mmu-miR-138-5p	23	1835008
+9	mmu-miR-7676-5p	23	2097152
+10	mmu-miR-344-5p	26	2359296
+11	mmu-miR-669p-5p__mmu-miR-669a-5p	24	2621440
+12	mmu-miR-684	19	2883584
+13	mmu-miR-9-3p	22	3145728
+14	mmu-miR-466p-3p__mmu-miR-466b-3p__mmu-miR-466c-3p	22	3407872
+15	mmu-miR-669m-3p	22	3670016
+16	mmu-miR-692	21	3932160
+17	mmu-miR-297a-5p	22	4194304
+18	mmu-miR-344e-5p__mmu-miR-344h-5p	20	4456448
+19	mmu-miR-6967-5p	21	4718592
+20	mmu-miR-669p-3p	24	4980736
+21	mmu-miR-466f-3p	21	5242880
+22	mmu-miR-467a-3p	22	5505024
+23	mmu-miR-8099	21	5767168
+24	mmu-miR-199a-5p	23	6029312
+25	mmu-miR-683	21	6291456
+26	mmu-miR-124-5p	22	6553600
+27	mmu-let-7a-1-3p__mmu-let-7c-2-3p	22	6815744
+28	mmu-miR-5615-5p	22	7077888
+29	mmu-miR-129-5p	21	7340032
+30	mmu-miR-344d-3p	22	7602176
+31	mmu-miR-465a-3p__mmu-miR-465c-3p__mmu-miR-465b-3p	22	7864320
+32	mmu-miR-133a-5p	21	8126464
+33	mmu-miR-680	21	8388608
+34	mmu-miR-344h-3p	22	8650752
+35	mmu-miR-3074-5p	22	8912896
+36	mmu-miR-3084-5p	22	9175040
+37	mmu-miR-124-3p	20	9437184
+38	mmu-miR-467a-5p	22	9699328
+39	mmu-miR-365-3p	22	9961472
+40	mmu-miR-466f-5p	22	10223616
+41	mmu-miR-7094-3p	21	10485760
+42	mmu-miR-29b-3p	23	10747904
+43	mmu-miR-16-5p	22	11010048
+44	mmu-miR-196a-5p	22	11272192
+45	mmu-miR-297b-3p__mmu-miR-297c-3p__mmu-miR-297a-3p	22	11534336
+46	mmu-miR-466a-3p__mmu-miR-466e-3p	23	11796480
+47	mmu-miR-135a-5p	23	12058624
+48	mmu-miR-92a-3p	21	12320768
+49	mmu-miR-465c-5p	22	12582912
+50	mmu-miR-465b-5p	22	12845056
+51	mmu-miR-128-3p	21	13107200
+52	mmu-miR-6967-3p	20	13369344
+53	mmu-miR-125b-5p	22	13631488
+54	mmu-miR-7676-3p	22	13893632
+55	mmu-miR-486a-5p__mmu-miR-486b-5p	22	14155776
+56	mmu-miR-9-5p	23	14417920
+57	mmu-miR-3471	22	14680064
+58	mmu-let-7f-5p	22	14942208
+59	mmu-let-7a-5p	22	15204352
+60	mmu-let-7c-5p	22	15466496
+61	mmu-miR-344-3p	23	15728640
+62	mmu-miR-466o-5p__mmu-miR-466b-5p	22	15990784
+63	mmu-miR-466c-5p	24	16252928
+64	mmu-miR-219a-5p	21	16515072
+65	mmu-miR-1906	22	16777216
+66	mmu-miR-7a-5p	23	17039360
+67	mmu-miR-1a-3p	22	17301504
+68	mmu-miR-24-3p	22	17563648
+69	mmu-miR-30c-5p	23	17825792
+70	mmu-miR-194-5p	22	18087936
+71	mmu-miR-5615-3p	22	18350080
+72	mmu-miR-19b-3p	23	18612224
+73	mmu-miR-669m-5p__mmu-miR-466m-5p	23	18874368
+74	mmu-miR-26a-5p	22	19136512
+75	mmu-miR-3084-3p	21	19398656
+76	mmu-miR-218-5p	21	19660800
+77	mmu-miR-133a-3p	22	19922944
+78	mmu-miR-450a-5p	22	20185088
+79	p-mmu-miR-34-2__p-mmu-miR-34-1	21	20447232
+80	p-mmu-miR-18-2__p-mmu-miR-18-1	21	20709376
+81	mmu-miR-7119-3p	21	20971520
+82	mmu-miR-703	21	21233664
+83	mmu-miR-320-3p	22	21495808
+84	mmu-miR-6946-5p	21	21757952
+85	mmu-miR-1192	22	22020096
+86	mmu-miR-495-3p	22	22282240
+87	mmu-miR-322-3p	21	22544384
+88	mmu-miR-218-1-3p	22	22806528
+89	mmu-miR-543-3p	22	23068672
+90	mmu-miR-451a	22	23330816
+91	mmu-miR-122-3p	20	23592960
+92	mmu-miR-7234-3p	23	23855104
+93	mmu-miR-8095	22	24117248
+94	mmu-miR-7092-5p	23	24379392
+95	mmu-miR-690	22	24641536
+96	mmu-miR-5709-3p	22	24903680
+97	mmu-miR-291b-3p	22	25165824
+98	mmu-miR-350-5p	19	25427968
+99	mmu-miR-292a-3p	24	25690112
+100	mmu-miR-290a-3p	24	25952256
+101	mmu-miR-295-3p	23	26214400
+102	mmu-miR-291a-3p	22	26476544
+103	mmu-miR-294-3p	22	26738688
+104	mmu-miR-6949-5p	23	27000832
+105	mmu-miR-148a-5p	22	27262976
+106	mmu-miR-6905-3p	21	27525120
+107	mmu-miR-3475-5p	22	27787264
+108	mmu-miR-216b-5p	22	28049408
+109	mmu-miR-224-3p	22	28311552
+110	mmu-miR-8097	22	28573696
+111	mmu-miR-338-5p	22	28835840
+112	mmu-miR-329-3p	22	29097984
+113	mmu-miR-362-3p	22	29360128
+114	mmu-miR-376c-3p	21	29622272
+115	mmu-miR-697	21	29884416
+116	mmu-miR-181c-5p	22	30146560
+117	mmu-miR-181d-5p	23	30408704
+118	mmu-miR-470-3p	22	30670848
+119	mmu-miR-7020-3p	21	30932992
+120	mmu-miR-100-5p	22	31195136
+121	mmu-miR-99a-5p	22	31457280
+122	mmu-miR-7031-3p	21	31719424
+123	mmu-miR-132-5p	22	31981568
+124	mmu-miR-6994-3p	21	32243712
+125	mmu-miR-6907-3p	23	32505856
+126	mmu-miR-7647-5p	22	32768000
+127	mmu-miR-8094	21	33030144
+128	mmu-miR-193b-3p	22	33292288
+129	mmu-miR-193a-3p	22	33554432
+130	mmu-miR-881-3p	22	33816576
+131	mmu-miR-7217-5p	25	34078720
+132	mmu-miR-5616-3p	22	34340864
+133	mmu-miR-7661-5p	25	34603008
+134	mmu-miR-483-5p	22	34865152
+135	mmu-miR-292b-3p	21	35127296
+136	mmu-miR-7086-5p	21	35389440
+137	mmu-miR-1969	23	35651584
+138	mmu-miR-129-2-3p	22	35913728
+139	mmu-miR-129-1-3p	22	36175872
+140	mmu-miR-7671-3p	22	36438016
+141	mmu-miR-8110	21	36700160
+142	mmu-miR-1198-3p	22	36962304
+143	mmu-miR-22-3p	22	37224448
+144	mmu-miR-6928-3p	22	37486592
+145	mmu-miR-3095-5p	22	37748736
+146	mmu-miR-208b-5p	22	38010880
+147	mmu-miR-6999-5p	23	38273024
+148	mmu-miR-6962-5p	20	38535168
+149	mmu-miR-7012-5p	23	38797312
+150	mmu-miR-28a-5p	22	39059456
+151	mmu-miR-708-5p	23	39321600
+152	mmu-miR-8116	21	39583744
+153	mmu-miR-6977-3p	22	39845888
+154	mmu-miR-7665-5p	23	40108032
+155	mmu-miR-1966-5p	25	40370176
+156	mmu-miR-1943-5p	23	40632320
+157	mmu-miR-541-5p	25	40894464
+158	mmu-miR-6953-5p	26	41156608
+159	mmu-miR-6930-5p	23	41418752
+160	mmu-miR-6978-5p	23	41680896
+161	mmu-miR-1839-5p	22	41943040
+162	mmu-miR-7037-5p	24	42205184
+163	mmu-miR-872-5p	21	42467328
+164	mmu-miR-5118	19	42729472
+165	mmu-miR-344i	20	42991616
+166	mmu-miR-7647-3p	21	43253760
+167	mmu-miR-6898-3p	21	43515904
+168	mmu-miR-290b-3p	22	43778048
+169	mmu-miR-302c-3p	22	44040192
+170	mmu-miR-7651-5p	22	44302336
+171	mmu-miR-6374	22	44564480
+172	mmu-miR-543-5p	21	44826624
+173	mmu-miR-369-3p	21	45088768
+174	mmu-miR-7657-5p	21	45350912
+175	mmu-miR-410-3p	21	45613056
+176	mmu-miR-34c-3p	22	45875200
+177	mmu-miR-34b-3p	22	46137344
+178	mmu-miR-34a-3p	21	46399488
+179	mmu-miR-154-3p	22	46661632
+180	mmu-miR-7650-5p	22	46923776
+181	mmu-miR-500-5p	25	47185920
+182	mmu-miR-362-5p	24	47448064
+183	mmu-miR-501-5p	22	47710208
+184	mmu-miR-487b-3p	22	47972352
+185	mmu-miR-489-3p	23	48234496
+186	mmu-miR-425-5p	23	48496640
+187	mmu-miR-501-3p	22	48758784
+188	mmu-miR-500-3p	22	49020928
+189	mmu-miR-3109-5p	24	49283072
+190	mmu-miR-652-3p	21	49545216
+191	mmu-miR-5129-3p	22	49807360
+192	mmu-miR-511-3p	22	50069504
+193	mmu-miR-363-3p	22	50331648
+194	mmu-miR-367-3p	22	50593792
+195	mmu-miR-6994-5p	23	50855936
+196	mmu-miR-7646-5p	22	51118080
+197	mmu-miR-7022-3p	22	51380224
+198	mmu-miR-6968-3p	22	51642368
+199	mmu-miR-100-3p	22	51904512
+200	mmu-miR-125b-2-3p	22	52166656
+201	mmu-miR-873b	22	52428800
+202	mmu-miR-6920-5p	22	52690944
+203	mmu-miR-672-3p	21	52953088
+204	mmu-miR-6955-3p	22	53215232
+205	mmu-miR-6923-3p	21	53477376
+206	mmu-miR-6908-3p	22	53739520
+207	mmu-miR-216b-3p	22	54001664
+208	mmu-miR-5113	23	54263808
+209	mmu-miR-214-3p	22	54525952
+210	mmu-miR-6971-3p	21	54788096
+211	mmu-miR-7050-5p	21	55050240
+212	mmu-miR-6715-5p	23	55312384
+213	mmu-miR-7656-3p	22	55574528
+214	mmu-miR-5627-3p	24	55836672
+215	mmu-miR-125a-3p	22	56098816
+216	mmu-miR-101c	19	56360960
+217	mmu-miR-5620-3p	21	56623104
+218	mmu-miR-669a-3-3p	23	56885248
+219	mmu-miR-1a-1-5p	23	57147392
+220	mmu-miR-1a-2-5p	23	57409536
+221	mmu-miR-3112-5p	21	57671680
+222	mmu-miR-206-5p	23	57933824
+223	mmu-miR-16-2-3p	22	58195968
+224	mmu-miR-1968-3p	21	58458112
+225	mmu-miR-7658-3p	21	58720256
+226	mmu-miR-665-3p	20	58982400
+227	mmu-miR-181c-3p	22	59244544
+228	mmu-miR-181a-1-3p	22	59506688
+229	mmu-miR-1247-5p	22	59768832
+230	mmu-miR-7017-3p	21	60030976
+231	mmu-miR-181a-2-3p	22	60293120
+232	mmu-miR-8111	21	60555264
+233	mmu-miR-7059-5p	22	60817408
+234	mmu-miR-1930-5p	22	61079552
+235	mmu-miR-6934-3p	22	61341696
+236	mmu-miR-7016-3p	22	61603840
+237	mmu-miR-221-5p	26	61865984
+238	mmu-miR-7685-5p	24	62128128
+239	mmu-miR-212-5p	23	62390272
+240	mmu-miR-5620-5p	23	62652416
+241	mmu-miR-1249-3p	22	62914560
+242	mmu-miR-7036b-5p	22	63176704
+243	mmu-miR-3104-3p	23	63438848
+244	mmu-miR-802-3p	22	63700992
+245	mmu-miR-6978-3p	23	63963136
+246	mmu-miR-137-5p	23	64225280
+247	mmu-miR-5134-3p	22	64487424
+248	mmu-miR-125b-1-3p	22	64749568
+249	mmu-miR-7225-5p	20	65011712
+250	mmu-miR-466f	22	65273856
+251	mmu-miR-1306-3p	21	65536000
+252	mmu-miR-7062-3p	23	65798144
+253	mmu-miR-6420	21	66060288
+254	mmu-miR-190a-3p	22	66322432
+255	mmu-miR-292b-5p	23	66584576
+256	mmu-miR-294-5p	22	66846720
+257	mmu-miR-290a-5p	22	67108864
+258	mmu-miR-292a-5p	22	67371008
+259	mmu-miR-293-5p	22	67633152
+260	mmu-miR-295-5p	22	67895296
+261	mmu-miR-3071-5p	22	68157440
+262	mmu-miR-136-5p	22	68419584
+263	mmu-miR-3544-3p	22	68681728
+264	mmu-miR-676-5p	22	68943872
+265	mmu-miR-1251-5p	21	69206016
+266	mmu-miR-130b-5p	22	69468160
+267	mmu-miR-6984-5p	24	69730304
+268	mmu-miR-190b-3p	23	69992448
+269	mmu-miR-29a-5p	22	70254592
+270	mmu-miR-6418-3p	22	70516736
+271	mmu-miR-1954	21	70778880
+272	mmu-miR-17-3p	22	71041024
+273	mmu-miR-106a-3p	23	71303168
+274	mmu-miR-20b-3p	22	71565312
+275	mmu-miR-20a-3p	22	71827456
+276	mmu-miR-18a-3p	22	72089600
+277	mmu-miR-9768-3p	24	72351744
+278	mmu-miR-93-3p	22	72613888
+279	mmu-miR-3105-3p	22	72876032
+280	mmu-miR-7680-3p	22	73138176
+281	mmu-miR-378c	21	73400320
+282	mmu-miR-378a-3p	21	73662464
+283	mmu-miR-5114	22	73924608
+284	mmu-miR-378d	22	74186752
+285	mmu-miR-6905-5p	23	74448896
+286	mmu-miR-7213-5p	20	74711040
+287	mmu-let-7g-3p	22	74973184
+288	mmu-miR-7043-3p	21	75235328
+289	mmu-miR-367-5p	21	75497472
+290	mmu-miR-302a-5p	22	75759616
+291	mmu-miR-374c-3p	19	76021760
+292	mmu-miR-327	19	76283904
+293	mmu-miR-7241-5p	23	76546048
+294	mmu-miR-7115-3p	22	76808192
+295	mmu-miR-302d-5p	23	77070336
+296	mmu-miR-302b-5p	23	77332480
+297	mmu-miR-3544-5p	23	77594624
+298	mmu-miR-7681-3p	22	77856768
+299	mmu-miR-6372	23	78118912
+300	mmu-miR-219b-3p	23	78381056
+301	mmu-miR-219a-2-3p	22	78643200
+302	mmu-miR-704	21	78905344
+303	mmu-miR-504-5p	22	79167488
+304	mmu-miR-1839-3p	23	79429632
+305	mmu-miR-1191b-3p	22	79691776
+306	mmu-miR-7230-5p	23	79953920
+307	mmu-miR-7685-3p	21	80216064
+308	mmu-miR-706	22	80478208
+309	mmu-miR-3105-5p	22	80740352
+310	mmu-miR-6998-3p	22	81002496
+311	mmu-miR-27b-5p	22	81264640
+312	mmu-miR-7081-5p	26	81526784
+313	mmu-miR-6924-5p	23	81788928
+314	mmu-miR-1962	22	82051072
+315	mmu-miR-485-5p	22	82313216
+316	mmu-miR-879-5p	21	82575360
+317	mmu-miR-7041-5p	23	82837504
+318	mmu-miR-6965-5p	24	83099648
+319	mmu-miR-7039-5p	22	83361792
+320	mmu-miR-5627-5p	22	83623936
+321	mmu-miR-7017-5p	24	83886080
+322	mmu-let-7d-5p	22	84148224
+323	mmu-miR-202-3p	22	84410368
+324	mmu-miR-1902	22	84672512
+325	mmu-miR-377-5p	22	84934656
+326	mmu-miR-329-5p	22	85196800
+327	mmu-miR-219a-1-3p	22	85458944
+328	mmu-miR-383-5p	22	85721088
+329	mmu-miR-369-5p	22	85983232
+330	mmu-miR-219b-5p	22	86245376
+331	mmu-miR-695	22	86507520
+332	mmu-miR-679-3p	22	86769664
+333	mmu-miR-770-5p	22	87031808
+334	mmu-miR-6899-5p	21	87293952
+335	mmu-miR-107-3p	23	87556096
+336	mmu-miR-3089-3p	23	87818240
+337	mmu-miR-6960-3p	22	88080384
+338	mmu-miR-210-5p	22	88342528
+339	mmu-miR-7665-3p	22	88604672
+340	mmu-miR-6990-3p	21	88866816
+341	mmu-miR-1946a	27	89128960
+342	mmu-miR-381-5p	23	89391104
+343	mmu-miR-1899	22	89653248
+344	mmu-miR-666-5p	22	89915392
+345	mmu-miR-7036a-5p	23	90177536
+346	mmu-miR-7045-5p	21	90439680
+347	mmu-miR-6366	22	90701824
+348	mmu-miR-222-3p	21	90963968
+349	mmu-miR-1928	17	91226112
+350	mmu-miR-221-3p	23	91488256
+351	mmu-miR-5046	24	91750400
+352	mmu-miR-423-3p	23	92012544
+353	mmu-miR-3966	21	92274688
+354	mmu-miR-2139	24	92536832
+355	mmu-miR-1964-5p	22	92798976
+356	mmu-miR-103-2-5p	23	93061120
+357	mmu-miR-107-5p	23	93323264
+358	mmu-miR-3967	20	93585408
+359	mmu-miR-5121	21	93847552
+360	mmu-miR-671-5p	23	94109696
+361	mmu-miR-1947-5p	22	94371840
+362	mmu-miR-882	22	94633984
+363	mmu-miR-7659-5p	22	94896128
+364	mmu-miR-28b	21	95158272
+365	mmu-miR-28c	20	95420416
+366	mmu-miR-8100	23	95682560
+367	mmu-miR-7011-5p	23	95944704
+368	mmu-miR-764-3p	22	96206848
+369	mmu-miR-1249-5p	25	96468992
+370	mmu-miR-5621-5p	23	96731136
+371	mmu-miR-7659-3p	23	96993280
+372	mmu-miR-8091	22	97255424
+373	mmu-miR-1934-3p	22	97517568
+374	mmu-miR-31-5p	22	97779712
+375	mmu-miR-9769-5p	22	98041856
+376	mmu-miR-7682-5p	24	98304000
+377	mmu-miR-346-3p	22	98566144
+378	mmu-miR-7001-5p	23	98828288
+379	mmu-miR-7087-5p	21	99090432
+380	mmu-miR-449c-5p	21	99352576
+381	mmu-miR-34b-5p	23	99614720
+382	mmu-miR-34c-5p	23	99876864
+383	mmu-miR-449b	20	100139008
+384	mmu-miR-8105	22	100401152
+385	mmu-miR-6546-5p	24	100663296
+386	mmu-miR-25-5p	22	100925440
+387	mmu-miR-7687-5p	25	101187584
+388	mmu-miR-187-5p	22	101449728
+389	mmu-miR-7671-5p	23	101711872
+390	mmu-miR-3552	21	101974016
+391	mmu-miR-7679-5p	20	102236160
+392	mmu-miR-3083-5p	22	102498304
+393	mmu-miR-3072-5p	22	102760448
+394	mmu-miR-92b-5p	24	103022592
+395	mmu-miR-7667-3p	22	103284736
+396	mmu-miR-365-2-5p	23	103546880
+397	mmu-miR-365-1-5p	23	103809024
+398	mmu-miR-504-3p	22	104071168
+399	mmu-miR-1941-5p	24	104333312
+400	mmu-miR-6929-5p	21	104595456
+401	mmu-miR-296-5p	21	104857600
+402	mmu-miR-6955-5p	24	105119744
+403	mmu-miR-7079-5p	22	105381888
+404	mmu-miR-7662-5p	22	105644032
+405	mmu-miR-6940-5p	23	105906176
+406	mmu-miR-7648-3p	21	106168320
+407	mmu-miR-27a-5p	22	106430464
+408	mmu-miR-3092-5p	22	106692608
+409	mmu-miR-7000-5p	22	106954752
+410	mmu-miR-6986-5p	22	107216896
+411	mmu-miR-7076-5p	21	107479040
+412	mmu-miR-6928-5p	23	107741184
+413	mmu-miR-665-5p	26	108003328
+414	mmu-miR-185-3p	21	108265472
+415	mmu-miR-6968-5p	22	108527616
+416	mmu-miR-342-5p	22	108789760
+417	mmu-miR-3962	20	109051904
+418	mmu-miR-1898	22	109314048
+419	mmu-miR-6915-5p	24	109576192
+420	mmu-miR-540-3p	20	109838336
+421	mmu-miR-1264-5p	22	110100480
+422	mmu-miR-5135	24	110362624
+423	mmu-miR-5106	23	110624768
+424	mmu-miR-3085-5p	25	110886912
+425	mmu-miR-92a-2-5p	22	111149056
+426	mmu-miR-323-5p	22	111411200
+427	mmu-miR-6933-3p	20	111673344
+428	mmu-miR-409-5p	23	111935488
+429	mmu-miR-7010-3p	21	112197632
+430	mmu-miR-496a-5p	21	112459776
+431	mmu-miR-453	24	112721920
+432	mmu-miR-92a-1-5p	23	112984064
+433	mmu-miR-494-5p	22	113246208
+434	mmu-miR-410-5p	21	113508352
+435	mmu-miR-7669-5p	23	113770496
+436	mmu-miR-5619-5p	21	114032640
+437	mmu-miR-344d-3-5p	23	114294784
+438	mmu-miR-344g-5p	21	114556928
+439	mmu-miR-344b-5p	23	114819072
+440	mmu-miR-344c-5p	23	115081216
+441	mmu-miR-344d-1-5p	24	115343360
+442	mmu-miR-344f-5p	22	115605504
+443	mmu-miR-485-3p	22	115867648
+444	mmu-miR-1933-5p	24	116129792
+445	mmu-miR-1956	22	116391936
+446	mmu-miR-1955-5p	25	116654080
+447	mmu-miR-344d-2-5p	24	116916224
+448	mmu-miR-293-3p	22	117178368
+449	mmu-miR-7091-3p	21	117440512
+450	mmu-miR-6993-5p	23	117702656
+451	mmu-miR-491-5p	22	117964800
+452	mmu-miR-7677-5p	25	118226944
+453	mmu-miR-203-5p	22	118489088
+454	mmu-miR-7065-5p	21	118751232
+455	mmu-miR-7663-3p	22	119013376
+456	mmu-miR-7228-3p	17	119275520
+457	mmu-miR-7233-5p	19	119537664
+458	mmu-miR-6948-5p	22	119799808
+459	mmu-miR-3067-5p	23	120061952
+460	mmu-miR-22-5p	22	120324096
+461	mmu-miR-669l-5p	22	120586240
+462	mmu-miR-669f-5p	24	120848384
+463	mmu-miR-19b-2-5p	24	121110528
+464	mmu-miR-19b-1-5p	23	121372672
+465	mmu-miR-669b-5p	22	121634816
+466	mmu-miR-208b-3p	22	121896960
+467	mmu-miR-208a-3p	22	122159104
+468	mmu-miR-3964	20	122421248
+469	mmu-miR-467e-5p	22	122683392
+470	mmu-miR-467h	22	122945536
+471	mmu-miR-374c-5p	20	123207680
+472	mmu-miR-466i-3p	22	123469824
+473	mmu-miR-466g	21	123731968
+474	mmu-miR-582-5p	22	123994112
+475	mmu-miR-5709-5p	22	124256256
+476	mmu-miR-7073-3p	22	124518400
+477	mmu-miR-7021-5p	22	124780544
+478	mmu-miR-669c-5p	22	125042688
+479	mmu-miR-374b-5p	22	125304832
+480	mmu-miR-467f	21	125566976
+481	mmu-miR-467b-3p	22	125829120
+482	mmu-miR-467d-3p	22	126091264
+483	mmu-miR-467c-3p	22	126353408
+484	mmu-miR-467e-3p	22	126615552
+485	mmu-miR-669d-2-3p	22	126877696
+486	mmu-miR-669l-3p	22	127139840
+487	mmu-miR-1948-5p	21	127401984
+488	mmu-miR-5136	20	127664128
+489	mmu-miR-421-3p	23	127926272
+490	mmu-miR-377-3p	22	128188416
+491	mmu-miR-23b-3p	21	128450560
+492	mmu-miR-23a-3p	21	128712704
+493	mmu-miR-376b-3p	21	128974848
+494	mmu-miR-3071-3p	22	129236992
+495	mmu-miR-136-3p	22	129499136
+496	mmu-miR-433-3p	22	129761280
+497	mmu-miR-670-5p	22	130023424
+498	mmu-miR-7032-3p	22	130285568
+499	mmu-miR-7681-5p	20	130547712
+500	mmu-miR-3075-3p	21	130809856
+501	mmu-miR-425-3p	21	131072000
+502	mmu-miR-376a-3p	21	131334144
+503	mmu-miR-6976-3p	21	131596288
+504	mmu-miR-719	22	131858432
+505	mmu-miR-7019-5p	23	132120576
+506	mmu-miR-7660-3p	23	132382720
+507	mmu-miR-215-5p	21	132644864
+508	mmu-miR-7063-5p	23	132907008
+509	mmu-miR-1931	22	133169152
+510	mmu-miR-7044-3p	21	133431296
+511	mmu-miR-669h-5p	24	133693440
+512	mmu-miR-511-5p	21	133955584
+513	mmu-miR-7238-5p	18	134217728
+514	mmu-miR-1843b-5p	21	134479872
+515	mmu-miR-6906-5p	24	134742016
+516	mmu-miR-1291	26	135004160
+517	mmu-miR-7023-5p	23	135266304
+518	mmu-miR-7237-5p	24	135528448
+519	mmu-miR-3073b-5p	22	135790592
+520	mmu-miR-546	16	136052736
+521	mmu-miR-6952-5p	22	136314880
+522	mmu-miR-380-5p	22	136577024
+523	mmu-miR-135b-3p	22	136839168
+524	mmu-miR-568	20	137101312
+525	mmu-miR-297b-5p	22	137363456
+526	mmu-miR-297c-5p	22	137625600
+527	mmu-miR-5129-5p	22	137887744
+528	mmu-miR-126b-5p	22	138149888
+529	mmu-miR-7670-5p	22	138412032
+530	mmu-miR-7680-5p	20	138674176
+531	mmu-miR-384-3p	22	138936320
+532	mmu-miR-691	22	139198464
+533	mmu-miR-145a-3p	22	139460608
+534	mmu-miR-544-3p	22	139722752
+535	mmu-miR-686	22	139984896
+536	mmu-miR-3057-5p	24	140247040
+537	mmu-miR-450a-1-3p	22	140509184
+538	mmu-miR-450b-3p	22	140771328
+539	mmu-miR-7242-5p	22	141033472
+540	mmu-miR-450a-2-3p	22	141295616
+541	mmu-miR-592-5p	23	141557760
+542	mmu-miR-1892	22	141819904
+543	mmu-miR-669n	20	142082048
+544	mmu-miR-3473g	20	142344192
+545	mmu-miR-497a-3p	21	142606336
+546	mmu-miR-186-5p	22	142868480
+547	mmu-miR-3078-5p	23	143130624
+548	mmu-miR-1668	21	143392768
+549	mmu-miR-106a-5p	23	143654912
+550	mmu-miR-20b-5p	23	143917056
+551	mmu-miR-93-5p	23	144179200
+552	mmu-miR-17-5p	23	144441344
+553	mmu-miR-3473f	20	144703488
+554	mmu-miR-1264-3p	22	144965632
+555	mmu-miR-10a-3p	22	145227776
+556	mmu-miR-7a-1-3p	22	145489920
+557	mmu-miR-7b-3p	22	145752064
+558	mmu-miR-7a-2-3p	22	146014208
+559	mmu-miR-21a-3p	22	146276352
+560	mmu-miR-6981-3p	22	146538496
+561	mmu-miR-496b	22	146800640
+562	mmu-miR-7075-3p	21	147062784
+563	mmu-miR-652-5p	24	147324928
+564	mmu-miR-490-3p	22	147587072
+565	mmu-miR-5107-3p	22	147849216
+566	mmu-miR-196a-1-3p	22	148111360
+567	mmu-miR-191-5p	23	148373504
+568	mmu-miR-708-3p	22	148635648
+569	mmu-miR-6915-3p	22	148897792
+570	mmu-miR-129b-3p	23	149159936
+571	mmu-miR-99b-3p	22	149422080
+572	mmu-miR-99a-3p	21	149684224
+573	mmu-miR-540-5p	23	149946368
+574	mmu-miR-96-3p	22	150208512
+575	mmu-miR-33-3p	22	150470656
+576	mmu-miR-5128	23	150732800
+577	mmu-miR-32-3p	21	150994944
+578	mmu-miR-6355	21	151257088
+579	mmu-miR-1912-3p	22	151519232
+580	mmu-miR-674-3p	22	151781376
+581	mmu-miR-6541	21	152043520
+582	mmu-miR-3076-5p	24	152305664
+583	mmu-miR-3097-5p	23	152567808
+584	mmu-miR-216a-3p	22	152829952
+585	mmu-miR-3082-3p	22	153092096
+586	mmu-miR-6408	24	153354240
+587	mmu-miR-323-3p	21	153616384
+588	mmu-miR-497b	24	153878528
+589	mmu-miR-1306-5p	23	154140672
+590	mmu-miR-1905	22	154402816
+591	mmu-miR-7000-3p	22	154664960
+592	mmu-miR-6987-3p	23	154927104
+593	mmu-miR-99b-5p	22	155189248
+594	mmu-miR-700-3p	21	155451392
+595	mmu-miR-574-3p	22	155713536
+596	mmu-miR-6241	19	155975680
+597	mmu-miR-28a-3p	22	156237824
+598	mmu-miR-6973a-3p	22	156499968
+599	mmu-miR-7668-5p	24	156762112
+600	mmu-miR-6481	19	157024256
+601	mmu-miR-6920-3p	21	157286400
+602	mmu-miR-7038-3p	22	157548544
+603	mmu-miR-3066-3p	22	157810688
+604	mmu-miR-547-5p	21	158072832
+605	mmu-miR-6957-5p	21	158334976
+606	mmu-miR-3154	22	158597120
+607	mmu-miR-881-5p	22	158859264
+608	mmu-miR-10b-3p	22	159121408
+609	mmu-miR-7025-3p	22	159383552
+610	mmu-miR-6969-5p	22	159645696
+611	mmu-miR-6419	22	159907840
+612	mmu-miR-6342	22	160169984
+613	mmu-miR-322-5p	22	160432128
+614	mmu-miR-497a-5p	22	160694272
+615	mmu-miR-5626-3p	22	160956416
+616	mmu-miR-693-5p	21	161218560
+617	mmu-miR-681	21	161480704
+618	mmu-miR-449a-3p	22	161742848
+619	mmu-miR-1929-3p	22	162004992
+620	mmu-miR-7057-5p	18	162267136
+621	mmu-miR-8113	22	162529280
+622	mmu-miR-6916-5p	21	162791424
+623	mmu-miR-7679-3p	24	163053568
+624	mmu-miR-7093-5p	22	163315712
+625	mmu-miR-6960-5p	22	163577856
+626	mmu-miR-8104	22	163840000
+627	mmu-miR-6381	21	164102144
+628	mmu-miR-6939-5p	21	164364288
+629	mmu-miR-15a-3p	22	164626432
+630	mmu-miR-5617-3p	21	164888576
+631	mmu-miR-7080-3p	22	165150720
+632	mmu-miR-3079-3p	21	165412864
+633	mmu-miR-344g-3p	22	165675008
+634	mmu-miR-7070-3p	20	165937152
+635	mmu-miR-6976-5p	23	166199296
+636	mmu-miR-7016-5p	21	166461440
+637	mmu-miR-3087-5p	21	166723584
+638	mmu-miR-7064-3p	21	166985728
+639	mmu-miR-6909-5p	22	167247872
+640	mmu-miR-370-5p	20	167510016
+641	mmu-miR-431-3p	22	167772160
+642	mmu-miR-1943-3p	21	168034304
+643	mmu-miR-6929-3p	23	168296448
+644	mmu-miR-363-5p	22	168558592
+645	mmu-miR-707	21	168820736
+646	mmu-miR-1191a	21	169082880
+647	mmu-miR-301a-3p	23	169345024
+648	mmu-miR-6341	23	169607168
+649	mmu-miR-130b-3p	22	169869312
+650	mmu-miR-301b-3p	23	170131456
+651	mmu-miR-130a-3p	22	170393600
+652	mmu-miR-6389	21	170655744
+653	mmu-miR-130c	22	170917888
+654	mmu-miR-721	21	171180032
+655	mmu-miR-6347	22	171442176
+656	mmu-miR-3061-5p	22	171704320
+657	mmu-miR-7085-5p	22	171966464
+658	mmu-miR-1957a	19	172228608
+659	mmu-miR-140-5p	22	172490752
+660	mmu-miR-6358	23	172752896
+661	mmu-miR-6376	22	173015040
+662	mmu-miR-449c-3p	22	173277184
+663	mmu-miR-7664-5p	21	173539328
+664	mmu-miR-3112-3p	21	173801472
+665	mmu-miR-142a-5p	21	174063616
+666	mmu-miR-539-3p	22	174325760
+667	mmu-miR-7040-5p	22	174587904
+668	mmu-miR-669b-3p	23	174850048
+669	mmu-miR-669f-3p	23	175112192
+670	mmu-miR-291a-5p	22	175374336
+671	mmu-miR-217-3p	23	175636480
+672	mmu-miR-6947-5p	21	175898624
+673	mmu-miR-188-5p	21	176160768
+674	mmu-miR-7237-3p	22	176422912
+675	mmu-miR-1981-3p	21	176685056
+676	mmu-miR-5119	19	176947200
+677	mmu-miR-1298-3p	22	177209344
+678	mmu-miR-200a-5p	22	177471488
+679	mmu-miR-200b-5p	22	177733632
+680	mmu-miR-1941-3p	21	177995776
+681	mmu-miR-141-5p	22	178257920
+682	mmu-miR-6769b-3p	21	178520064
+683	mmu-miR-6386	24	178782208
+684	mmu-miR-532-5p	22	179044352
+685	mmu-miR-7578	24	179306496
+686	mmu-miR-3091-5p	21	179568640
+687	mmu-miR-218-2-3p	22	179830784
+688	mmu-miR-126a-5p	21	180092928
+689	mmu-miR-698-3p	19	180355072
+690	mmu-miR-25-3p	22	180617216
+691	mmu-miR-344b-3p	22	180879360
+692	mmu-miR-6715-3p	21	181141504
+693	mmu-miR-6240	26	181403648
+694	mmu-miR-3067-3p	23	181665792
+695	mmu-miR-710	22	181927936
+696	mmu-miR-105	23	182190080
+697	mmu-miR-195a-3p	22	182452224
+698	mmu-miR-7013-3p	24	182714368
+699	mmu-miR-383-3p	21	182976512
+700	mmu-miR-7687-3p	21	183238656
+701	mmu-miR-3473d	24	183500800
+702	mmu-miR-324-3p	20	183762944
+703	mmu-miR-7024-3p	23	184025088
+704	mmu-miR-763	22	184287232
+705	mmu-miR-3099-5p	21	184549376
+706	mmu-miR-7220-3p	23	184811520
+707	mmu-miR-1933-3p	22	185073664
+708	mmu-miR-16-1-3p	22	185335808
+709	mmu-miR-1960	22	185597952
+710	mmu-miR-194-1-3p	22	185860096
+711	mmu-miR-194-2-3p	22	186122240
+712	mmu-miR-3060-3p	22	186384384
+713	mmu-miR-490-5p	20	186646528
+714	mmu-miR-6902-3p	21	186908672
+715	mmu-miR-6931-3p	21	187170816
+716	mmu-miR-3086-3p	22	187432960
+717	mmu-miR-181d-3p	21	187695104
+718	mmu-miR-7004-3p	21	187957248
+719	mmu-miR-488-5p	21	188219392
+720	mmu-miR-6990-5p	21	188481536
+721	mmu-miR-7032-5p	26	188743680
+722	mmu-miR-199b-5p	23	189005824
+723	mmu-miR-935	24	189267968
+724	mmu-miR-7007-3p	18	189530112
+725	mmu-miR-1224-3p	21	189792256
+726	mmu-miR-1895	22	190054400
+727	mmu-miR-7003-3p	19	190316544
+728	mmu-miR-7653-3p	22	190578688
+729	mmu-miR-760-5p	23	190840832
+730	mmu-miR-5625-5p	21	191102976
+731	mmu-miR-7071-5p	23	191365120
+732	mmu-miR-3969	20	191627264
+733	mmu-miR-3474	22	191889408
+734	mmu-miR-1964-3p	22	192151552
+735	mmu-miR-7689-5p	19	192413696
+736	mmu-miR-1843b-3p	20	192675840
+737	mmu-miR-8115	22	192937984
+738	mmu-miR-106b-3p	22	193200128
+739	mmu-miR-5122	20	193462272
+740	mmu-miR-7648-5p	20	193724416
+741	mmu-miR-1901	22	193986560
+742	mmu-miR-7677-3p	23	194248704
+743	mmu-miR-7036a-3p	23	194510848
+744	mmu-miR-676-3p	21	194772992
+745	mmu-miR-7089-5p	24	195035136
+746	mmu-miR-7236-5p	24	195297280
+747	mmu-miR-325-5p	23	195559424
+748	mmu-miR-26a-1-3p	22	195821568
+749	mmu-miR-7056-3p	22	196083712
+750	mmu-miR-6939-3p	20	196345856
+751	mmu-miR-532-3p	22	196608000
+752	mmu-miR-3059-3p	22	196870144
+753	mmu-miR-326-3p	21	197132288
+754	mmu-miR-7014-3p	21	197394432
+755	mmu-miR-875-3p	21	197656576
+756	mmu-miR-345-3p	22	197918720
+757	mmu-miR-7031-5p	23	198180864
+758	mmu-miR-6927-3p	21	198443008
+759	mmu-miR-7069-3p	21	198705152
+760	mmu-miR-7022-5p	23	198967296
+761	mmu-miR-7005-5p	22	199229440
+762	mmu-miR-6769b-5p	20	199491584
+763	mmu-miR-146a-3p	22	199753728
+764	mmu-miR-7682-3p	21	200015872
+765	mmu-miR-26b-3p	22	200278016
+766	mmu-miR-7039-3p	22	200540160
+767	mmu-miR-26a-2-3p	22	200802304
+768	mmu-miR-184-5p	22	201064448
+769	mmu-miR-7686-5p	25	201326592
+770	mmu-miR-7077-3p	20	201588736
+771	mmu-miR-7028-3p	22	201850880
+772	mmu-miR-1903	22	202113024
+773	mmu-miR-3094-3p	21	202375168
+774	mmu-miR-5619-3p	22	202637312
+775	mmu-miR-15b-3p	22	202899456
+776	mmu-miR-3968	21	203161600
+777	mmu-miR-714	21	203423744
+778	mmu-miR-219c-3p	22	203685888
+779	mmu-miR-7654-3p	22	203948032
+780	mmu-miR-6359	21	204210176
+781	mmu-miR-3093-5p	22	204472320
+782	mmu-miR-3076-3p	23	204734464
+783	mmu-miR-324-5p	23	204996608
+784	mmu-miR-7040-3p	22	205258752
+785	mmu-miR-7240-3p	21	205520896
+786	mmu-miR-6406	22	205783040
+787	mmu-miR-6538	19	206045184
+788	mmu-miR-126b-3p	23	206307328
+789	mmu-miR-7001-3p	20	206569472
+790	mmu-miR-1251-3p	21	206831616
+791	mmu-miR-7010-5p	22	207093760
+792	mmu-miR-7655-5p	22	207355904
+793	mmu-miR-874-5p	22	207618048
+794	mmu-miR-5131	23	207880192
+795	mmu-miR-6936-3p	21	208142336
+796	mmu-miR-337-5p	22	208404480
+797	mmu-miR-138-1-3p	22	208666624
+798	mmu-miR-760-3p	20	208928768
+799	mmu-miR-1247-3p	21	209190912
+800	mmu-miR-3091-3p	22	209453056
+801	mmu-miR-3062-3p	19	209715200
+802	mmu-miR-7075-5p	21	209977344
+803	mmu-miR-486b-3p	20	210239488
+804	mmu-miR-486a-3p	21	210501632
+805	mmu-miR-128-1-5p	21	210763776
+806	mmu-miR-7048-5p	22	211025920
+807	mmu-miR-193b-5p	22	211288064
+808	mmu-miR-341-5p	21	211550208
+809	mmu-miR-6897-3p	21	211812352
+810	mmu-miR-7668-3p	22	212074496
+811	mmu-miR-667-5p	25	212336640
+812	mmu-miR-7672-5p	22	212598784
+813	mmu-miR-1938	22	212860928
+814	mmu-miR-6996-3p	23	213123072
+815	mmu-miR-1197-5p	21	213385216
+816	mmu-miR-505-3p	22	213647360
+817	mmu-miR-3108-3p	21	213909504
+818	mmu-miR-7221-5p	21	214171648
+819	mmu-miR-200c-5p	22	214433792
+820	mmu-miR-7025-5p	24	214695936
+821	mmu-miR-770-3p	22	214958080
+822	mmu-miR-223-5p	23	215220224
+823	mmu-miR-7218-3p	24	215482368
+824	mmu-miR-6941-3p	21	215744512
+825	mmu-miR-6540-5p	22	216006656
+826	mmu-miR-6414	22	216268800
+827	mmu-miR-3618-3p	22	216530944
+828	mmu-miR-6912-3p	25	216793088
+829	mmu-miR-3061-3p	22	217055232
+830	mmu-miR-151-3p	21	217317376
+831	mmu-miR-7072-3p	21	217579520
+832	mmu-miR-331-5p	22	217841664
+833	mmu-let-7b-3p	22	218103808
+834	mmu-miR-98-3p	22	218365952
+835	mmu-let-7f-1-3p	22	218628096
+836	mmu-let-7f-2-3p	21	218890240
+837	mmu-miR-1949	24	219152384
+838	mmu-miR-5618-3p	18	219414528
+839	mmu-let-7d-3p	22	219676672
+840	mmu-let-7e-3p	22	219938816
+841	mmu-miR-687	22	220200960
+842	mmu-miR-6985-3p	21	220463104
+843	mmu-miR-673-5p	22	220725248
+844	mmu-miR-1983	21	220987392
+845	mmu-miR-181b-1-3p	19	221249536
+846	mmu-miR-181b-2-3p	22	221511680
+847	mmu-miR-717	22	221773824
+848	mmu-miR-3097-3p	22	222035968
+849	mmu-miR-7214-3p	24	222298112
+850	mmu-miR-421-5p	21	222560256
+851	mmu-miR-188-3p	21	222822400
+852	mmu-miR-3971	22	223084544
+853	mmu-miR-6416-5p	21	223346688
+854	mmu-miR-155-3p	21	223608832
+855	mmu-miR-378a-5p	22	223870976
+856	mmu-miR-7053-3p	21	224133120
+857	mmu-miR-712-5p	21	224395264
+858	mmu-miR-542-5p	22	224657408
+859	mmu-miR-6966-5p	21	224919552
+860	mmu-miR-7058-3p	22	225181696
+861	mmu-miR-3102-3p.2-3p	21	225443840
+862	mmu-miR-344f-3p	21	225705984
+863	mmu-miR-1894-5p	22	225968128
+864	mmu-miR-1896	22	226230272
+865	mmu-miR-6950-3p	21	226492416
+866	mmu-miR-694	19	226754560
+867	mmu-miR-127-5p	22	227016704
+868	mmu-miR-6953-3p	24	227278848
+869	mmu-miR-192-5p	21	227540992
+870	mmu-miR-7071-3p	21	227803136
+871	mmu-miR-3077-3p	22	228065280
+872	mmu-miR-5132-3p	21	228327424
+873	mmu-miR-5625-3p	25	228589568
+874	mmu-miR-6959-3p	22	228851712
+875	mmu-miR-682	21	229113856
+876	mmu-miR-6335	22	229376000
+877	mmu-miR-192-3p	22	229638144
+878	mmu-miR-6393	22	229900288
+879	mmu-miR-874-3p	22	230162432
+880	mmu-let-7i-3p	22	230424576
+881	mmu-miR-3077-5p	25	230686720
+882	mmu-miR-3620-3p	22	230948864
+883	mmu-miR-7686-3p	22	231211008
+884	mmu-miR-6943-3p	22	231473152
+885	mmu-miR-378b	20	231735296
+886	mmu-miR-5130	24	231997440
+887	mmu-miR-6982-5p	25	232259584
+888	mmu-miR-6395	22	232521728
+889	mmu-miR-328-3p	22	232783872
+890	mmu-miR-6930-3p	21	233046016
+891	mmu-miR-3073b-3p	22	233308160
+892	mmu-miR-664-5p	21	233570304
+893	mmu-miR-6368	21	233832448
+894	mmu-miR-30c-2-3p	22	234094592
+895	mmu-miR-30c-1-3p	22	234356736
+896	mmu-miR-6995-5p	23	234618880
+897	mmu-miR-30b-3p	22	234881024
+898	mmu-miR-6998-5p	22	235143168
+899	mmu-miR-6941-5p	21	235405312
+900	mmu-miR-7119-5p	21	235667456
+901	mmu-miR-2136	21	235929600
+902	mmu-miR-150-3p	22	236191744
+903	mmu-miR-29b-2-5p	25	236453888
+904	mmu-miR-6338	21	236716032
+905	mmu-let-7c-1-3p	22	236978176
+906	mmu-let-7a-2-3p	21	237240320
+907	mmu-miR-675-3p	22	237502464
+908	mmu-miR-7238-3p	15	237764608
+909	mmu-miR-3100-3p	21	238026752
+910	mmu-miR-7005-3p	25	238288896
+911	mmu-miR-210-3p	22	238551040
+912	mmu-miR-5104	24	238813184
+913	mmu-miR-134-3p	20	239075328
+914	mmu-miR-3620-5p	22	239337472
+915	mmu-miR-744-3p	22	239599616
+916	mmu-miR-7675-5p	22	239861760
+917	mmu-miR-5622-3p	22	240123904
+918	mmu-miR-491-3p	22	240386048
+919	mmu-miR-6999-3p	22	240648192
+920	mmu-miR-718	21	240910336
+921	mmu-miR-7225-3p	22	241172480
+922	mmu-miR-6993-3p	21	241434624
+923	mmu-miR-7030-3p	21	241696768
+924	mmu-miR-7231-3p	23	241958912
+925	mmu-miR-547-3p	21	242221056
+926	mmu-miR-6916-3p	22	242483200
+927	mmu-miR-30d-3p	22	242745344
+928	mmu-miR-30e-3p	22	243007488
+929	mmu-miR-30a-3p	22	243269632
+930	mmu-miR-1897-5p	22	243531776
+931	mmu-miR-6951-3p	21	243793920
+932	mmu-miR-743a-3p	22	244056064
+933	mmu-miR-743b-3p	22	244318208
+934	mmu-miR-742-3p	22	244580352
+935	mmu-miR-551b-5p	23	244842496
+936	mmu-miR-499-3p	23	245104640
+937	mmu-miR-448-5p	22	245366784
+938	mmu-miR-216c-5p	23	245628928
+939	mmu-miR-677-3p	26	245891072
+940	mmu-miR-8090	20	246153216
+941	mmu-miR-148b-5p	24	246415360
+942	mmu-miR-495-5p	23	246677504
+943	mmu-miR-382-5p	22	246939648
+944	mmu-miR-1194	22	247201792
+945	mmu-miR-3092-3p	21	247463936
+946	mmu-miR-409-3p	22	247726080
+947	mmu-miR-6906-3p	21	247988224
+948	mmu-miR-6390	21	248250368
+949	mmu-miR-6375	23	248512512
+950	mmu-miR-8118	22	248774656
+951	mmu-miR-3082-5p	22	249036800
+952	mmu-miR-1927	23	249298944
+953	mmu-miR-6901-3p	20	249561088
+954	mmu-miR-6392-3p	23	249823232
+955	mmu-miR-468-5p	27	250085376
+956	mmu-miR-3081-5p	23	250347520
+957	mmu-miR-873a-3p	21	250609664
+958	mmu-miR-3102-3p	23	250871808
+959	mmu-miR-1907	22	251133952
+960	mmu-miR-6402	23	251396096
+961	mmu-miR-1955-3p	21	251658240
+962	mmu-miR-7667-5p	22	251920384
+963	mmu-miR-6546-3p	21	252182528
+964	mmu-miR-7669-3p	23	252444672
+965	mmu-miR-590-5p	22	252706816
+966	mmu-miR-6415	22	252968960
+967	mmu-miR-208a-5p	22	253231104
+968	mmu-miR-298-3p	22	253493248
+969	mmu-miR-8119	20	253755392
+970	mmu-miR-149-3p	22	254017536
+971	mmu-miR-7072-5p	22	254279680
+972	mmu-miR-296-3p	22	254541824
+973	mmu-miR-3970	20	254803968
+974	mmu-miR-503-3p	22	255066112
+975	mmu-miR-344e-3p	22	255328256
+976	mmu-miR-3074-1-3p	22	255590400
+977	mmu-miR-291b-5p	22	255852544
+978	mmu-miR-7666-3p	19	256114688
+979	mmu-miR-6339	23	256376832
+980	mmu-miR-466e-5p	22	256638976
+981	mmu-miR-205-3p	22	256901120
+982	mmu-miR-6416-3p	21	257163264
+983	mmu-miR-330-3p	23	257425408
+984	mmu-miR-6403	22	257687552
+985	mmu-miR-211-3p	21	257949696
+986	mmu-miR-6385	21	258211840
+987	mmu-miR-1894-3p	22	258473984
+988	mmu-miR-7088-5p	25	258736128
+989	mmu-miR-6539	24	258998272
+990	mmu-miR-3110-3p	22	259260416
+991	mmu-miR-674-5p	22	259522560
+992	mmu-miR-1947-3p	22	259784704
+993	mmu-miR-759	22	260046848
+994	mmu-miR-761	22	260308992
+995	mmu-miR-6991-3p	22	260571136
+996	mmu-miR-6947-3p	22	260833280
+997	mmu-miR-693-3p	23	261095424
+998	mmu-miR-6370	21	261357568
+999	mmu-miR-873a-5p	21	261619712
+1000	mmu-miR-455-3p	21	261881856
+1001	mmu-miR-878-3p	22	262144000
+1002	mmu-miR-7226-5p	26	262406144
+1003	mmu-miR-7239-5p	20	262668288
+1004	mmu-miR-8092	21	262930432
+1005	mmu-miR-5626-5p	22	263192576
+1006	mmu-miR-7082-3p	22	263454720
+1007	mmu-miR-331-3p	21	263716864
+1008	mmu-miR-186-3p	22	263979008
+1009	mmu-miR-146b-3p	22	264241152
+1010	mmu-miR-2137	21	264503296
+1011	mmu-miR-1946b	26	264765440
+1012	mmu-miR-6236	19	265027584
+1013	mmu-miR-7084-3p	22	265289728
+1014	mmu-miR-370-3p	22	265551872
+1015	mmu-miR-320-5p	22	265814016
+1016	mmu-miR-551b-3p	21	266076160
+1017	mmu-miR-375-5p	22	266338304
+1018	mmu-miR-8109	21	266600448
+1019	mmu-miR-5126	22	266862592
+1020	mmu-miR-598-5p	23	267124736
+1021	mmu-miR-5132-5p	21	267386880
+1022	mmu-miR-696	18	267649024
+1023	mmu-miR-3088-5p	22	267911168
+1024	mmu-miR-8098	21	268173312
+1025	mmu-miR-138-2-3p	21	268435456
+1026	mmu-miR-6919-3p	21	268697600
+1027	mmu-miR-434-5p	22	268959744
+1028	mmu-miR-8117	21	269221888
+1029	mmu-miR-301b-5p	22	269484032
+1030	mmu-miR-301a-5p	22	269746176
+1031	mmu-miR-7052-3p	21	270008320
+1032	mmu-miR-7215-5p	25	270270464
+1033	mmu-miR-130a-5p	22	270532608
+1034	mmu-miR-345-5p	22	270794752
+1035	mmu-miR-191-3p	22	271056896
+1036	mmu-miR-3106-3p	22	271319040
+1037	mmu-miR-7663-5p	23	271581184
+1038	mmu-miR-5133	21	271843328
+1039	mmu-miR-6972-5p	23	272105472
+1040	mmu-miR-204-3p	21	272367616
+1041	mmu-miR-6975-5p	23	272629760
+1042	mmu-miR-133b-5p	22	272891904
+1043	mmu-miR-29b-1-5p	22	273154048
+1044	mmu-miR-290b-5p	22	273416192
+1045	mmu-miR-879-3p	22	273678336
+1046	mmu-miR-207	23	273940480
+1047	mmu-miR-302c-5p	22	274202624
+1048	mmu-miR-6384	20	274464768
+1049	mmu-miR-129b-5p	22	274726912
+1050	mmu-miR-219c-5p	22	274989056
+1051	mmu-miR-679-5p	22	275251200
+1052	mmu-miR-539-5p	22	275513344
+1053	mmu-miR-3062-5p	22	275775488
+1054	mmu-miR-5110	25	276037632
+1055	mmu-miR-709	19	276299776
+1056	mmu-miR-3103-5p	21	276561920
+1057	mmu-miR-7235-5p	18	276824064
+1058	mmu-miR-7654-5p	22	277086208
+1059	mmu-miR-144-5p	23	277348352
+1060	mmu-miR-7222-5p	27	277610496
+1061	mmu-miR-298-5p	23	277872640
+1062	mmu-miR-7077-5p	21	278134784
+1063	mmu-miR-1900	22	278396928
+1064	mmu-miR-8101	22	278659072
+1065	mmu-miR-1893	22	278921216
+1066	mmu-miR-3960	20	279183360
+1067	mmu-miR-666-3p	22	279445504
+1068	mmu-miR-7035-5p	21	279707648
+1069	mmu-miR-103-1-5p	23	279969792
+1070	mmu-miR-711	22	280231936
+1071	mmu-miR-505-5p	23	280494080
+1072	mmu-miR-3060-5p	20	280756224
+1073	mmu-miR-8096	20	281018368
+1074	mmu-miR-3473b	20	281280512
+1075	mmu-miR-3473e	21	281542656
+1076	mmu-miR-6979-5p	20	281804800
+1077	mmu-miR-2861	19	282066944
+1078	mmu-miR-6396	24	282329088
+1079	mmu-miR-762	22	282591232
+1080	mmu-miR-326-5p	24	282853376
+1081	mmu-miR-128-2-5p	23	283115520
+1082	mmu-miR-6244	21	283377664
+1083	mmu-miR-328-5p	22	283639808
+1084	mmu-miR-615-5p	22	283901952
+1085	mmu-miR-6988-5p	21	284164096
+1086	mmu-miR-23a-5p	22	284426240
+1087	mmu-miR-7224-5p	21	284688384
+1088	mmu-miR-23b-5p	21	284950528
+1089	mmu-miR-3101-5p	21	285212672
+1090	mmu-miR-376a-5p	22	285474816
+1091	mmu-miR-351-3p	21	285736960
+1092	mmu-miR-5124a	20	285999104
+1093	mmu-miR-3068-3p	22	286261248
+1094	mmu-miR-7220-5p	22	286523392
+1095	mmu-miR-143-5p	21	286785536
+1096	mmu-miR-1930-3p	22	287047680
+1097	mmu-miR-764-5p	19	287309824
+1098	mmu-miR-705	20	287571968
+1099	mmu-miR-6963-5p	24	287834112
+1100	mmu-miR-3102-5p.2-5p	21	288096256
+1101	mmu-miR-374b-3p	22	288358400
+1102	mmu-miR-299b-5p	21	288620544
+1103	mmu-miR-30f	22	288882688
+1104	mmu-miR-1971	18	289144832
+1105	mmu-miR-1981-5p	24	289406976
+1106	mmu-miR-5617-5p	23	289669120
+1107	mmu-miR-467b-5p	21	289931264
+1108	mmu-miR-668-5p	24	290193408
+1109	mmu-miR-6970-5p	25	290455552
+1110	mmu-miR-101b-3p	19	290717696
+1111	mmu-miR-5108	19	290979840
+1112	mmu-miR-877-5p	20	291241984
+1113	mmu-miR-7666-5p	22	291504128
+1114	mmu-miR-7080-5p	23	291766272
+1115	mmu-miR-7091-5p	23	292028416
+1116	mmu-miR-6973b-5p	24	292290560
+1117	mmu-miR-1951	22	292552704
+1118	mmu-miR-6398	21	292814848
+1119	mmu-miR-6917-3p	22	293076992
+1120	mmu-miR-6340	23	293339136
+1121	mmu-miR-145a-5p	23	293601280
+1122	mmu-miR-145b	21	293863424
+1123	mmu-miR-3113-5p	22	294125568
+1124	mmu-miR-7223-3p	17	294387712
+1125	mmu-miR-678	22	294649856
+1126	mmu-miR-3108-5p	23	294912000
+1127	mmu-miR-3090-5p	21	295174144
+1128	mmu-miR-429-5p	21	295436288
+1129	mmu-miR-203-3p	22	295698432
+1130	mmu-miR-183-3p	22	295960576
+1131	mmu-miR-6944-5p	23	296222720
+1132	mmu-miR-7018-5p	24	296484864
+1133	mmu-miR-6936-5p	21	296747008
+1134	mmu-miR-1224-5p	21	297009152
+1135	mmu-miR-6981-5p	26	297271296
+1136	mmu-miR-6974-5p	24	297533440
+1137	mmu-miR-6977-5p	25	297795584
+1138	mmu-miR-7068-5p	21	298057728
+1139	mmu-miR-6923-5p	24	298319872
+1140	mmu-miR-7070-5p	21	298582016
+1141	mmu-miR-6927-5p	22	298844160
+1142	mmu-miR-7060-5p	22	299106304
+1143	mmu-miR-3102-5p	22	299368448
+1144	mmu-miR-702-5p	21	299630592
+1145	mmu-miR-6537-5p	22	299892736
+1146	mmu-miR-466q	20	300154880
+1147	mmu-miR-33-5p	21	300417024
+1148	mmu-miR-24-2-5p	22	300679168
+1149	mmu-miR-24-1-5p	23	300941312
+1150	mmu-miR-376b-5p	22	301203456
+1151	mmu-miR-376c-5p	22	301465600
+1152	mmu-miR-3547-5p	25	301727744
+1153	mmu-miR-6405	23	301989888
+1154	mmu-miR-6404	21	302252032
+1155	mmu-miR-6958-5p	22	302514176
+1156	mmu-miR-6362	22	302776320
+1157	mmu-miR-6980-5p	22	303038464
+1158	mmu-miR-3073a-5p	22	303300608
+1159	mmu-miR-182-3p	21	303562752
+1160	mmu-miR-147-3p	22	303824896
+1161	mmu-miR-7044-5p	19	304087040
+1162	mmu-miR-466n-5p	22	304349184
+1163	mmu-miR-653-5p	21	304611328
+1164	mmu-miR-5098	21	304873472
+1165	mmu-miR-1904	22	305135616
+1166	mmu-miR-5623-3p	22	305397760
+1167	mmu-miR-1932	22	305659904
+1168	mmu-miR-6986-3p	19	305922048
+1169	mmu-miR-6344	22	306184192
+1170	mmu-miR-7650-3p	22	306446336
+1171	mmu-miR-106b-5p	21	306708480
+1172	mmu-miR-6383	21	306970624
+1173	mmu-miR-20a-5p	23	307232768
+1174	mmu-miR-7212-3p	21	307494912
+1175	mmu-miR-141-3p	22	307757056
+1176	mmu-miR-200a-3p	22	308019200
+1177	mmu-miR-6997-5p	22	308281344
+1178	mmu-miR-132-3p	22	308543488
+1179	mmu-miR-212-3p	22	308805632
+1180	mmu-miR-7210-5p	23	309067776
+1181	mmu-miR-3103-3p	22	309329920
+1182	mmu-miR-582-3p	21	309592064
+1183	mmu-miR-3087-3p	21	309854208
+1184	mmu-miR-7118-3p	22	310116352
+1185	mmu-miR-6944-3p	23	310378496
+1186	mmu-miR-1936	23	310640640
+1187	mmu-miR-883a-3p	22	310902784
+1188	mmu-miR-883b-3p	22	311164928
+1189	mmu-miR-700-5p	22	311427072
+1190	mmu-miR-7652-5p	22	311689216
+1191	mmu-miR-7653-5p	22	311951360
+1192	mmu-miR-18a-5p	23	312213504
+1193	mmu-miR-18b-5p	23	312475648
+1194	mmu-miR-224-5p	21	312737792
+1195	mmu-miR-467d-5p	22	312999936
+1196	mmu-miR-467c-5p	22	313262080
+1197	mmu-miR-302d-3p	23	313524224
+1198	mmu-miR-302b-3p	23	313786368
+1199	mmu-miR-302a-3p	23	314048512
+1200	mmu-miR-200c-3p	23	314310656
+1201	mmu-miR-200b-3p	22	314572800
+1202	mmu-miR-429-3p	22	314834944
+1203	mmu-miR-3472	25	315097088
+1204	mmu-miR-216a-5p	22	315359232
+1205	mmu-miR-7057-3p	22	315621376
+1206	mmu-miR-590-3p	21	315883520
+1207	mmu-miR-669c-3p	22	316145664
+1208	mmu-miR-7229-3p	24	316407808
+1209	mmu-miR-3572-3p	23	316669952
+1210	mmu-miR-6912-5p	22	316932096
+1211	mmu-miR-101a-3p	21	317194240
+1212	mmu-miR-144-3p	20	317456384
+1213	mmu-miR-466m-3p	22	317718528
+1214	mmu-miR-466o-3p	22	317980672
+1215	mmu-miR-1b-5p	21	318242816
+1216	mmu-miR-7232-5p	24	318504960
+1217	mmu-miR-140-3p	21	318767104
+1218	mmu-miR-10b-5p	23	319029248
+1219	mmu-miR-10a-5p	23	319291392
+1220	mmu-miR-5618-5p	20	319553536
+1221	mmu-miR-463-5p	22	319815680
+1222	mmu-miR-7213-3p	20	320077824
+1223	mmu-miR-466h-3p	19	320339968
+1224	mmu-miR-7082-5p	21	320602112
+1225	mmu-miR-433-5p	22	320864256
+1226	mmu-miR-6973a-5p	22	321126400
+1227	mmu-miR-741-5p	23	321388544
+1228	mmu-miR-471-5p	22	321650688
+1229	mmu-miR-598-3p	22	321912832
+1230	mmu-miR-742-5p	21	322174976
+1231	mmu-miR-880-5p	21	322437120
+1232	mmu-miR-201-5p	22	322699264
+1233	mmu-miR-509-5p	22	322961408
+1234	mmu-miR-880-3p	22	323223552
+1235	mmu-miR-883b-5p	22	323485696
+1236	mmu-miR-6985-5p	22	323747840
+1237	mmu-miR-217-5p	23	324009984
+1238	mmu-miR-18b-3p	22	324272128
+1239	mmu-miR-6984-3p	21	324534272
+1240	mmu-miR-7078-3p	21	324796416
+1241	mmu-miR-7042-5p	21	325058560
+1242	mmu-miR-7084-5p	21	325320704
+1243	mmu-miR-7058-5p	24	325582848
+1244	mmu-miR-3086-5p	20	325844992
+1245	mmu-miR-6417	22	326107136
+1246	mmu-miR-29a-3p	22	326369280
+1247	mmu-miR-29c-3p	22	326631424
+1248	mmu-miR-6357	23	326893568
+1249	mmu-miR-6345	21	327155712
+1250	mmu-miR-195b	22	327417856
+1251	mmu-miR-195a-5p	21	327680000
+1252	mmu-miR-15a-5p	22	327942144
+1253	mmu-miR-15b-5p	22	328204288
+1254	mmu-miR-6353	23	328466432
+1255	mmu-miR-503-5p	23	328728576
+1256	mmu-miR-6350	21	328990720
+1257	mmu-miR-6346	22	329252864
+1258	mmu-miR-6411	21	329515008
+1259	mmu-miR-6351	23	329777152
+1260	mmu-miR-6239	20	330039296
+1261	mmu-miR-5112	19	330301440
+1262	mmu-miR-7085-3p	22	330563584
+1263	mmu-miR-7688-5p	23	330825728
+1264	mmu-miR-6937-5p	24	331087872
+1265	mmu-miR-21a-5p	22	331350016
+1266	mmu-miR-21c	21	331612160
+1267	mmu-miR-7223-5p	20	331874304
+1268	mmu-miR-3101-3p	21	332136448
+1269	mmu-miR-1958	22	332398592
+1270	mmu-miR-7054-5p	25	332660736
+1271	mmu-miR-1197-3p	21	332922880
+1272	mmu-miR-6942-5p	21	333185024
+1273	mmu-miR-6919-5p	23	333447168
+1274	mmu-miR-7074-3p	23	333709312
+1275	mmu-miR-3099-3p	22	333971456
+1276	mmu-miR-3109-3p	21	334233600
+1277	mmu-miR-3104-5p	25	334495744
+1278	mmu-miR-9769-3p	22	334757888
+1279	mmu-miR-196b-5p	22	335020032
+1280	mmu-miR-1193-3p	21	335282176
+1281	mmu-miR-154-5p	22	335544320
+1282	mmu-miR-152-5p	24	335806464
+1283	mmu-miR-7229-5p	21	336068608
+1284	mmu-miR-411-5p	21	336330752
+1285	mmu-miR-7241-3p	22	336592896
+1286	mmu-miR-876-3p	22	336855040
+1287	mmu-miR-6360	22	337117184
+1288	mmu-miR-669o-5p	23	337379328
+1289	mmu-miR-21b	23	337641472
+1290	mmu-miR-19a-5p	22	337903616
+1291	mmu-miR-466l-3p	22	338165760
+1292	mmu-miR-381-3p	22	338427904
+1293	mmu-miR-467g	21	338690048
+1294	mmu-miR-669d-3p	21	338952192
+1295	mmu-miR-466d-3p	21	339214336
+1296	mmu-miR-466n-3p	22	339476480
+1297	mmu-miR-875-5p	22	339738624
+1298	mmu-miR-135a-1-3p	22	340000768
+1299	mmu-miR-7061-3p	22	340262912
+1300	mmu-miR-7219-3p	21	340525056
+1301	mmu-miR-878-5p	22	340787200
+1302	mmu-miR-701-3p	20	341049344
+1303	mmu-miR-6962-3p	22	341311488
+1304	mmu-miR-7013-5p	22	341573632
+1305	mmu-miR-468-3p	23	341835776
+1306	mmu-miR-300-3p	22	342097920
+1307	mmu-miR-669h-3p	22	342360064
+1308	mmu-miR-669k-3p	21	342622208
+1309	mmu-miR-7061-5p	22	342884352
+1310	mmu-miR-1843a-5p	21	343146496
+1311	mmu-miR-183-5p	22	343408640
+1312	mmu-miR-135b-5p	23	343670784
+1313	mmu-miR-6373	22	343932928
+1314	mmu-miR-411-3p	22	344195072
+1315	mmu-miR-379-3p	22	344457216
+1316	mmu-miR-380-3p	22	344719360
+1317	mmu-miR-654-3p	22	344981504
+1318	mmu-miR-455-5p	22	345243648
+1319	mmu-miR-299b-3p	18	345505792
+1320	mmu-miR-299a-3p	22	345767936
+1321	mmu-miR-466p-5p	21	346030080
+1322	mmu-miR-466a-5p	22	346292224
+1323	mmu-miR-1187	23	346554368
+1324	mmu-miR-1198-5p	22	346816512
+1325	mmu-miR-871-5p	23	347078656
+1326	mmu-miR-743a-5p	22	347340800
+1327	mmu-miR-664-3p	22	347602944
+1328	mmu-miR-32-5p	22	347865088
+1329	mmu-miR-92b-3p	22	348127232
+1330	mmu-miR-5624-5p	18	348389376
+1331	mmu-miR-7233-3p	22	348651520
+1332	mmu-miR-465a-5p	23	348913664
+1333	mmu-miR-465d-5p	23	349175808
+1334	mmu-miR-6997-3p	23	349437952
+1335	mmu-miR-3065-5p	22	349700096
+1336	mmu-miR-1897-3p	22	349962240
+1337	mmu-miR-335-5p	23	350224384
+1338	mmu-miR-6911-3p	21	350486528
+1339	mmu-miR-6937-3p	23	350748672
+1340	mmu-miR-7051-5p	22	351010816
+1341	mmu-miR-6926-3p	21	351272960
+1342	mmu-miR-8114	21	351535104
+1343	mmu-miR-7047-3p	23	351797248
+1344	mmu-miR-7018-3p	22	352059392
+1345	mmu-miR-7068-3p	21	352321536
+1346	mmu-miR-7023-3p	22	352583680
+1347	mmu-miR-7019-3p	23	352845824
+1348	mmu-miR-6970-3p	21	353107968
+1349	mmu-miR-8102	22	353370112
+1350	mmu-miR-483-3p	21	353632256
+1351	mmu-miR-3470b	21	353894400
+1352	mmu-miR-7646-3p	21	354156544
+1353	mmu-miR-3470a	21	354418688
+1354	mmu-miR-7243-3p	20	354680832
+1355	mmu-miR-7007-5p	23	354942976
+1356	mmu-miR-7064-5p	24	355205120
+1357	mmu-miR-1942	21	355467264
+1358	mmu-miR-3065-3p	23	355729408
+1359	mmu-miR-3058-5p	23	355991552
+1360	mmu-miR-6348	22	356253696
+1361	mmu-miR-337-3p	22	356515840
+1362	mmu-miR-1190	22	356777984
+1363	mmu-miR-6958-3p	23	357040128
+1364	mmu-miR-1191b-5p	22	357302272
+1365	mmu-miR-484	22	357564416
+1366	mmu-miR-6418-5p	21	357826560
+1367	mmu-miR-802-5p	22	358088704
+1368	mmu-miR-222-5p	21	358350848
+1369	mmu-miR-452-3p	22	358612992
+1370	mmu-miR-3569-3p	22	358875136
+1371	mmu-miR-148a-3p	22	359137280
+1372	mmu-miR-148b-3p	22	359399424
+1373	mmu-miR-152-3p	21	359661568
+1374	mmu-miR-6926-5p	22	359923712
+1375	mmu-miR-7055-5p	21	360185856
+1376	mmu-miR-7089-3p	22	360448000
+1377	mmu-miR-101a-5p	22	360710144
+1378	mmu-miR-7651-3p	24	360972288
+1379	mmu-miR-592-3p	22	361234432
+1380	mmu-miR-5103	20	361496576
+1381	mmu-miR-6938-3p	22	361758720
+1382	mmu-miR-6910-3p	22	362020864
+1383	mmu-miR-6516-3p	22	362283008
+1384	mmu-miR-382-3p	22	362545152
+1385	mmu-miR-6377	23	362807296
+1386	mmu-miR-7054-3p	20	363069440
+1387	mmu-miR-7224-3p	21	363331584
+1388	mmu-miR-338-3p	22	363593728
+1389	mmu-miR-7222-3p	23	363855872
+1390	mmu-miR-142b	20	364118016
+1391	mmu-miR-3057-3p	22	364380160
+1392	mmu-miR-3090-3p	22	364642304
+1393	mmu-miR-7674-3p	21	364904448
+1394	mmu-miR-6356	21	365166592
+1395	mmu-miR-361-3p	25	365428736
+1396	mmu-miR-6925-3p	18	365690880
+1397	mmu-miR-6367	22	365953024
+1398	mmu-miR-125a-5p	24	366215168
+1399	mmu-miR-351-5p	24	366477312
+1400	mmu-miR-6394	21	366739456
+1401	mmu-miR-6379	22	367001600
+1402	mmu-miR-339-5p	23	367263744
+1403	mmu-miR-3083-3p	22	367525888
+1404	mmu-miR-615-3p	22	367788032
+1405	mmu-miR-1188-3p	25	368050176
+1406	mmu-miR-7034-5p	21	368312320
+1407	mmu-miR-673-3p	23	368574464
+1408	mmu-miR-671-3p	21	368836608
+1409	mmu-miR-340-3p	22	369098752
+1410	mmu-miR-7086-3p	21	369360896
+1411	mmu-miR-3098-5p	22	369623040
+1412	mmu-miR-3080-3p	22	369885184
+1413	mmu-miR-6961-3p	22	370147328
+1414	mmu-miR-6950-5p	23	370409472
+1415	mmu-miR-3113-3p	20	370671616
+1416	mmu-miR-6945-5p	22	370933760
+1417	mmu-miR-6914-5p	24	371195904
+1418	mmu-miR-6904-5p	22	371458048
+1419	mmu-miR-6924-3p	21	371720192
+1420	mmu-miR-205-5p	22	371982336
+1421	mmu-miR-6412	22	372244480
+1422	mmu-miR-5100	21	372506624
+1423	mmu-miR-196b-3p	22	372768768
+1424	mmu-miR-151-5p	21	373030912
+1425	mmu-miR-6364	22	373293056
+1426	mmu-miR-688	20	373555200
+1427	mmu-miR-3569-5p	21	373817344
+1428	mmu-miR-127-3p	22	374079488
+1429	mmu-miR-196a-2-3p	22	374341632
+1430	mmu-miR-7672-3p	21	374603776
+1431	mmu-miR-7083-5p	21	374865920
+1432	mmu-miR-7115-5p	24	375128064
+1433	mmu-miR-7027-3p	22	375390208
+1434	mmu-miR-341-3p	21	375652352
+1435	mmu-miR-101b-5p	23	375914496
+1436	mmu-miR-126a-3p	22	376176640
+1437	mmu-miR-187-3p	22	376438784
+1438	mmu-miR-139-5p	22	376700928
+1439	mmu-miR-7066-3p	23	376963072
+1440	mmu-miR-7060-3p	21	377225216
+1441	mmu-miR-342-3p	23	377487360
+1442	mmu-miR-1982-3p	23	377749504
+1443	mmu-miR-6992-3p	22	378011648
+1444	mmu-miR-7015-3p	21	378273792
+1445	mmu-miR-7090-5p	23	378535936
+1446	mmu-miR-7050-3p	21	378798080
+1447	mmu-miR-1952	17	379060224
+1448	mmu-miR-6974-3p	22	379322368
+1449	mmu-miR-7033-5p	23	379584512
+1450	mmu-miR-150-5p	22	379846656
+1451	mmu-miR-5127	19	380108800
+1452	mmu-miR-7045-3p	21	380370944
+1453	mmu-miR-343	20	380633088
+1454	mmu-miR-8112	20	380895232
+1455	mmu-miR-8103	21	381157376
+1456	mmu-miR-6336	21	381419520
+1457	mmu-miR-6913-3p	23	381681664
+1458	mmu-miR-7649-3p	23	381943808
+1459	mmu-miR-3473c	22	382205952
+1460	mmu-miR-6975-3p	20	382468096
+1461	mmu-miR-6952-3p	22	382730240
+1462	mmu-miR-330-5p	22	382992384
+1463	mmu-miR-7021-3p	22	383254528
+1464	mmu-miR-7664-3p	23	383516672
+1465	mmu-miR-7227-3p	22	383778816
+1466	mmu-miR-7094-1-5p	23	384040960
+1467	mmu-miR-6540-3p	21	384303104
+1468	mmu-miR-7049-5p	23	384565248
+1469	mmu-miR-7235-3p	23	384827392
+1470	mmu-miR-7035-3p	21	385089536
+1471	mmu-miR-6945-3p	21	385351680
+1472	mmu-miR-1199-5p	20	385613824
+1473	mmu-miR-1843a-3p	22	385875968
+1474	mmu-miR-6904-3p	18	386138112
+1475	mmu-miR-7227-5p	20	386400256
+1476	mmu-miR-1950	22	386662400
+1477	mmu-miR-5125	20	386924544
+1478	mmu-miR-7083-3p	20	387186688
+1479	mmu-miR-7011-3p	21	387448832
+1480	mmu-miR-7029-5p	23	387710976
+1481	mmu-miR-7094b-2-5p	23	387973120
+1482	mmu-miR-3475-3p	21	388235264
+1483	mmu-miR-6392-5p	23	388497408
+1484	mmu-miR-149-5p	23	388759552
+1485	mmu-miR-3085-3p	21	389021696
+1486	mmu-miR-3064-5p	22	389283840
+1487	mmu-miR-7688-3p	21	389545984
+1488	mmu-miR-7652-3p	21	389808128
+1489	mmu-miR-7684-5p	21	390070272
+1490	mmu-miR-1231-5p	23	390332416
+1491	mmu-miR-8108	22	390594560
+1492	mmu-miR-7117-5p	22	390856704
+1493	mmu-miR-7212-5p	21	391118848
+1494	mmu-miR-1934-5p	23	391380992
+1495	mmu-miR-215-3p	21	391643136
+1496	mmu-miR-6914-3p	19	391905280
+1497	mmu-miR-7015-5p	23	392167424
+1498	mmu-miR-6965-3p	22	392429568
+1499	mmu-miR-6932-3p	21	392691712
+1500	mmu-miR-7048-3p	21	392953856
+1501	mmu-miR-1945	22	393216000
+1502	mmu-miR-432	23	393478144
+1503	mmu-miR-5710	22	393740288
+1504	mmu-miR-544-5p	21	394002432
+1505	mmu-miR-7211-5p	22	394264576
+1506	mmu-miR-7009-3p	21	394526720
+1507	mmu-miR-494-3p	22	394788864
+1508	mmu-miR-471-3p	22	395051008
+1509	mmu-miR-201-3p	23	395313152
+1510	mmu-miR-7046-3p	22	395575296
+1511	mmu-miR-872-3p	22	395837440
+1512	mmu-miR-7116-5p	21	396099584
+1513	mmu-miR-3080-5p	20	396361728
+1514	mmu-miR-493-3p	23	396623872
+1515	mmu-miR-669e-3p	21	396886016
+1516	mmu-miR-6983-3p	23	397148160
+1517	mmu-miR-7226-3p	23	397410304
+1518	mmu-miR-667-3p	23	397672448
+1519	mmu-miR-7649-5p	22	397934592
+1520	mmu-miR-29c-5p	22	398196736
+1521	mmu-miR-6956-3p	20	398458880
+1522	mmu-miR-6988-3p	22	398721024
+1523	mmu-miR-7012-3p	22	398983168
+1524	mmu-miR-7076-3p	21	399245312
+1525	mmu-miR-6921-3p	21	399507456
+1526	mmu-miR-8106	22	399769600
+1527	mmu-miR-871-3p	23	400031744
+1528	mmu-miR-6961-5p	20	400293888
+1529	mmu-miR-7221-3p	21	400556032
+1530	mmu-miR-7079-3p	21	400818176
+1531	mmu-miR-6980-3p	20	401080320
+1532	mmu-miR-7217-3p	22	401342464
+1533	mmu-miR-146b-5p	22	401604608
+1534	mmu-miR-146a-5p	22	401866752
+1535	mmu-miR-741-3p	23	402128896
+1536	mmu-miR-143-3p	21	402391040
+1537	mmu-miR-3547-3p	21	402653184
+1538	mmu-miR-7051-3p	22	402915328
+1539	mmu-miR-6918-3p	22	403177472
+1540	mmu-miR-339-3p	23	403439616
+1541	mmu-miR-6925-5p	22	403701760
+1542	mmu-miR-3063-3p	22	403963904
+1543	mmu-miR-1967	23	404226048
+1544	mmu-miR-6391	21	404488192
+1545	mmu-miR-7047-5p	23	404750336
+1546	mmu-miR-6337	23	405012480
+1547	mmu-miR-423-5p	23	405274624
+1548	mmu-miR-6921-5p	22	405536768
+1549	mmu-let-7e-5p	22	405798912
+1550	mmu-let-7k	19	406061056
+1551	mmu-miR-98-5p	22	406323200
+1552	mmu-let-7b-5p	22	406585344
+1553	mmu-miR-1961	17	406847488
+1554	mmu-let-7g-5p	22	407109632
+1555	mmu-let-7i-5p	22	407371776
+1556	mmu-let-7j	24	407633920
+1557	mmu-miR-7674-5p	24	407896064
+1558	mmu-miR-672-5p	23	408158208
+1559	mmu-miR-496a-3p	22	408420352
+1560	mmu-miR-6956-5p	20	408682496
+1561	mmu-miR-574-5p	23	408944640
+1562	mmu-miR-3089-5p	22	409206784
+1563	mmu-miR-1195	23	409468928
+1564	mmu-miR-463-3p	22	409731072
+1565	mmu-miR-190a-5p	22	409993216
+1566	mmu-miR-190b-5p	21	410255360
+1567	mmu-miR-465d-3p	22	410517504
+1568	mmu-miR-344c-3p	23	410779648
+1569	mmu-miR-509-3p	21	411041792
+1570	mmu-miR-7067-3p	21	411303936
+1571	mmu-miR-6996-5p	21	411566080
+1572	mmu-miR-767	21	411828224
+1573	mmu-miR-713	19	412090368
+1574	mmu-miR-6388	21	412352512
+1575	mmu-miR-6954-3p	21	412614656
+1576	mmu-miR-7049-3p	21	412876800
+1577	mmu-miR-1968-5p	24	413138944
+1578	mmu-miR-6901-5p	20	413401088
+1579	mmu-miR-7067-5p	23	413663232
+1580	mmu-miR-7218-5p	21	413925376
+1581	mmu-miR-669i	21	414187520
+1582	mmu-miR-669j	22	414449664
+1583	mmu-miR-669g	23	414711808
+1584	mmu-miR-3064-3p	22	414973952
+1585	mmu-miR-6900-5p	24	415236096
+1586	mmu-miR-702-3p	22	415498240
+1587	mmu-miR-3072-3p	22	415760384
+1588	mmu-miR-3961	19	416022528
+1589	mmu-miR-6354	21	416284672
+1590	mmu-miR-1231-3p	23	416546816
+1591	mmu-miR-7033-3p	21	416808960
+1592	mmu-miR-6963-3p	23	417071104
+1593	mmu-miR-214-5p	22	417333248
+1594	mmu-miR-6992-5p	23	417595392
+1595	mmu-miR-6909-3p	22	417857536
+1596	mmu-miR-712-3p	22	418119680
+1597	mmu-miR-1199-3p	21	418381824
+1598	mmu-miR-744-5p	22	418643968
+1599	mmu-miR-6409	23	418906112
+1600	mmu-miR-31-3p	23	419168256
+1601	mmu-miR-1912-5p	22	419430400
+1602	mmu-miR-7063-3p	20	419692544
+1603	mmu-miR-6973b-3p	20	419954688
+1604	mmu-miR-7215-3p	23	420216832
+1605	mmu-miR-7684-3p	22	420478976
+1606	mmu-miR-883a-5p	22	420741120
+1607	mmu-miR-1258-5p	22	421003264
+1608	mmu-miR-6918-5p	23	421265408
+1609	mmu-miR-7087-3p	22	421527552
+1610	mmu-miR-7243-5p	20	421789696
+1611	mmu-miR-6966-3p	21	422051840
+1612	mmu-miR-3965	19	422313984
+1613	mmu-miR-147-5p	24	422576128
+1614	mmu-miR-8107	21	422838272
+1615	mmu-miR-7027-5p	23	423100416
+1616	mmu-miR-7683-3p	21	423362560
+1617	mmu-miR-7b-5p	23	423624704
+1618	mmu-miR-6387	22	423886848
+1619	mmu-miR-6382	24	424148992
+1620	mmu-miR-1957b	21	424411136
+1621	mmu-miR-206-3p	22	424673280
+1622	mmu-miR-6349	22	424935424
+1623	mmu-miR-7216-3p	21	425197568
+1624	mmu-miR-3095-3p	23	425459712
+1625	mmu-miR-184-3p	22	425721856
+1626	mmu-miR-6991-5p	22	425984000
+1627	mmu-miR-139-3p	22	426246144
+1628	mmu-miR-6397	21	426508288
+1629	mmu-miR-185-5p	22	426770432
+1630	mmu-miR-3473a	18	427032576
+1631	mmu-miR-7216-5p	24	427294720
+1632	mmu-miR-3063-5p	21	427556864
+1633	mmu-miR-7662-3p	24	427819008
+1634	mmu-miR-7062-5p	24	428081152
+1635	mmu-miR-7211-3p	23	428343296
+1636	mmu-miR-122-5p	22	428605440
+1637	mmu-miR-3535	26	428867584
+1638	mmu-miR-6957-3p	22	429129728
+1639	mmu-miR-876-5p	22	429391872
+1640	mmu-miR-9768-5p	23	429654016
+1641	mmu-miR-7242-3p	22	429916160
+1642	mmu-miR-5623-5p	24	430178304
+1643	mmu-miR-449a-5p	22	430440448
+1644	mmu-miR-34a-5p	22	430702592
+1645	mmu-miR-6982-3p	21	430964736
+1646	mmu-miR-541-3p	22	431226880
+1647	mmu-miR-7228-5p	19	431489024
+1648	mmu-miR-6933-5p	22	431751168
+1649	mmu-miR-6413	21	432013312
+1650	mmu-miR-6361	23	432275456
+1651	mmu-miR-6410	22	432537600
+1652	mmu-miR-5124b	21	432799744
+1653	mmu-miR-6369	23	433061888
+1654	mmu-miR-3106-5p	21	433324032
+1655	mmu-miR-7239-3p	20	433586176
+1656	mmu-miR-6407	23	433848320
+1657	mmu-miR-6959-5p	23	434110464
+1658	mmu-miR-1953	22	434372608
+1659	mmu-miR-7074-5p	23	434634752
+1660	mmu-miR-6987-5p	22	434896896
+1661	mmu-miR-1963	23	435159040
+1662	mmu-miR-6913-5p	22	435421184
+1663	mmu-miR-451b	21	435683328
+1664	mmu-miR-7020-5p	24	435945472
+1665	mmu-miR-5107-5p	21	436207616
+1666	mmu-miR-5621-3p	21	436469760
+1667	mmu-miR-7028-5p	23	436731904
+1668	mmu-miR-6911-5p	23	436994048
+1669	mmu-miR-7053-5p	21	437256192
+1670	mmu-miR-3572-5p	22	437518336
+1671	mmu-miR-7118-5p	22	437780480
+1672	mmu-miR-7030-5p	22	438042624
+1673	mmu-miR-6954-5p	22	438304768
+1674	mmu-miR-7073-5p	22	438566912
+1675	mmu-miR-6971-5p	20	438829056
+1676	mmu-miR-6897-5p	23	439091200
+1677	mmu-miR-6910-5p	23	439353344
+1678	mmu-miR-7006-5p	25	439615488
+1679	mmu-miR-6943-5p	20	439877632
+1680	mmu-miR-6931-5p	21	440139776
+1681	mmu-miR-1b-3p	23	440401920
+1682	mmu-miR-193a-5p	22	440664064
+1683	mmu-miR-7066-5p	22	440926208
+1684	mmu-miR-654-5p	22	441188352
+1685	mmu-miR-1193-5p	20	441450496
+1686	mmu-miR-379-5p	21	441712640
+1687	mmu-miR-412-5p	23	441974784
+1688	mmu-miR-6900-3p	21	442236928
+1689	mmu-miR-675-5p	22	442499072
+1690	mmu-miR-3070-3p	22	442761216
+1691	mmu-miR-3070-2-3p	22	443023360
+1692	mmu-miR-1188-5p	21	443285504
+1693	mmu-miR-487b-5p	21	443547648
+1694	mmu-miR-6378	22	443809792
+1695	mmu-miR-7041-3p	20	444071936
+1696	mmu-miR-7232-3p	22	444334080
+1697	mmu-miR-758-5p	21	444596224
+1698	mmu-miR-299a-5p	22	444858368
+1699	mmu-miR-384-5p	23	445120512
+1700	mmu-miR-30d-5p	22	445382656
+1701	mmu-miR-30b-5p	22	445644800
+1702	mmu-miR-30a-5p	22	445906944
+1703	mmu-miR-30e-5p	22	446169088
+1704	mmu-miR-6343	22	446431232
+1705	mmu-miR-6898-5p	22	446693376
+1706	mmu-miR-6380	24	446955520
+1707	mmu-miR-7038-5p	22	447217664
+1708	mmu-miR-6363	22	447479808
+1709	mmu-miR-5123	24	447741952
+1710	mmu-miR-135a-2-3p	21	448004096
+1711	mmu-miR-7046-5p	24	448266240
+1712	mmu-miR-142a-3p	23	448528384
+1713	mmu-miR-3963	19	448790528
+1714	mmu-miR-668-3p	24	449052672
+1715	mmu-miR-223-3p	22	449314816
+1716	mmu-miR-489-5p	25	449576960
+1717	mmu-miR-6989-3p	22	449839104
+1718	mmu-miR-7042-3p	21	450101248
+1719	mmu-miR-877-3p	22	450363392
+1720	mmu-miR-6948-3p	21	450625536
+1721	mmu-miR-7117-3p	20	450887680
+1722	mmu-miR-7037-3p	22	451149824
+1723	mmu-miR-346-5p	23	451411968
+1724	mmu-miR-3075-5p	21	451674112
+1725	mmu-miR-431-5p	21	451936256
+1726	mmu-miR-669e-5p	22	452198400
+1727	mmu-miR-7043-5p	23	452460544
+1728	mmu-miR-542-3p	22	452722688
+1729	mmu-miR-134-5p	22	452984832
+1730	mmu-miR-804	22	453246976
+1731	mmu-miR-3618-5p	22	453509120
+1732	mmu-miR-19a-3p	23	453771264
+1733	mmu-miR-669k-5p	25	454033408
+1734	mmu-miR-8120	22	454295552
+1735	mmu-miR-7008-3p	22	454557696
+1736	mmu-miR-7026-3p	23	454819840
+1737	mmu-miR-6917-5p	21	455081984
+1738	mmu-miR-3093-3p	22	455344128
+1739	mmu-miR-7056-5p	22	455606272
+1740	mmu-miR-7029-3p	22	455868416
+1741	mmu-miR-7052-5p	21	456130560
+1742	mmu-miR-7008-5p	24	456392704
+1743	mmu-miR-6935-5p	22	456654848
+1744	mmu-miR-6922-5p	23	456916992
+1745	mmu-miR-7656-5p	22	457179136
+1746	mmu-miR-7658-5p	20	457441280
+1747	mmu-miR-7003-5p	21	457703424
+1748	mmu-miR-698-5p	21	457965568
+1749	mmu-miR-7078-5p	20	458227712
+1750	mmu-miR-1970	23	458489856
+1751	mmu-miR-6995-3p	21	458752000
+1752	mmu-miR-466j	23	459014144
+1753	mmu-miR-466h-5p	22	459276288
+1754	mmu-miR-6903-3p	20	459538432
+1755	mmu-miR-466d-5p	22	459800576
+1756	mmu-miR-466k	23	460062720
+1757	mmu-miR-466i-5p	20	460324864
+1758	mmu-miR-7219-5p	23	460587008
+1759	mmu-miR-743b-5p	21	460849152
+1760	mmu-miR-6922-3p	23	461111296
+1761	mmu-miR-6935-3p	20	461373440
+1762	mmu-miR-7092-3p	24	461635584
+1763	mmu-miR-3094-5p	21	461897728
+1764	mmu-miR-6969-3p	20	462159872
+1765	mmu-miR-3074-2-3p	20	462422016
+1766	mmu-miR-7675-3p	21	462684160
+1767	mmu-miR-452-5p	22	462946304
+1768	mmu-miR-7059-3p	22	463208448
+1769	mmu-miR-7214-5p	23	463470592
+1770	mmu-miR-499-5p	21	463732736
+1771	mmu-miR-6237	23	463994880
+1772	mmu-miR-5624-3p	22	464257024
+1773	mmu-miR-155-5p	23	464519168
+1774	mmu-miR-7678-5p	21	464781312
+1775	mmu-miR-6401	22	465043456
+1776	mmu-miR-6940-3p	23	465305600
+1777	mmu-miR-6972-3p	21	465567744
+1778	mmu-miR-7689-3p	23	465829888
+1779	mmu-miR-5099	20	466092032
+1780	mmu-miR-701-5p	21	466354176
+1781	mmu-miR-6365	22	466616320
+1782	mmu-miR-1258-3p	22	466878464
+1783	mmu-miR-340-5p	22	467140608
+1784	mmu-miR-7210-3p	24	467402752
+1785	mmu-miR-361-5p	22	467664896
+1786	mmu-miR-6537-3p	23	467927040
+1787	mmu-miR-6942-3p	22	468189184
+1788	mmu-miR-6238	22	468451328
+1789	mmu-miR-137-3p	23	468713472
+1790	mmu-miR-26b-5p	21	468975616
+1791	mmu-miR-6371	23	469237760
+1792	mmu-miR-350-3p	22	469499904
+1793	mmu-miR-27a-3p	21	469762048
+1794	mmu-miR-27b-3p	21	470024192
+1795	mmu-miR-5622-5p	22	470286336
+1796	mmu-miR-412-3p	20	470548480
+1797	mmu-miR-653-3p	21	470810624
+1798	mmu-miR-677-5p	22	471072768
+1799	mmu-miR-3088-3p	23	471334912
+1800	mmu-miR-1298-5p	22	471597056
+1801	mmu-miR-7081-3p	22	471859200
+1802	mmu-miR-6949-3p	21	472121344
+1803	mmu-miR-7670-3p	23	472383488
+1804	mmu-miR-204-5p	22	472645632
+1805	mmu-miR-211-5p	22	472907776
+1806	mmu-miR-7004-5p	24	473169920
+1807	mmu-miR-7683-5p	22	473432064
+1808	mmu-miR-202-5p	21	473694208
+1809	mmu-miR-6902-5p	22	473956352
+1810	mmu-miR-7036b-3p	22	474218496
+1811	mmu-miR-3058-3p	21	474480640
+1812	mmu-miR-7673-3p	23	474742784
+1813	mmu-miR-7657-3p	23	475004928
+1814	mmu-miR-1929-5p	23	475267072
+1815	mmu-miR-7026-5p	21	475529216
+1816	mmu-miR-3110-5p	21	475791360
+1817	mmu-miR-3098-3p	21	476053504
+1818	mmu-miR-6907-5p	22	476315648
+1819	mmu-miR-6400	21	476577792
+1820	mmu-miR-470-5p	23	476839936
+1821	mmu-miR-488-3p	21	477102080
+1822	mmu-miR-2183	18	477364224
+1823	mmu-miR-300-5p	22	477626368
+1824	mmu-miR-7088-3p	22	477888512
+1825	mmu-miR-7661-3p	22	478150656
+1826	mmu-miR-7230-3p	23	478412800
+1827	mmu-miR-3073a-3p	22	478674944
+1828	mmu-miR-6399	22	478937088
+1829	mmu-miR-153-3p	22	479199232
+1830	mmu-miR-448-3p	22	479461376
+1831	mmu-miR-6908-5p	22	479723520
+1832	mmu-miR-3081-3p	23	479985664
+1833	mmu-miR-7055-3p	23	480247808
+1834	mmu-miR-3078-3p	20	480509952
+1835	mmu-miR-6983-5p	22	480772096
+1836	mmu-miR-3069-3p	22	481034240
+1837	mmu-miR-7236-3p	22	481296384
+1838	mmu-miR-7240-5p	21	481558528
+1839	mmu-miR-6938-5p	23	481820672
+1840	mmu-miR-3068-5p	24	482082816
+1841	mmu-miR-5134-5p	21	482344960
+1842	mmu-miR-3069-5p	24	482607104
+1843	mmu-miR-7034-3p	24	482869248
+1844	mmu-miR-7002-5p	21	483131392
+1845	mmu-miR-6903-5p	22	483393536
+1846	mmu-miR-3100-5p	23	483655680
+1847	mmu-miR-1982-5p	20	483917824
+1848	mmu-miR-7231-5p	22	484179968
+1849	mmu-miR-6989-5p	22	484442112
+1850	mmu-miR-8093	21	484704256
+1851	mmu-miR-7024-5p	21	484966400
+1852	mmu-miR-7069-5p	23	485228544
+1853	mmu-miR-7009-5p	22	485490688
+1854	mmu-miR-6964-5p	21	485752832
+1855	mmu-miR-7014-5p	22	486014976
+1856	mmu-miR-6934-5p	22	486277120
+1857	mmu-miR-3066-5p	22	486539264
+1858	mmu-miR-7065-3p	21	486801408
+1859	mmu-miR-493-5p	19	487063552
+1860	mmu-miR-6932-5p	22	487325696
+1861	mmu-miR-6951-5p	21	487587840
+1862	mmu-miR-6899-3p	23	487849984
+1863	mmu-miR-7002-3p	19	488112128
+1864	mmu-miR-599	19	488374272
+1865	mmu-miR-6979-3p	21	488636416
+1866	mmu-miR-466l-5p	22	488898560
+1867	mmu-miR-7234-5p	23	489160704
+1868	mmu-miR-1948-3p	22	489422848
+1869	mmu-miR-7655-3p	22	489684992
+1870	mmu-miR-325-3p	22	489947136
+1871	mmu-miR-7093-3p	21	490209280
+1872	mmu-miR-670-3p	25	490471424
+1873	mmu-miR-5616-5p	21	490733568
+1874	mmu-miR-3059-5p	22	490995712
+1875	mmu-miR-7678-3p	22	491257856
+1876	mmu-miR-6896-3p	22	491520000
+1877	mmu-miR-7006-3p	20	491782144
+1878	mmu-miR-1966-3p	23	492044288
+1879	mmu-miR-6946-3p	20	492306432
+1880	mmu-miR-6964-3p	20	492568576
+1881	mmu-miR-434-3p	22	492830720
+1882	mmu-miR-7673-5p	22	493092864
+1883	mmu-miR-5116	21	493355008
+1884	mmu-miR-3079-5p	23	493617152
+1885	mmu-miR-7090-3p	20	493879296
+1886	mmu-miR-6516-5p	22	494141440
+1887	mmu-miR-7660-5p	22	494403584
+1888	mmu-miR-216c-3p	23	494665728
+1889	mmu-miR-182-5p	25	494927872
+1890	mmu-miR-96-5p	23	495190016
+1891	mmu-miR-6352	22	495452160
+1892	mmu-miR-5120	23	495714304
+1893	mmu-miR-133b-3p	22	495976448
+1894	mmu-miR-133c	23	496238592
+1895	mmu-miR-6896-5p	22	496500736
+1896	mmu-miR-758-3p	19	496762880
+1897	mmu-miR-153-5p	17	497025024
+1898	mmu-miR-375-3p	22	497287168
+1899	mmu-miR-5101	22	497549312
+1900	mmu-miR-450b-5p	22	497811456
+1901	mmu-miR-335-3p	22	498073600
+1902	mmu-miR-7116-3p	22	498335744
+1903	p-mmu-miR-22	22	498597888
+1904	p-mmu-miR-69	19	498860032
+1905	p-mmu-miR-46	20	499122176
+1906	p-mmu-miR-33	19	499384320
+1907	p-mmu-miR-62	23	499646464
+1908	p-mmu-miR-32	18	499908608
+1909	p-mmu-miR-43	22	500170752
+1910	p-mmu-miR-25	18	500432896
+1911	p-mmu-miR-63	23	500695040
+1912	p-mmu-miR-35	22	500957184
+1913	p-mmu-miR-55	23	501219328
+1914	p-mmu-miR-30	19	501481472
+1915	p-mmu-miR-61	18	501743616
+1916	p-mmu-miR-70	18	502005760
+1917	p-mmu-miR-8	22	502267904
+1918	p-mmu-miR-58	18	502530048
+1919	p-mmu-miR-44	23	502792192
+1920	p-mmu-miR-66	20	503054336
+1921	p-mmu-miR-64	21	503316480
+1922	p-mmu-miR-68	19	503578624
+1923	p-mmu-miR-19	23	503840768
+1924	p-mmu-miR-42	22	504102912
+1925	p-mmu-miR-10	23	504365056
+1926	p-mmu-miR-16	18	504627200
+1927	p-mmu-miR-6	23	504889344
+1928	p-mmu-miR-31	23	505151488
+1929	p-mmu-miR-7	24	505413632
+1930	p-mmu-miR-17	21	505675776
+1931	p-mmu-miR-47	18	505937920
+1932	p-mmu-miR-38	22	506200064
+1933	p-mmu-miR-27	18	506462208
+1934	p-mmu-miR-53	18	506724352
+1935	p-mmu-miR-1	23	506986496
+1936	p-mmu-miR-65	20	507248640
+1937	p-mmu-miR-49	20	507510784
+1938	p-mmu-miR-51	21	507772928
+1939	p-mmu-miR-54	25	508035072
+1940	p-mmu-miR-67	22	508297216
+1941	p-mmu-miR-48	21	508559360
+1942	p-mmu-miR-9	22	508821504
+1943	p-mmu-miR-3	24	509083648
+1944	p-mmu-miR-14	18	509345792
+1945	p-mmu-miR-36	19	509607936
+1946	p-mmu-miR-60	25	509870080
+1947	p-mmu-miR-45	23	510132224
+1948	p-mmu-miR-26	24	510394368
+1949	p-mmu-miR-13	23	510656512
+1950	p-mmu-miR-11	24	510918656
+1951	p-mmu-miR-12	21	511180800
+1952	p-mmu-miR-41	20	511442944
+1953	p-mmu-miR-29	25	511705088
+1954	p-mmu-miR-28	25	511967232
+1955	p-mmu-miR-40	18	512229376
+1956	p-mmu-miR-39	18	512491520
+1957	p-mmu-miR-59	21	512753664
+1958	p-mmu-miR-57	22	513015808
+1959	p-mmu-miR-5	22	513277952
+1960	p-mmu-miR-52	22	513540096
+1961	p-mmu-miR-37	24	513802240
+1962	p-mmu-miR-4	21	514064384
+1963	p-mmu-miR-21	22	514326528
+1964	p-mmu-miR-2	22	514588672
+1965	p-mmu-miR-23	21	514850816
+1966	p-mmu-miR-20	21	515112960
+1967	p-mmu-miR-24	25	515375104
+1968	p-mmu-miR-56	22	515637248
+1969	p-mmu-miR-15	18	515899392
+1970	p-mmu-miR-50	25	516161536
+To accomodate alignIntronMax=1 redefined winBinNbits=14
+To accomodate alignIntronMax=1 and alignMatesGapMax=0, redefined winFlankNbins=1 and winAnchorDistNbins=2
+Created thread # 1
+Created thread # 2
+Created thread # 3
+Created thread # 4
+Created thread # 5
+Created thread # 6
+Created thread # 7
+Thread #6 end of input stream, nextChar=-1
+BAM sorting: 75622 mapped reads
+BAM sorting bins genomic start loci:
+1	58	0
+2	73	0
+3	120	0
+4	677	0
+5	1199	0
+6	1200	0
+7	1217	1
+8	1218	1
+9	1264	0
+10	1370	0
+11	1535	0
+12	1553	1
+13	1845	5
+14	1946	0
+15	1946	0
+16	1946	0
+Completed: thread #5
+Completed: thread #0
+Completed: thread #7
+Completed: thread #6
+Completed: thread #1
+Joined thread # 1
+Completed: thread #3
+Completed: thread #4
+Completed: thread #2
+Joined thread # 2
+Joined thread # 3
+Joined thread # 4
+Joined thread # 5
+Joined thread # 6
+Joined thread # 7
+May 17 15:43:07 ..... Started sorting BAM
+Max memory needed for sorting = 38753197
+ALL DONE!

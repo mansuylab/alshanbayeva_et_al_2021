@@ -1,0 +1,393 @@
+You are running cutadapt 1.7.1 with Python 2.7.6
+Command line parameters: -a GATCGGAAGAGCACACGTCTGAACTCCAGTCAC /share/de/plasma_all_60a243166c4b6/plasma_all_60a243166c4b6/20190308sample9/20190308sample9_cat.fastq.gz
+Maximum error rate: 10.00%
+   No. of adapters: 1
+   Processed reads:      5004006
+   Processed bases:    630504756 bp (630.5 Mbp)
+     Trimmed reads:      4966643 (99.3%)
+     Trimmed bases:    547467627 bp (547.5 Mbp) (86.83% of total)
+   Too short reads:            0 (0.0% of processed reads)
+    Too long reads:            0 (0.0% of processed reads)
+        Total time:     85.99 s
+     Time per read:      0.017 ms
+
+=== Adapter 1 ===
+
+Sequence: GATCGGAAGAGCACACGTCTGAACTCCAGTCAC; Type: regular 3'; Length: 33; Trimmed: 4966643 times.
+
+No. of allowed errors:
+0-9 bp: 0; 10-19 bp: 1; 20-29 bp: 2; 30-33 bp: 3
+
+Bases preceding removed adapters:
+  A: 99.5%
+  C: 0.1%
+  G: 0.2%
+  T: 0.3%
+  none/other: 0.0%
+WARNING:
+    The adapter is preceded by "A" extremely often.
+    The provided adapter sequence may be incomplete.
+    To fix the problem, add "A" to the beginning of the adapter sequence.
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+3	29	78187.6	0	29
+4	3	19546.9	0	3
+11	1	1.2	1	0 1
+24	1	0.0	2	0 0 1
+39	1	0.0	3	0 0 0 1
+43	1	0.0	3	0 1
+44	1	0.0	3	0 0 1
+45	3	0.0	3	0 0 0 3
+46	4	0.0	3	0 0 2 2
+47	1	0.0	3	0 0 1
+48	3	0.0	3	0 2 0 1
+49	9	0.0	3	0 0 2 7
+50	7	0.0	3	0 0 3 4
+51	7	0.0	3	0 2 3 2
+52	13	0.0	3	0 3 5 5
+53	22	0.0	3	3 3 6 10
+54	23	0.0	3	2 6 6 9
+55	5	0.0	3	1 1 2 1
+56	6	0.0	3	0 0 3 3
+57	38	0.0	3	3 7 20 8
+58	34	0.0	3	6 8 12 8
+59	24	0.0	3	4 3 6 11
+60	24	0.0	3	2 9 8 5
+61	43	0.0	3	12 14 9 8
+62	37	0.0	3	11 9 9 8
+63	39	0.0	3	14 12 6 7
+64	134	0.0	3	55 42 24 13
+65	46	0.0	3	13 14 12 7
+66	46	0.0	3	17 15 9 5
+67	32	0.0	3	14 9 8 1
+68	33	0.0	3	15 13 2 3
+69	38	0.0	3	22 8 5 3
+70	31	0.0	3	21 6 3 1
+71	33	0.0	3	22 5 5 1
+72	21	0.0	3	13 7 0 1
+73	25	0.0	3	13 8 2 2
+74	49	0.0	3	36 8 4 1
+75	48	0.0	3	33 9 5 1
+76	56	0.0	3	37 12 2 5
+77	49	0.0	3	38 8 2 1
+78	65	0.0	3	55 8 2
+79	91	0.0	3	63 14 12 2
+80	80	0.0	3	63 9 5 3
+81	163	0.0	3	126 29 4 4
+82	288	0.0	3	228 51 6 3
+83	297	0.0	3	248 34 10 5
+84	1156	0.0	3	933 168 37 18
+85	518	0.0	3	438 61 15 4
+86	349	0.0	3	301 33 10 5
+87	518	0.0	3	433 54 28 3
+88	1130	0.0	3	971 99 42 18
+89	1976	0.0	3	1699 208 48 21
+90	2705	0.0	3	2271 345 71 18
+91	3418	0.0	3	2973 341 86 18
+92	6424	0.0	3	5573 666 124 61
+93	12470	0.0	3	10821 1251 294 104
+94	38595	0.0	3	33357 4063 854 321
+95	44573	0.0	3	38766 4390 1017 400
+96	36829	0.0	3	32476 3372 716 265
+97	53473	0.0	3	46791 5349 1001 332
+98	54650	0.0	3	47963 5288 1045 354
+99	75754	0.0	3	66114 7819 1351 470
+100	111304	0.0	3	98102 10608 1972 622
+101	128574	0.0	3	110666 14495 2656 757
+102	213831	0.0	3	187314 21300 3947 1270
+103	395935	0.0	3	347961 39573 6508 1893
+104	302238	0.0	3	265975 30104 4746 1413
+105	233584	0.0	3	207168 21800 3511 1105
+106	194869	0.0	3	174381 16941 2693 854
+107	231767	0.0	3	207206 20430 3159 972
+108	196745	0.0	3	176172 17142 2622 809
+109	206317	0.0	3	186308 16709 2530 770
+110	207969	0.0	3	187106 17091 2850 922
+111	290019	0.0	3	258228 26713 4014 1064
+112	213078	0.0	3	192183 17256 2758 881
+113	182531	0.0	3	163683 15700 2439 709
+114	209575	0.0	3	189178 17137 2468 792
+115	135601	0.0	3	121794 11576 1709 522
+116	163030	0.0	3	147285 13255 1951 539
+117	62471	0.0	3	56113 5303 835 220
+118	72752	0.0	3	65330 6338 884 200
+119	27308	0.0	3	24597 2325 312 74
+120	18339	0.0	3	16540 1519 224 56
+121	11070	0.0	3	9887 1026 125 32
+122	10199	0.0	3	8978 1048 142 31
+123	8661	0.0	3	7771 754 109 27
+124	16242	0.0	3	14506 1511 184 41
+125	785218	0.0	3	710574 65586 7353 1705
+126	874	0.0	3	743 103 10 18
+
+WARNING:
+    One or more of your adapter sequences may be incomplete.
+    Please see the detailed output above.
+Started analysis of 20190308sample9-trimmed.fastq
+Approx 5% complete for 20190308sample9-trimmed.fastq
+Approx 10% complete for 20190308sample9-trimmed.fastq
+Approx 15% complete for 20190308sample9-trimmed.fastq
+Approx 20% complete for 20190308sample9-trimmed.fastq
+Approx 25% complete for 20190308sample9-trimmed.fastq
+Approx 30% complete for 20190308sample9-trimmed.fastq
+Approx 35% complete for 20190308sample9-trimmed.fastq
+Approx 40% complete for 20190308sample9-trimmed.fastq
+Approx 45% complete for 20190308sample9-trimmed.fastq
+Approx 50% complete for 20190308sample9-trimmed.fastq
+Approx 55% complete for 20190308sample9-trimmed.fastq
+Approx 60% complete for 20190308sample9-trimmed.fastq
+Approx 65% complete for 20190308sample9-trimmed.fastq
+Approx 70% complete for 20190308sample9-trimmed.fastq
+Approx 75% complete for 20190308sample9-trimmed.fastq
+Approx 80% complete for 20190308sample9-trimmed.fastq
+Approx 85% complete for 20190308sample9-trimmed.fastq
+Approx 90% complete for 20190308sample9-trimmed.fastq
+Approx 95% complete for 20190308sample9-trimmed.fastq
+Approx 100% complete for 20190308sample9-trimmed.fastq
+Started analysis of 20190308sample9-nofilt-trimmed.fastq
+Approx 5% complete for 20190308sample9-nofilt-trimmed.fastq
+Approx 10% complete for 20190308sample9-nofilt-trimmed.fastq
+Approx 15% complete for 20190308sample9-nofilt-trimmed.fastq
+Approx 20% complete for 20190308sample9-nofilt-trimmed.fastq
+Approx 25% complete for 20190308sample9-nofilt-trimmed.fastq
+Approx 30% complete for 20190308sample9-nofilt-trimmed.fastq
+Approx 35% complete for 20190308sample9-nofilt-trimmed.fastq
+Approx 40% complete for 20190308sample9-nofilt-trimmed.fastq
+Approx 45% complete for 20190308sample9-nofilt-trimmed.fastq
+Approx 50% complete for 20190308sample9-nofilt-trimmed.fastq
+Approx 55% complete for 20190308sample9-nofilt-trimmed.fastq
+Approx 60% complete for 20190308sample9-nofilt-trimmed.fastq
+Approx 65% complete for 20190308sample9-nofilt-trimmed.fastq
+Approx 70% complete for 20190308sample9-nofilt-trimmed.fastq
+Approx 75% complete for 20190308sample9-nofilt-trimmed.fastq
+Approx 80% complete for 20190308sample9-nofilt-trimmed.fastq
+Approx 85% complete for 20190308sample9-nofilt-trimmed.fastq
+Approx 90% complete for 20190308sample9-nofilt-trimmed.fastq
+Approx 95% complete for 20190308sample9-nofilt-trimmed.fastq
+Approx 100% complete for 20190308sample9-nofilt-trimmed.fastq
+mac2unix: converting file /share/de/plasma_all_60a243166c4b6/plasma_all_60a243166c4b6/20190308sample9/error.log to Unix format ...
+mac2unix: converting file /share/de/plasma_all_60a243166c4b6/plasma_all_60a243166c4b6/20190308sample9/output.log to Unix format ...
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v1.4.6
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                           S /share/de/plasma_all_60a243166c4b6/2019030 ... ||
+||                                                                            ||
+||             Output file : /share/de/plasma_all_60a243166c4b6/plasma_al ... ||
+||             Annotations : /home/vsac/database2/all/saf/all.saf (SAF)       ||
+||                                                                            ||
+||                 Threads : 1                                                ||
+||                   Level : meta-feature level                               ||
+||              Paired-end : no                                               ||
+||         Strand specific : no                                               ||
+||      Multimapping reads : not counted                                      ||
+|| Multi-overlapping reads : not counted                                      ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file /home/vsac/database2/all/saf/all.saf ...              ||
+||    Features : 23571                                                        ||
+||    Meta-features : 23571                                                   ||
+||    Chromosomes : 23571                                                     ||
+||                                                                            ||
+|| Process BAM file /share/de/plasma_all_60a243166c4b6/20190308sample9-al ... ||
+||    Single-end reads are included.                                          ||
+||    Assign reads to features...                                             ||
+||    Total reads : 1212271                                                   ||
+||    Successfully assigned reads : 57 (0.0%)                                 ||
+||    Running time : 0.03 minutes                                             ||
+||                                                                            ||
+||                         Read assignment finished.                          ||
+||                                                                            ||
+\\===================== http://subread.sourceforge.net/ ======================//
+
+cat: 20190308sample9: No such file or directory
+[bam_sort_core] merging from 13 files...
+converting bam to fasta...
+# reads processed: 4045677
+# reads with at least one reported alignment: 1962638 (48.51%)
+# reads that failed to align: 1877262 (46.40%)
+# reads with alignments suppressed due to -m: 205777 (5.09%)
+Reported 2579120 alignments to 1 output stream(s)
+Mapping statistics
+
+#desc	total	mapped	unmapped	%mapped	%unmapped
+total: 37842643	10802368	27040275	0.285	0.715
+mkz: 37842643	10802368	27040275	0.285	0.715
+all files were created
+Loading required package: S4Vectors
+Loading required package: methods
+Loading required package: stats4
+Loading required package: BiocGenerics
+Loading required package: parallel
+
+Attaching package: ‘BiocGenerics’
+
+The following objects are masked from ‘package:parallel’:
+
+    clusterApply, clusterApplyLB, clusterCall, clusterEvalQ,
+    clusterExport, clusterMap, parApply, parCapply, parLapply,
+    parLapplyLB, parRapply, parSapply, parSapplyLB
+
+The following objects are masked from ‘package:stats’:
+
+    IQR, mad, sd, var, xtabs
+
+The following objects are masked from ‘package:base’:
+
+    anyDuplicated, append, as.data.frame, cbind, colMeans, colnames,
+    colSums, do.call, duplicated, eval, evalq, Filter, Find, get, grep,
+    grepl, intersect, is.unsorted, lapply, lengths, Map, mapply, match,
+    mget, order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank,
+    rbind, Reduce, rowMeans, rownames, rowSums, sapply, setdiff, sort,
+    table, tapply, union, unique, unsplit, which, which.max, which.min
+
+
+Attaching package: ‘S4Vectors’
+
+The following object is masked from ‘package:base’:
+
+    expand.grid
+
+Loading required package: IRanges
+Loading required package: GenomicRanges
+Loading required package: GenomeInfoDb
+Loading required package: SummarizedExperiment
+Loading required package: Biobase
+Welcome to Bioconductor
+
+    Vignettes contain introductory material; view with
+    'browseVignettes()'. To cite Bioconductor, see
+    'citation("Biobase")', and for packages 'citation("pkgname")'.
+
+Loading required package: DelayedArray
+Loading required package: matrixStats
+
+Attaching package: ‘matrixStats’
+
+The following objects are masked from ‘package:Biobase’:
+
+    anyMissing, rowMedians
+
+
+Attaching package: ‘DelayedArray’
+
+The following objects are masked from ‘package:matrixStats’:
+
+    colMaxs, colMins, colRanges, rowMaxs, rowMins, rowRanges
+
+The following object is masked from ‘package:base’:
+
+    apply
+
+
+Attaching package: ‘gplots’
+
+The following object is masked from ‘package:IRanges’:
+
+    space
+
+The following object is masked from ‘package:S4Vectors’:
+
+    space
+
+The following object is masked from ‘package:stats’:
+
+    lowess
+
+
+Attaching package: ‘gridExtra’
+
+The following object is masked from ‘package:Biobase’:
+
+    combine
+
+The following object is masked from ‘package:BiocGenerics’:
+
+    combine
+
+estimating size factors
+estimating dispersions
+gene-wise dispersion estimates
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+
+Attaching package: ‘genefilter’
+
+The following objects are masked from ‘package:matrixStats’:
+
+    rowSds, rowVars
+
+estimating size factors
+estimating dispersions
+gene-wise dispersion estimates
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+estimating size factors
+estimating dispersions
+gene-wise dispersion estimates
+mean-dispersion relationship
+-- note: fitType='parametric', but the dispersion trend was not well captured by the
+   function: y = a/x + b, and a local regression fit was automatically substituted.
+   specify fitType='local' or 'mean' to avoid this message next time.
+final dispersion estimates
+fitting model and testing
+-- note: fitType='parametric', but the dispersion trend was not well captured by the
+   function: y = a/x + b, and a local regression fit was automatically substituted.
+   specify fitType='local' or 'mean' to avoid this message next time.
+estimating size factors
+estimating dispersions
+gene-wise dispersion estimates
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+estimating size factors
+estimating dispersions
+gene-wise dispersion estimates
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+estimating size factors
+estimating dispersions
+gene-wise dispersion estimates
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+Warning messages:
+1: In checkForExperimentalReplicates(object, modelMatrix) :
+  same number of samples and coefficients to fit,
+  estimating dispersion by treating samples as replicates.
+  read the ?DESeq section on 'Experiments without replicates'
+2: In checkForExperimentalReplicates(object, modelMatrix) :
+  same number of samples and coefficients to fit,
+  estimating dispersion by treating samples as replicates.
+  read the ?DESeq section on 'Experiments without replicates'
+3: In checkForExperimentalReplicates(object, modelMatrix) :
+  same number of samples and coefficients to fit,
+  estimating dispersion by treating samples as replicates.
+  read the ?DESeq section on 'Experiments without replicates'
+4: In checkForExperimentalReplicates(object, modelMatrix) :
+  same number of samples and coefficients to fit,
+  estimating dispersion by treating samples as replicates.
+  read the ?DESeq section on 'Experiments without replicates'
+5: In checkForExperimentalReplicates(object, modelMatrix) :
+  same number of samples and coefficients to fit,
+  estimating dispersion by treating samples as replicates.
+  read the ?DESeq section on 'Experiments without replicates'
+6: In checkForExperimentalReplicates(object, modelMatrix) :
+  same number of samples and coefficients to fit,
+  estimating dispersion by treating samples as replicates.
+  read the ?DESeq section on 'Experiments without replicates'

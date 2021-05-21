@@ -1,0 +1,223 @@
+Finished processing /share/de/plasma_all_60a243166c4b6/plasma_all_60a243166c4b6/20190308sample9/20190308sample9_cat.fastq.gz with 20016024 lines containing 5004006 sequences.
+There were a total of 0 errors.
+Returning: 0 : FASTQ_SUCCESS
+UNCONDITIONAL_BIDIRECTIONAL_TRIM_LENGTH=0
+No barcode trimming requested by user
+Analysis complete for 20190308sample9-trimmed.fastq
+Analysis complete for 20190308sample9-nofilt-trimmed.fastq
+Mapping against miRNAs
+Extract unmapped reads from bam file /share/de/plasma_all_60a243166c4b6/20190308sample9-mirna.bam
+Convert bam file /share/de/plasma_all_60a243166c4b6/20190308sample9-mirna_unmapped.bam to fastq file
+Mapping the rest of the reads of sample 20190308sample9 against other sRNAs
+Extract unmapped reads from bam file /share/de/plasma_all_60a243166c4b6/20190308sample9-srna.bam
+Convert the bam file of the unmapped reads of sample 20190308sample9 to fasta
+Mapping against the reference genome and extract the unmapped reads to study the contamination
+Exract unmapped reads
+Convert the bam file of the unmapped reads mapped to the genome of sample 20190308sample9 to fasta
+Running kraken package for sample 20190308sample9
+EDITOR                  vi
+ENVIRONMENT             BATCH
+HOME                    /home/oasis
+HOSTNAME                dzne-goe-cn1
+LC_ALL                  en_US.UTF-8
+LC_CTYPE                en_US.UTF-8
+LD_LIBRARY_PATH         /home/bonnlab/bin/programs/R/R-3.4.0/lib64/R/lib:/home/bonnlab/bin/programs/R/zlib/1.2.8/lib:/home/bonnlab/bin/programs/R/bzip/1.0.6/lib:/home/bonnlab/bin/programs/R/liblzma/5.2.2/lib:/home/bonnlab/bin/programs/R/pcre/8.35/lib:/home/bonnlab/bin/programs/R/curl/7.47.1/lib:/opt/jdk1.8.0_121/jre/lib/amd64/server:/home/vsac/programs/Python-2.7.5/lib:/home/vsac/pipelines2/programs/gcc-4.8.2/lib64
+LN_S                    ln -s
+LOGNAME                 oasis
+MAKE                    make
+NGSPLOT                 /home/vsac/programs/ngsplot
+PAGER                   /usr/bin/less
+PATH                    /home/vsac/pipelines2:/home/bonnlab/programs/R/bin:/home/vsac/programs/cutadapt-1.8.1/bin:/software/bin:/home/vsac/programs/homer/bin:/home/vsac/programs/ViennaRNA-2.1.8/bin:/home/vsac/programs/squid-1.9g/bin:/home/vsac/programs/mirdeep2:/home/vsac/programs/fastx_toolkit/bin:/home/vsac/programs/bin:/home/vsac/pipelines2/programs/bin:/home/vsac/pipelines2/programs/fastQValidator/bin:/home/vsac/pipelines2/programs/parallel/bin:/home/vsac/pipelines2/programs/MACS2/bin:/home/vsac/pipelines2/programs/ngsplot/bin:/home/vsac/pipelines2/programs/bedtools2/bin:/home/vsac/pipelines2/programs/tophat:/home/vsac/pipelines2/programs/bowtie2:/home/vsac/pipelines2/programs/FastQC:/home/vsac/pipelines2/programs/HTSeq/bin:/home/vsac/pipelines2/programs/samtools:/home/vsac/pipelines2/programs/seqimp/bin:/home/vsac/pipelines2/programs/STAR:/home/vsac/pipelines2/programs/cufflinks:/home/vsac/pipelines2/programs/R/bin:/home/vsac/pipelines2/programs/Python/bin:/home/vsac/pipelines2/programs/gcc/bin:/home/vsac/pipelines2/programs/R/bin:/home/vsac/programs/bedtools/bin:/home/vsac/programs/ngsplot/bin:/home/vsac/programs/meme/bin:/home/vsac/programs/weblogo:/home/vsac/programs:/home/vsac/programs/py-vsac/bin:/home/vsac/programs/sratoolkit/bin:/home/vsac/programs/blast/bin:/home/vsac/programs/fastqc/:/home/vsac/programs/bowtie:/home/vsac/programs/R/bin:/home/vsac/programs/bwa:/home/vsac/programs/tophat:/home/vsac/programs/picard:/home/vsac/programs/cufflinks:/home/vsac/pipelines2/programs/bowtie:/home/vsac/pipelines2/programs/mirdeep2:/home/vsac/bin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/home/vsac/pipelines2/kraken:/home/vsac/pipelines2/programs/DNApi-master:/home/vsac/pipelines2/programs/Python-3.5/bin:/home/vsac/pipelines2/dos2unix-7.1:/usr/local/bin
+PATH_TO_BIN             /home/vsac/pipelines2
+PATH_TO_DATABASE        /home/vsac/database2
+PERL5LIB                :/home/vsac/programs/ensembl_modules/bioperl-1.2.3:/home/vsac/programs/ensembl_modules/ensembl/modules:/home/vsac/programs/ensembl_modules/ensembl-compara/modules:/home/vsac/programs/ensembl_modules/ensembl-variation/modules:/home/vsac/programs/ensembl_modules/ensembl-functgenomics/modules:/home/vsac/programs/homer/bin:/home/vsac/pipelines2/programs/bin:/home/vsac/programs/ensembl_modules/bioperl-1.2.3:/home/vsac/programs/ensembl_modules/ensembl/modules:/home/vsac/programs/ensembl_modules/ensembl-compara/modules:/home/vsac/programs/ensembl_modules/ensembl-variation/modules:/home/vsac/programs/ensembl_modules/ensembl-functgenomics/modules:/home/vsac/programs/homer/bin:/home/vsac/pipelines2/programs/bin:/home/vsac/programs/ensembl_modules/bioperl-1.2.3:/home/vsac/programs/ensembl_modules/ensembl/modules:/home/vsac/programs/ensembl_modules/ensembl-compara/modules:/home/vsac/programs/ensembl_modules/ensembl-variation/modules:/home/vsac/programs/ensembl_modules/ensembl-functgenomics/modules:/home/vsac/programs/homer/bin:/home/vsac/pipelines2/programs/bin
+PWD                     /home/oasis
+PYTHONPATH              /home/vsac/pipelines2/programs/HTSeq/lib/python2.7/site-packages:/home/vsac/pipelines2/programs/MACS2/lib/python2.7/site-packages:/home/vsac/pipelines2/programs/Python/lib/python2.7/site-packages
+R_ARCH                  
+R_BROWSER               /usr/bin/firefox
+R_BZIPCMD               /home/bonnlab/bin/programs/R/bzip/1.0.6/bin/bzip2
+R_DEFAULT_PACKAGES      datasets,utils,grDevices,graphics,stats
+R_DOC_DIR               /home/bonnlab/bin/programs/R/R-3.4.0/lib64/R/doc
+R_GZIPCMD               /bin/gzip
+R_HOME                  /home/bonnlab/bin/programs/R/R-3.4.0/lib64/R
+R_INCLUDE_DIR           /home/bonnlab/bin/programs/R/R-3.4.0/lib64/R/include
+R_LIBS_SITE             
+R_LIBS_USER             ~/R/x86_64-pc-linux-gnu-library/3.4
+ROOT                    /share/de
+R_PAPERSIZE             a4
+R_PDFVIEWER             /usr/bin/xdg-open
+R_PLATFORM              x86_64-pc-linux-gnu
+R_PRINTCMD              lpr
+R_RD4PDF                times,hyper
+R_SESSION_TMPDIR        /tmp/RtmpSdDkpK
+R_SHARE_DIR             /home/bonnlab/bin/programs/R/R-3.4.0/lib64/R/share
+R_SYSTEM_ABI            linux,gcc,gxx,gfortran,?
+R_TEXI2DVICMD           /usr/bin/texi2dvi
+R_UNZIPCMD              /usr/bin/unzip
+R_ZIPCMD                /usr/bin/zip
+SBATCH_CPU_BIND         quiet,mask_cpu:0x003C003C
+SBATCH_CPU_BIND_LIST    0x003C003C
+SBATCH_CPU_BIND_TYPE    mask_cpu:
+SBATCH_CPU_BIND_VERBOSE
+                        quiet
+SED                     /bin/sed
+SHELL                   /bin/sh
+SHLVL                   5
+SLURM_CHECKPOINT_IMAGE_DIR
+                        /home/oasis
+SLURM_CLUSTER_NAME      cluster
+SLURM_CPUS_ON_NODE      8
+SLURM_CPUS_PER_TASK     8
+SLURMD_NODENAME         dzne-goe-cn1
+SLURM_GTIDS             0
+SLURM_JOB_CPUS_PER_NODE
+                        8
+SLURM_JOB_DEPENDENCY    afterok:43809
+SLURM_JOBID             43831
+SLURM_JOB_ID            43831
+SLURM_JOB_NAME          smallrnapipeline
+SLURM_JOB_NODELIST      dzne-goe-cn1
+SLURM_JOB_NUM_NODES     1
+SLURM_JOB_PARTITION     small
+SLURM_JOB_UID           516
+SLURM_JOB_USER          oasis
+SLURM_LOCALID           0
+SLURM_MEM_PER_CPU       2048
+SLURM_NNODES            1
+SLURM_NODE_ALIASES      (null)
+SLURM_NODEID            0
+SLURM_NODELIST          dzne-goe-cn1
+SLURM_PRIO_PROCESS      0
+SLURM_PROCID            0
+SLURM_SUBMIT_DIR        /home/oasis
+SLURM_SUBMIT_HOST       dzne-goe-cn1
+SLURM_TASK_PID          31154
+SLURM_TASKS_PER_NODE    1
+SLURM_TOPOLOGY_ADDR     dzne-goe-cn1
+SLURM_TOPOLOGY_ADDR_PATTERN
+                        node
+SVN_EDITOR              /bin/vim
+TAR                     /bin/gtar
+TMP                     /tmp/
+TMPDIR                  /tmp
+USER                    oasis
+WEB                     /web/de
+Ending kraken package for sample 20190308sample9
+Mapping the rest of the reads to the other mirna genomes
+Counting the contamination by other genomes for the sample 20190308sample9
+Create count file
+Adding mirna to the count file /share/de/plasma_all_60a243166c4b6/plasma_all_60a243166c4b6/20190308sample9/20190308sample9_allspeciesCounts.txt
+Adding pirna to the count file /share/de/plasma_all_60a243166c4b6/plasma_all_60a243166c4b6/20190308sample9/20190308sample9_allspeciesCounts.txt
+Adding snorna to the count file /share/de/plasma_all_60a243166c4b6/plasma_all_60a243166c4b6/20190308sample9/20190308sample9_allspeciesCounts.txt
+Adding snrna to the count file /share/de/plasma_all_60a243166c4b6/plasma_all_60a243166c4b6/20190308sample9/20190308sample9_allspeciesCounts.txt
+Adding rrna to the count file /share/de/plasma_all_60a243166c4b6/plasma_all_60a243166c4b6/20190308sample9/20190308sample9_allspeciesCounts.txt
+/share/de/plasma_all_60a243166c4b6/plasma_all_60a243166c4b6/20190308sample9/20190308sample9-smallrnaOutput/mapping/20190308sample9-Log.final.out
+NUMER_READS:5004006
+UNIQUE_MAPPED_READS=854095
+MULTIPLE_MAPPED_READS=84053
+[1] "/share/de/plasma_all_60a243166c4b6/plasma_all_60a243166c4b6/20190308sample9/Sample_readsR.log"
+[1] "/share/de/plasma_all_60a243166c4b6/plasma_all_60a243166c4b6/20190308sample9/Sample_smallrnaR.log"
+[1] "/share/de/plasma_all_60a243166c4b6/plasma_all_60a243166c4b6/20190308sample9/Sample_trimR.log"
+[1] "/share/de/plasma_all_60a243166c4b6/plasma_all_60a243166c4b6/20190308sample9/Sample_starR.log"
+[1] "numberReads"
+[1] "trim"
+[1] "map"
+[1] "smallRNA"
+###########MIRNA_COUNTED=8717381
+###########TOTAL_READS=188575526
+###########COVERAGe=21
+pre-processing the unmapped reads...
+mapping the converted fasta file in the genome...
+/share/de/plasma_all_60a243166c4b6/prediction//merge_sorted.bam.filt.bam /share/de/plasma_all_60a243166c4b6/prediction//merge_sorted.bam.filt.fa
+/share/de/plasma_all_60a243166c4b6/prediction 
+=========/share/de/plasma_all_60a243166c4b6/prediction/mapper_mkz/==========
+---/share/de/plasma_all_60a243166c4b6/prediction/---
+minimum read depth calculation...
+=========read depth cutoff: 50=========
+running mirdeep2...
+new_miRDeep3.pl /share/de/plasma_all_60a243166c4b6/prediction//seqs_colapsed.fa /home/vsac/database2/mm10/bowtie/mm10.fa /share/de/plasma_all_60a243166c4b6/prediction//seqs.arf none /home/vsac/database2/mirbase/mature.fa none -t Mouse -a 50
+
+
+#####################################
+#                                   #
+# miRDeep2.0.0.5                    #
+#                                   #
+# last change: 25/06/2012           #
+#                                   #
+#####################################
+
+miRDeep2 started at 16:50:06
+
+
+#Starting miRDeep2
+#testing input files
+#parsing genome mappings
+#excising precursors
+#preparing signature
+#folding precursors
+#computing randfold p-values
+#running miRDeep core algorithm
+#running permuted controls
+#doing survey of accuracy
+#producing graphic results
+
+
+miRDeep runtime: 
+
+started: 16:50:06
+ended: 17:0:15
+total:0h:10m:9s
+
+LOG:/share/de/plasma_all_60a243166c4b6/log.out FOLDER:/share/de/plasma_all_60a243166c4b6/prediction/
+['/share/de/plasma_all_60a243166c4b6/prediction//novel_mirna.csv']
+/share/de/plasma_all_60a243166c4b6/prediction//novel_mirna.csv
+/share/de/plasma_all_60a243166c4b6/prediction//novel_mirna.csv
+/share/de/plasma_all_60a243166c4b6/prediction//novel_mirna.gtf
+empty_file
+empty_file
+None
+None
+None
+None
+None
+None
+None
+None
+None
+empty_file
+empty_file
+empty_file
+empty_file
+empty_file
+empty_file
+None
+empty_file
+empty_file
+empty_file
+empty_file
+None
+empty_file
+empty_file
+None
+empty_file
+empty_file
+None
+empty_file
+empty_file
+None
+empty_file
+empty_file
+empty_file
+None
+empty_file
+empty_file
+empty_file
+empty_file
+empty_file
+None
+empty_file
+Add to the count files the expression of the sequences of the other organisms
+NUMBER_OF_LAST_UNMAPPED_READS=4166078 /share/de/plasma_all_60a243166c4b6/prediction/merge_sorted.bam.filt.fa_not_mapped
+  adding: reads_distribution/ (stored 0%)
+  adding: data.tsv (deflated 51%)
+[1] "PCA JSon file done"

@@ -1,0 +1,68 @@
+@charset "UTF-8";
+/* CSS Document */
+
+#basics { 
+	border-radius:3px; 
+	-moz-border-radius:3px; /* Firefox */ 
+	-webkit-border-radius:3px; /* Safari y Chrome */ 
+
+/* Otros estilos */ 
+	background:#eee;
+	width:100%;
+	padding:5px;
+
+	max-width:700px;
+	margin-left:auto;
+	margin-right:auto;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	
+	float:left;
+}
+
+#basics tr {float:left; margin-bottom:4px;}
+
+#basics tr td {text-align:center; padding-top:4px; padding-bottom:4px;}
+
+#basics tr td.first {width:400px; color:#000; font-weight:bold}
+#basics tr td.second {width:470px;}
+
+#basics .titles {
+	background-color:#39A9E5;
+	border-bottom:#000 1px solid;
+	color:#fff;
+	text-transform:uppercase;
+	text-align:center;
+	font-weight:bold;
+	padding-top:2px;
+	font-size:14px;
+	letter-spacing:0.5;
+	
+	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #aaaaaa), color-stop(1, #666666) );
+	background:-moz-linear-gradient( center top, #aaaaaa 5%, #666666 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#aaaaaa', endColorstr='#666666');
+	
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #aaaaaa), color-stop(1, #666666) );
+	background:-moz-linear-gradient( center top, #aaaaaa 5%, #666666 100% );
+	
+	width:870px;
+}
+
+#basics tr.titles td.first {background-color:transparent; color:#fff;}
+
+#basics tr.one {background-color:#ccc;}
+#basics tr.two {background-color:#ddd;}
+#basics tr.one td.second {background-color:#fff;}
+#basics tr.two td.second {background-color:#eee;}
+
+
+#basics tr.one:hover, #basics tr.one:hover td.second:hover {background-color:#d0dff5!important; cursor:crosshair;}
+#basics tr.two:hover, #basics tr.two:hover td.second:hover {background-color:#d0dff5!important; cursor:crosshair;}
+#basics tr td.counts {width:470px; background-color:#eee;}
+#basics tr td.counts:hover {background-color:#d0dff5!important;}
+#basics tr td.counts a {padding:3px; color:#09F; text-decoration:none; padding-left:10px; padding-right:10px;}
+#basics tr td.counts a:hover {color:#f60;}

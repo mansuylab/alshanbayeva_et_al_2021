@@ -1,0 +1,84 @@
+@charset "UTF-8";
+/* CSS Document */
+
+#tablein {margin:0px; width:900px; height:auto;}
+
+table.results {
+	float:left;
+	width:100%;
+	border:none;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+table.results tr, #content table.results tr td {float:left; padding:0px; font-size:12px; text-align:center;}
+table.results tr {padding:0px;}
+table.results tr td {
+	border: 1px solid #FFFFFF;
+    padding: 10px 0;
+}
+
+table.results tr:hover {background-color:#ddd;}
+
+table.results tr.titles {
+	background-color:#09F;
+	text-align:center;
+	color:#fff;
+	margin-bottom:10px;
+}
+
+table.results tr.titles td {padding-bottom:4px; padding-bottom:4px; border:#09F 1px solid;}
+
+table.results tr.titles td.sample,
+table.results tr td.sample {width:360px;}
+
+table.results tr td.sample img.icon-sample {
+    float: left;
+    margin-left: 2px;
+    margin-top: 1px;
+}
+
+table.results tr.titles td.trimmed,
+table.results tr td.trimmed {width:80px; }
+
+table.results tr.titles td.reads,
+table.results tr td.reads {width:100px;}
+
+table.results tr.titles td.mapped,
+table.results tr td.mapped {width:180px;}
+
+table.results tr.titles td.counts,
+table.results tr td.counts {width:150px; line-height:15px;}
+
+table.results tr td a {color:#09F; text-decoration:none;}
+table.results tr td a:hover {color:#f60;}
+
+table.results tr td.counts a {padding:3px;}
+
+table.results tr.pngs {background-color:#eee; float:left; width:1196px; margin-top:20px; margin-bottom:20px;}
+
+table.results tr.pngs td {
+    background-color: #eee;
+    border: medium none;
+    float: left;
+	margin:10px;
+    height: auto;
+	width: 219px;
+	padding:0px;
+}
+
+table.results tr.pngs td img {width:219px; height:219px;}
+
+table.results tr.pngs td span.title-png {float:left; width:100%; margin-bottom:6px; background-color:#09f; color:#fff; padding-top:3px; padding-bottom:3px;}
+
+table.results tr.pngs td a {cursor:pointer;}
+
+
+p {
+    color: #000;
+    float: left;
+    font-family: arial;
+    margin-bottom: 10px;
+    padding-left: 5px;
+    text-decoration: underline;
+    width: 680px;
+}

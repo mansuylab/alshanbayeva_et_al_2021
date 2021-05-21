@@ -1,0 +1,79 @@
+#pca_total svg {
+  width: 1000px;
+  height: 500px;
+  overflow: auto;
+}
+#trimming svg {
+  width: 1000px;
+  height: 500px;
+  overflow: auto;
+}
+#counting svg {
+  width: 1000px;
+  height: 500px;
+  overflow: auto;
+}
+#mapping svg {
+  width: 1000px;
+  height: 500px;
+  overflow: auto;
+}
+.module{
+	display: inline;
+	float: right;
+	width: 92%;
+	background-color: #FFF;
+	text-align: center;
+	overflow: auto;
+	height: 530px;
+	margin-top: 10px;
+}
+.modulePCA{ /* 	The same .module function just separated it because we do not need scroll for pca */
+
+	display: inline;
+	float: right;
+	width: 92%;
+	background-color: #FFF;
+	text-align: center;
+	
+}
+.module.body{
+	text-align: left;	
+	display: inline;
+	float: right;
+	margin: 0px auto;
+	overflow: auto;
+}
+
+.floatLeft {
+    display: inline;
+    float: left;
+}
+.ui-helper-clearfix::before, .ui-helper-clearfix::after {
+    content: "";
+    display: table;
+}
+.ui-helper-clearfix::after {
+    clear: both;
+}
+.ui-helper-clearfix {
+}
+
+#oasis-d3-multilayer-pie-charts-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  align-content: center;
+
+}
+
+#oasis-d3-multilayer-pie-charts-container div {
+  align-self: flex-start;
+}
+
+#oasis_pie_chart_toggle {
+  margin:auto;
+  text-align: center;
+}

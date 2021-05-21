@@ -1,0 +1,744 @@
+/*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
+
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+border: 0px none;
+position: relative;
+min-height: 100%;
+min-width: 1500px;
+width: auto !important;
+padding: 0px;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+/* 
+ * Header Styles (clean)
+ * 
+ *  */
+
+nav {
+    background: #282828 none no-repeat scroll center center;
+height: 94px;
+width: 100%;
+}
+
+#menu-in {
+    background: no-repeat scroll center top transparent;
+    height: 86px;
+    margin: 0 auto;
+    padding: 0 10px 0 9px;
+    width: 1081px;
+}
+
+.menu-logo {
+    background: url(../images/oasis-logo.png) no-repeat scroll left top transparent;
+    float: left;
+    height: 90px;
+    width: 218px;
+}
+.menu-logo span {
+    display: none;
+}
+.menu-links {
+    float: right;
+}
+.menu-links li {
+    float: left;
+    height: 34px;
+    margin: 29px 2px 0 0;
+}
+.menu-links li a {
+    color: #ffffff;
+    font-family: Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 34px;
+    text-shadow: 0 -2px 1px #1d1d1d;
+}
+
+.menu-links li a:hover {
+    color: #d0dff5;
+}
+
+.menu-m {
+	background: repeat-x scroll left top transparent;
+    float: left;
+    height: 34px;
+    padding: 1px 15px 0 15px;
+}
+
+.menu-link-sel .menu-m {
+	background: none repeat scroll 0 0 #3e4141;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 2px #2b2b2b inset;
+}
+
+.menu-link-sel .menu-m a {
+    color: #d0dff5;
+    cursor: pointer;
+    text-shadow: 0 -1px 1px #050303;
+}
+
+.menu-m a:hover {cursor:pointer;}
+
+/* second levenl */
+#has-sub:hover ul {
+  display: block;
+  background-color:#222222;
+}
+#has-sub ul {
+	border-radius: 6px;
+    display: none;
+    position: absolute;
+    text-align: center;
+    top: 66px;
+    width: 250px;
+  	background-color:#222222;
+	padding:5px;
+	margin-top:-2px;
+	border:#EEE 1px solid;
+}
+
+#has-sub ul img {
+	float:left;
+    margin-left: 12px;
+    margin-top: -11px;
+}
+	
+#has-sub ul li {
+    float: left;
+    height: 26px;
+    margin: -2px 1px 1px;
+    text-align: center;
+}
+#has-sub ul li a {
+    border-top: 0 none;
+    display: block;
+    float: left;
+    font-size: 13px;
+    height: auto;
+    line-height: 120%;
+    padding-left: 5px;
+    padding-top: 5px;
+    text-align: center;
+    text-shadow: none;
+}
+
+#has-sub ul li a:hover {cursor:pointer;}
+
+#has-sub ul li a span {float:left;}
+
+/* mapping */
+#has-sub ul#mapping {
+	width:120px;
+}
+
+#has-sub ul#otherresults {
+	width:180px;
+}
+
+#has-sub ul#otherresults img {margin-left:25px;}
+
+
+/*** content ***/
+
+#content {
+	margin-left:auto;
+	margin-right:auto;
+	width:1200px;
+	overflow:auto;
+	margin-top:8px;
+}
+
+/* 
+ * Body Styles (clean)
+ * 
+ * */
+
+body, td, th, .bod, font, p, h1, h2, h3, h4, h5, h6 {
+    color: #535353;
+    font: 13px Arial,verdana,sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+	background: linear-gradient(to right, #f2f6fc, #bfd3f2) repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+
+:focus {
+    outline: 0 none;
+}
+
+form {
+    margin: 0;
+    padding: 0;
+}
+b, strong {
+    font-weight: bold;
+}
+img {
+    border: 0 none;
+}
+a {
+    color: #09f;
+    text-decoration: none;
+}
+a:hover {
+    color: #f08135;
+    text-decoration: none;
+}
+h1, h2, h3 {
+    font-family: Helvetica,Arial,sans-serif;
+}
+
+ul {
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+}
+
+p.title {
+	float:left;
+	margin:0px;
+	padding:5px 20px;
+	width:860px;
+	background: linear-gradient(to bottom, #4D4C4C, #111111) repeat scroll 0 0 rgba(0, 0, 0, 0);
+	color:#fff;
+	margin-bottom:20px;
+	border-radius:6px;
+}
+
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers:
+ * http://juicystudio.com/article/screen-readers-display-none.php
+ */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
+
+
+
+
+/*** content ***/
+
+p.post-title {text-align:justify;}
+
+#content table.results {
+	float:right;
+	width:829px;
+	margin-top:40px;
+	border:none;
+}
+
+#content table.results tr, #content table.results tr td {float:left; padding:0px; font-size:12px; text-align:center;}
+#content table.results tr {padding:0px;}
+#content table.results tr td {padding-top:10px; padding-bottom:10px; border:#fff 1px solid;}
+#content table.results tr {background-color:#fff;}
+#content table.results tr:hover {background-color:#ddd;}
+
+#content table.results tr.titles {
+	background: linear-gradient(to bottom, #4d4c4c, #111111) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: medium none;
+    color: #fff;
+    text-align: center;
+width: 789px;
+}
+
+#content table.results tr.titles td {padding-bottom:4px; padding-bottom:4px; border:none; color:#fff;}
+
+#content table.results tr.titles td.sample,
+#content table.results tr td.sample {width:400px;}
+
+#content table.results tr.titles td.trimmed,
+#content table.results tr td.trimmed {width:130px; }
+
+#content table.results tr.titles td.reads,
+#content table.results tr td.reads {width:140px;}
+
+#content table.results tr.titles td.mapped,
+#content table.results tr td.mapped {width:118px;}
+
+#content table.results tr.titles td.counts,
+#content table.results tr td.counts {width:224px; padding-top:22px;}
+
+
+/* display table results */
+
+#content p.links-show {
+	float:left;
+	width:1188px;
+	padding-left:12px;
+	padding-top:15px;
+	padding-bottom:15px;
+	margin-bottom:40px;
+	margin-top:30px;
+	background:linear-gradient(to bottom, #4D4C4C, #111111) repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+
+#content p.links-show a {
+	float:left;
+	margin-right:40px;
+	width:150px;
+	padding-top:7px;
+	padding-bottom:6px;
+	color:#000;
+	text-align:center;
+	text-decoration:none;
+	
+	background: none repeat scroll 0 0 #ccc;
+    border-radius: 10px;
+	box-shadow: 1px 1px 1px 1px #000 inset;
+}
+
+#content p.links-show a:hover {
+	background-color:#4B4B4B;
+	color:#fff;
+}
+	
+
+#content #qcresults {
+  display:block;
+}
+
+
+#content #pngresults {
+	display:none;
+}
+
+#content #description {
+	display:none;
+	float:left;
+	width:100%;
+	text-align:justify;
+	margin-bottom:40px;
+}
+
+#content #description p {float:left; line-height:16px; padding-top:20px;}
+
+#content #description p a {color:#09F; text-decoration:none;}
+
+#content #description p span.title-description {
+    background-color: #ccc;
+    border-bottom: 1px solid #09f;
+    color: #000;
+    float: left;
+    padding: 5px 60px 4px;
+    text-align: center;
+    width: auto;
+	min-width:120px;
+}
+
+#content #description p span.image-descrip {
+	float:left;
+	background-color:#EEE;
+	text-align:center;
+	max-width:200px;
+	padding:20px;
+	margin-top:0px;
+	padding-bottom:5px;
+	font-size:11px;
+	color:#AAA;
+	margin-right:40px;
+}
+
+#content #description p span.image-descrip img {padding-bottom:8px; max-width:200px;}
+
+
+/* end tables resul */
+
+
+
+#content table.results-png {
+	float:left;
+	width:100%;
+	border:none;
+	
+}
+
+#content table.results-png tr, #content table.results-png tr td {float:left; padding:0px; font-size:14px; text-align:center;}
+
+
+#content table.results-png tr.pngs {float:left; width:1096px; margin-top:0px;padding-left:50px; margin-bottom:20px;}
+
+#content table.results-png tr.pngs td {
+    background-color: #eee;
+    border: medium none;
+    float: left;
+	margin:10px;
+    height: auto;
+	width: 199px;
+	padding:0px;
+}
+
+#content table.results-png tr.pngs td img {width:199px; height:199px;}
+
+#content table.results-png tr.pngs td span.title-png {float:left; width:100%; margin-bottom:6px; background: linear-gradient(to bottom, #4d4c4c, #111111) repeat scroll 0 0 rgba(0, 0, 0, 0); color:#fff; padding-top:3px; padding-bottom:3px; font-size:12px;}
+
+#content table.results-png tr.pngs td a {cursor:pointer;}
+
+#content a.species-png {
+    background-color: #eee;
+    border: medium none;
+    float: left;
+	margin:10px;
+    height: auto;
+	width: 219px;
+	padding:10px;
+	margin-top:40px;
+	margin-right:40px;
+	margin-left:0px;
+} 
+
+a.species-png span {float:left; width:198px; margin-bottom:6px; background: linear-gradient(to bottom, #4d4c4c, #111111) repeat scroll 0 0 rgba(0, 0, 0, 0); color:#fff; padding-top:3px; padding-bottom:3px;}
+
+a.species-png span.info-bubble {float:right; width:21px; background-color:#09F;}
+
+a.species-png span.info-bubble:hover {cursor:pointer;}
+
+#content a.species-png img {width:219px; height:219px;}
+
+#content a.species-png img:hover {cursor:pointer}
+
+
+.fadebox {
+	display: none;
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	z-index:1001;
+	-moz-opacity: 0.8;
+	opacity:.80;
+	filter: alpha(opacity=80);
+}
+.overbox {
+	display: none;
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	width: 100%;
+	height: 130%;
+	z-index:1002;
+	overflow: auto;
+}
+
+img.grande {min-width:600px; min-height:600px; max-width:600px; max-height:440px; float:none; border:#fff 10px solid;}
+
+img.mediano {min-width:460px; min-height:auto; max-width:460px; max-height:360px; float:none; border:#fff 10px solid;}
+
+.overbox p {text-align:center; position:relative; z-index:2000; margin-top:10%; margin-left:auto; margin-right:auto; width:40%; background-color:#fff;}
+.overbox p a {color:#fff;}
+#fade a,#fadedos a,#fadetres a,#fadecuatro a,#fadecinco a,#fadeseis a  {width:100%; height:100%; float:left; cursor: default;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*** speech bubble rna seq analysis***/
+
+
+#speech-bubble {
+    background-color: #0099ff;
+	color:#fff;
+    border: 1px solid #C8C8C8;
+    border-radius: 5px;
+    margin-left: -40px;
+    padding: 20px;
+    position: absolute;
+    text-align: center;
+    width: 280px;
+	height:auto;
+	display:none;
+	font-size:11px;
+	top:500px;
+}
+
+#shownovelmirna{display:none;}
+
+#summary{
+     border-radius: 25px;
+     background-color: #C0C0C0;
+    width: 110px;
+    padding-left: 10;
+	color: rgb(0, 0, 0);
+    background-color: rgb(208, 223, 245);
+	position: fixed;
+cursor:pointer;
+	
+}
+#summary li{
+	margin: 10px 0
+}
+
+#id_dataset p{
+	text-align: center;
+    font-size: x-large;
+	font-weight: bold;
+   margin-top: 10px;
+}

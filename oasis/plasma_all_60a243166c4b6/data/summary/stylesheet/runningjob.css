@@ -1,0 +1,103 @@
+html {
+  text-align: center;
+}
+
+body {
+    background: linear-gradient(to right, #f2f6fc, #bfd3f2) repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+
+table{
+	border: 2px solid #FFFFFF;
+	    text-align: center;
+    width: 100%;
+}
+
+td{
+	border: 2px solid #FFFFFF;
+	padding:2px;
+}
+
+
+#srna_detection,#novel_mirna_prediction,#other_mirna_expression,#send,#pipeline_end{
+    background-color: lightgrey;
+    width: 113px;
+    padding: 16px;
+    border: 2px solid black;
+    margin: 25px;
+   float: left;
+	box-shadow: 10px 10px 5px #888888;
+border-radius: 20px;	
+height: 100px;
+}
+#pipeline_end{
+	width: 200px;
+}
+
+.step_wait{
+	opacity: 0.4;
+	filter: alpha(opacity=60);
+}
+nav {
+    background:url(../images/background.png) repeat-x scroll center top transparent;
+    height: 86px;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+#menu-in {
+    background: no-repeat scroll center top transparent;
+    height: 86px;
+    margin: 0 auto;
+    padding: 0 10px 0 9px;
+    width: 961px;
+}
+
+.menu-logo {
+    background: url(../images/oasis-logo.png) no-repeat scroll left top transparent;
+    float: left;
+    height: 90px;
+    width: 217px;
+}
+.menu-logo span {
+    display: none;
+}
+.menu-links {
+    float: right;
+}
+.menu-links li {
+    float: left;
+    height: 34px;
+    margin: 29px 2px 0 0;
+}
+.menu-links li a {
+    color: #ffffff;
+    font-family: Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 34px;
+    text-shadow: 0 -2px 1px #1d1d1d;
+        text-decoration:none;
+}
+
+.menu-links li a:hover {
+    color: #d0dff5;
+        cursor:pointer;
+}
+
+.menu-m {
+        background: repeat-x scroll left top transparent;
+    float: left;
+    height: 34px;
+    padding: 1px 15px 0 15px;
+}
+.menu-link-sel .menu-m {
+        background: none repeat scroll 0 0 #3e4141;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 2px #2b2b2b inset;
+}
+
+.menu-link-sel .menu-m a {
+    color: #d0dff5 !important;
+    cursor: pointer;
+    text-shadow: 0 -1px 1px #050303;
+}

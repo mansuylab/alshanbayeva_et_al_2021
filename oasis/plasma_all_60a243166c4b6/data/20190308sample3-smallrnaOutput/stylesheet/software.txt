@@ -1,0 +1,10 @@
+version=1.7.1;tool=Cutadapt;tool=cutadapt; -a=GATCGGAAGAGCACACGTCTGAACTCCAGTCAC, -m=15, -M=32
+version=v0.10.1;tool=FastQC;
+version=2.4.1d;tool=STAR;tool=STAR_2.4.1d; --genomeDir=/home/vsac/database2/mm10/smallrna/mirna/star, --alignIntronMax=1, --outFilterMatchNmin=15, --outFilterScoreMinOverLread=0, --outFilterMatchNminOverLread=0
+version=v1.4.6;tool=featureCounts;tool=featureCounts
+version=2.0.0.5;tool=miRDeep2;
+version=Mirbase version 21;database=miRNA;release date: 2014-6-22
+version=piRNAbank V.2;database=piRNA;
+version=Ensembl v84;database=snRNA;
+version=Ensembl v84;database=snoRNA;
+version=Ensembl v84;database=rRNA;

@@ -1,0 +1,13 @@
+Sample ID	20190110sample2
+Initial number of reads	12841746
+Number of trimmed reads	12457201
+Percentage of trimmed reads	97.0%
+Number of reads too short	953606
+Number of reads too long	8040111
+Number of mapped reads	3848029
+Average read length	21.555
+Number of uniquely mapped reads	624234
+Adapter sequence	GATCGGAAGAGCACACGTCTGAACTCCAGTCAC
+Minimum read length	15
+Maximum read length	32
+Number of mismatches in the mapping step	5.00

@@ -1,0 +1,213 @@
+<html>
+
+<link rel="shortcut icon" href="data/summary/img/favicon.ico" type="image/x-icon"/>
+
+<link rel="stylesheet" href="data/summary/stylesheet/main.css" />
+
+<!-- Added by Orr -->
+<link rel="stylesheet" href="data/summary/stylesheet/local_style.css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/novus/nvd3/v1.8.1/build/nv.d3.css">
+<script src="https://d3js.org/d3.v3.min.js"></script>
+<script src="https://cdn.rawgit.com/novus/nvd3/v1.8.1/build/nv.d3.js"></script>
+<script type="text/javascript" src="data/summary/library/utils.js"></script>
+<script type="text/javascript" src="data/summary/library/local_functions.js"></script>
+<script type="text/javascript" src="data/summary/images/test.json"></script>
+
+<body onload="showQc();createPieCharts( keys_for_rna_species_layers )">
+
+<nav>
+        <div id="menu-in">
+                <a class="menu-logo" href="https://oasis.dzne.de/"><span>Oasis</span></a>
+            </div>
+        </nav>
+
+<div id="content">
+
+<noscript>
+ <div style="border: 3px solid red; margin: 4px; font-weight: bold; text-align: center">
+  <p>Dear Oasis user, please enable JavaScript in your browser. Otherwise it is not possible to display all results.</p>
+ </div>
+</noscript>    
+
+<p class="post-title">
+This is a short description of the output that you generated using the first part of the <a href="https://oasis.dzne.de/index.php" target="_blank">sRNA detection</a>. To check the status of your samples please click <a href="summary/images/runningjobs.html" target="_blank">here</a> This analysis provides you with several quality plots to check if your experiment ran successful and also supplies the input for subsequent <a href="https://oasis.dzne.de/small_rna_de.php" target="_blank">differential expression analysis (DE)</a> and <a href="https://oasis.dzne.de/small_rna_classification.php" target="_blank">classification analysis</a>
+
+
+    </br>
+</p>
+
+<div id="id_dataset">
+	<p>plasma_all_60a243166c4b6</p>
+</div>
+
+<!-- <table class="results" style="float:left;"> -->
+<table class="results" style="margin-right: 186px">	
+	<tr class="titles">
+    	<td class="sample" title="Sample name">Sample</td>
+	<td class="reads">Initial number of reads</td>
+        <td class="trimmed" title="Reads that passed the adapter trimming in total and (in percent).">% trimmed reads</td>
+        <td class="mapped" title="Reads that were aligned uniquely to a small RNA database or the genome in total and (in percent)">% of uniquely mapped reads</td>
+<!--	<td class="counts" title="Raw expression of small RNA species">Count files</td>-->
+    </tr>
+
+</table>
+
+<center>
+	
+	<!-- <a class="species-png" onClick="javascript:showLightboxSeis();"><span>All Species</span><span class="info-bubble" onMouseOver="show()" onMouseOut="out()">?</span><img src="data/summary/images/PcaSampleDistances_qc_allspecies.png"/></a>
+	<a class="species-png" onClick="javascript:showLightboxSeis();"><span>All Species</span><span class="info-bubble" onMouseOver="show()" onMouseOut="out()">?</span><div id="pca_total" style="position: relative; width: 100%; padding-bottom: 100%; float: left; height: 0;"><svg style="width: 100%; height: 100%; position: absolute; margin-left:0"></svg></div></a>
+	<div id="speech-bubble">Principal component plots are means to assess sample quality. Technically PCA shifts the coordinate system to the first and second dimensions of most variation in the data. In the best case this separates two biological conditions from each other, e.g. wt data from transgenic data. PCA is especially helpful to identify switched labels, e.g. wrong genotyping of samples, or in general outliers that would harm your statistical analysis. In case you do detect outliers you can try to take them out of the differential expression analysis to obtain better results.</div>
+	-->
+	<iframe src="data/summary/images/summaryStatistics.html" id="frame-table" style="width:832px; height:auto; min-height:210px; border:none;"> </iframe>
+	
+</center>
+    
+<!--  Links to show the information  -->
+
+<p class="links-show">
+
+	<a href="#" onClick="showQc()" id="showqc">Quality control</a>
+	
+	<a href="#" onClick="showPngs()" id="showtables">Show other PCA plots</a>
+
+	<a href="#" onClick="showDescription()" id="showdescription">Description</a>
+	
+	<a href="#" onClick="showNovelMirna()" id="shownovel">Novel miRNA</a>
+</p>
+
+<div class="results-qc" id="qcresults" style="width:100%; margin-bottom:20px; overflow: hidden;">
+
+	<div id="summary">
+	<ul>
+	<li><a href="#pca_total">PCA all species</a></li>
+	<li><a href="#trimming">Trimmed reads</a></li>
+	<li><a href="#counting">Reads per species</a></li>
+	<li><a href="#mapping">Mapped reads</a></li></ul>
+	</div>
+    
+    <div class="modulePCA" id="pca_total" class="module.body"><h1 style="font-size:20px"><b>PCA all species</b></h1><svg style='height:400px; width: 700px;margin: auto;'> </svg></div>
+ 
+    <div class="module" id="trimming" class="module.body"><h1 style="font-size:20px"><b>Trimmed reads</b></h1><svg></svg></div>
+ 
+    <div class="module" id="counting" class="module.body"><h1 style="font-size:20px"><b>Reads per species (%)</b></h1><svg></svg></div>
+ 
+    <div class="module" id="mapping" class="module.body"><h1 style="font-size:20px"><b>Mapped reads</b></h1><svg></svg></div>
+
+    <div class="module" id="pie_charts_div" class="module.body"><h1 style="font-size:20px"><b>Read characteristics</b></h1>
+      <section id="oasis_pie_chart_toggle">
+        <form action="">
+           <label><input type="radio" name="data_selection" checked="checked" onchange="createPieCharts( keys_for_rna_species_layers )"> RNA species</label>
+           <label><input type="radio" name="data_selection" onchange="createPieCharts( keys_for_rna_reads_layers )"> Read mapping</label>
+        </form>
+      </section>
+      <div id="oasis-d3-multilayer-pie-charts-container"></div>
+    </div>
+</div>
+
+<table class="results-png" id="pngresults">
+  
+    <tr class="pngs">
+    
+    	<td><span class="title-png">miRNA</span><a onClick="javascript:showLightbox();"><img src="data/summary/images/PcaSampleDistances_qc_mirna.png"></a></td>
+        <td><span class="title-png">piRNA</span><a onClick="javascript:showLightboxDos();"><img src="data/summary/images/PcaSampleDistances_qc_piwirna.png"></a></td>
+        <td><span class="title-png">snoRNA</span><a onClick="javascript:showLightboxTres();"><img src="data/summary/images/PcaSampleDistances_qc_snorna.png"></a></td>
+        <td><span class="title-png">snRNA</span><a onClick="javascript:showLightboxCuatro();"><img src="data/summary/images/PcaSampleDistances_qc_snrna.png"></a></td>
+        <td><span class="title-png">rRNA</span><a onClick="javascript:showLightboxCinco();"><img src="data/summary/images/PcaSampleDistances_qc_rrna.png"></a></td>
+
+    
+    </tr>
+
+</table>
+
+<div id="description">
+<embed src="data/summary/stylesheet/srna_output.pdf" width=100% height=1000px>
+</div>
+
+<div id="shownovelmirna">
+	
+    <p style="float:left; width:100%; margin-bottom:20px;">
+	The miRNA prediction allows the user to detect novel miRNAs and use them in the differential expression (DE) analysis and in the classification tool.<br><br>
+
+The prediction is done in the total data (i.e., all the input samples are merged into a unique file containing the total reads) and it is executed by <a href="http://www.ncbi.nlm.nih.gov/pubmed/18392026" target="_blank">mirdeep2 software</a>. <br><br>
+
+Mirdeep2 runs with the default parameters except by the minimum read depth (-a). This parameter is internally automatically computed according to the total number of uniquely mapped reads. This is chosen in order to obtain a ratio of 80% of true positive and a 80% recall. This step also reduces the running time by reducing the number of genome regions to make predictions.<br><br>
+
+The results can be visualized below and it shows detailed information about each predicted miRNA, including prediction scores, total mapped reads, similarity with another species miRNA, etc. Each predicted structure can be viewed by clicking in the <i>provisional id</i> link. <br><br>
+
+<b>    Note : Only predicted miRNA's that have miRDeep2-score >10, have no rfam alert, significant-randfold-p-value is yes and not known exon are added to the database.</b>
+        <a href="https://oasis.dzne.de/oasis2Search/searchForm.jsp" >Search Database</a>
+    </br>
+
+    
+    	<a href="data/summary/images/novel_mirna.xls">Download the output of Mirdeep2 as excel file</a><br>
+<!--		<a href="data/summary/images/novel_mirna.bed.zip">Download as bed file</a><br>
+		<a href="data/summary/images/novel_mirna.gtf.zip">Download as gtf file</a>-->
+    
+    </p>
+	
+    
+    
+    
+    <iframe src="data/summary/images/novel_mirna.html" id="frame-table" style="float:left; width:1200px; min-height:360px; height:auto; border:none;"> </iframe>
+	
+</div>
+
+<!-- style="float:left; width:1200px; min-height:360px; height:auto; border:none;" -->
+<div id="overseis" class="overbox">
+	<p><svg></p>
+    <div id="fadeseis" class="fadebox"><a href="javascript:hideLightboxSeis();"></a></div>
+</div>
+
+<!-- img 1 -->
+<div id="over" class="overbox">
+    <p><img src="data/summary/images/PcaSampleDistances_qc_mirna.png" class="grande" onClick="javascript:hideLightbox();">
+    <img src="data/summary/images/PcaSampleDistances_qc_mirna_legend.png" class="mediano" onClick="javascript:hideLightbox();">
+    </p>
+	<div id="fade" class="fadebox"><a href="javascript:hideLightbox();"></a></div>
+</div>
+
+
+<!-- img 2 -->
+<div id="overdos" class="overbox">
+    <p><img src="data/summary/images/PcaSampleDistances_qc_piwirna.png" class="grande" onClick="javascript:hideLightboxDos();">
+    <img src="data/summary/images/PcaSampleDistances_qc_piwirna_legend.png" class="mediano" onClick="javascript:hideLightboxDos();">
+    </p>
+	<div id="fadedos" class="fadebox"><a href="javascript:hideLightboxDos();"></a></div>
+</div>
+
+
+<!-- img 3 -->
+<div id="overtres" class="overbox">
+    <p><img src="data/summary/images/PcaSampleDistances_qc_snorna.png" class="grande" onClick="javascript:hideLightboxTres();">
+    <img src="data/summary/images/PcaSampleDistances_qc_snorna_legend.png" class="mediano" onClick="javascript:hideLightboxTres();">
+    </p>
+	<div id="fadetres" class="fadebox"><a href="javascript:hideLightboxTres();"></a></div>
+</div>
+
+
+<!-- img 4 -->
+<div id="overcuatro" class="overbox">
+    <p><img src="data/summary/images/PcaSampleDistances_qc_snrna.png" class="grande" onClick="javascript:hideLightboxCuatro();">
+    <img src="data/summary/images/PcaSampleDistances_qc_snrna_legend.png" class="mediano" onClick="javascript:hideLightboxCuatro();">
+    </p>
+	<div id="fadecuatro" class="fadebox"><a href="javascript:hideLightboxCuatro();"></a></div>
+</div>
+
+
+<!-- img 5 -->
+<div id="overcinco" class="overbox">
+    <p><img src="data/summary/images/PcaSampleDistances_qc_rrna.png" class="grande" onClick="javascript:hideLightboxCinco();">
+    <img src="data/summary/images/PcaSampleDistances_qc_rrna_legend.png" class="mediano" onClick="javascript:hideLightboxCinco();">
+    </p>
+	<div id="fadecinco" class="fadebox"><a href="javascript:hideLightboxCinco();"></a></div>
+</div>
+
+
+
+
+
+
+
+</div>
+
+</body></html>

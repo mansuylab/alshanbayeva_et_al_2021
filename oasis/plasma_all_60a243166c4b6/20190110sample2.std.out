@@ -1,0 +1,37 @@
+Finished processing /share/de/plasma_all_60a243166c4b6/plasma_all_60a243166c4b6/20190110sample2/20190110sample2_cat.fastq.gz with 51366984 lines containing 12841746 sequences.
+There were a total of 0 errors.
+Returning: 0 : FASTQ_SUCCESS
+UNCONDITIONAL_BIDIRECTIONAL_TRIM_LENGTH=0
+No barcode trimming requested by user
+Analysis complete for 20190110sample2-trimmed.fastq
+Analysis complete for 20190110sample2-nofilt-trimmed.fastq
+Mapping against miRNAs
+Extract unmapped reads from bam file /share/de/plasma_all_60a243166c4b6/20190110sample2-mirna.bam
+Convert bam file /share/de/plasma_all_60a243166c4b6/20190110sample2-mirna_unmapped.bam to fastq file
+Mapping the rest of the reads of sample 20190110sample2 against other sRNAs
+Extract unmapped reads from bam file /share/de/plasma_all_60a243166c4b6/20190110sample2-srna.bam
+Convert the bam file of the unmapped reads of sample 20190110sample2 to fasta
+Mapping against the reference genome and extract the unmapped reads to study the contamination
+Exract unmapped reads
+Convert the bam file of the unmapped reads mapped to the genome of sample 20190110sample2 to fasta
+Running kraken package for sample 20190110sample2
+Mapping the rest of the reads to the other mirna genomes
+Create count file
+Adding mirna to the count file /share/de/plasma_all_60a243166c4b6/plasma_all_60a243166c4b6/20190110sample2/20190110sample2_allspeciesCounts.txt
+Adding pirna to the count file /share/de/plasma_all_60a243166c4b6/plasma_all_60a243166c4b6/20190110sample2/20190110sample2_allspeciesCounts.txt
+Adding snorna to the count file /share/de/plasma_all_60a243166c4b6/plasma_all_60a243166c4b6/20190110sample2/20190110sample2_allspeciesCounts.txt
+Adding snrna to the count file /share/de/plasma_all_60a243166c4b6/plasma_all_60a243166c4b6/20190110sample2/20190110sample2_allspeciesCounts.txt
+Adding rrna to the count file /share/de/plasma_all_60a243166c4b6/plasma_all_60a243166c4b6/20190110sample2/20190110sample2_allspeciesCounts.txt
+/share/de/plasma_all_60a243166c4b6/plasma_all_60a243166c4b6/20190110sample2/20190110sample2-smallrnaOutput/mapping/20190110sample2-Log.final.out
+NUMER_READS:12841746
+UNIQUE_MAPPED_READS=624234
+MULTIPLE_MAPPED_READS=88270
+[1] "/share/de/plasma_all_60a243166c4b6/plasma_all_60a243166c4b6/20190110sample2/Sample_readsR.log"
+[1] "/share/de/plasma_all_60a243166c4b6/plasma_all_60a243166c4b6/20190110sample2/Sample_smallrnaR.log"
+[1] "/share/de/plasma_all_60a243166c4b6/plasma_all_60a243166c4b6/20190110sample2/Sample_trimR.log"
+[1] "/share/de/plasma_all_60a243166c4b6/plasma_all_60a243166c4b6/20190110sample2/Sample_starR.log"
+[1] "numberReads"
+[1] "trim"
+[1] "map"
+[1] "smallRNA"
+Sample 20190110sample2 finished with no errors
