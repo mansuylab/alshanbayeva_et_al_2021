@@ -759,14 +759,14 @@ data_d <- ldply(lapply(files[-2], function(x){
 
 rownames(data_d) <- data_d$Genes
 
-mm <- model.matrix(~0+Group, data=meta)
+mm <- model.matrix(~0+group, data=meta)
 y <- DGEList(counts = data_d[,-c(1:2)])
 y <- calcNormFactors(y)
 cpm <- cpm(y, normalized.lib.sizes = T, log = T)
 # rownames(cpm) <- data_d[,2]
 
 # cpm <- t(scale(t(cpm)))
-re <- RUVSeq::RUVs(cpm, cIdx=row.names(cpm), k=1, scIdx = RUVSeq::makeGroups(meta$Group), isLog = TRUE)
+re <- RUVSeq::RUVs(cpm, cIdx=row.names(cpm), k=1, scIdx = RUVSeq::makeGroups(meta$group), isLog = TRUE)
 ### add the variable (suppose I have only one) to the colData dataframe:
 meta$SV1 <- re$W[,1]
 mm <- model.matrix(~SV1+group, data=meta)

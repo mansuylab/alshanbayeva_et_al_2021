@@ -1,0 +1,1 @@
+../../../oasis/plasma_all_60a243166c4b6/data/counts/species/20190110sample11_rrnaCounts.txt
