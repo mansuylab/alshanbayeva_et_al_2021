@@ -1,0 +1,17 @@
+	MS28F1_sample2	MS28F1_sample3	MS28F1_sample4	MS28F1_sample5	MS28F1_sample6	MS28F1_sample7	MS28F1_sample8	MS28F1_sample9	MS28F1_sample11	MS28F1_sample14
+mm9_circ_010964	4	16	28	21	53	27	33	8	9	19
+mm9_circ_009548	0	1	0	0	0	0	0	0	0	0
+mm9_circ_018840	0	1	0	0	0	0	0	0	0	0
+mm9_circ_011174	0	1	1	1	1	0	1	0	0	0
+mm9_circ_009934	0	0	1	0	0	0	0	0	0	0
+mm9_circ_018654	0	0	0	1	3	0	0	0	1	0
+mm9_circ_004976	0	0	0	1	1	0	0	0	0	0
+mm9_circ_013905	0	0	0	0	1	0	0	0	0	0
+mm9_circ_000807	0	0	0	0	1	0	0	0	0	0
+mm9_circ_007087	0	0	0	0	1	0	0	0	0	0
+mm9_circ_013120	0	0	0	0	0	1	0	0	0	0
+mm9_circ_006435	0	0	0	0	0	0	0	1	0	0
+mm9_circ_013331	0	0	0	0	0	0	0	1	0	0
+mm9_circ_007768	0	0	0	0	0	0	0	0.5	0	0
+mm9_circ_007233	0	0	0	0	0	0	0	0.5	0	0
+mm9_circ_004772	0	0	0	0	0	0	0	0	1	0

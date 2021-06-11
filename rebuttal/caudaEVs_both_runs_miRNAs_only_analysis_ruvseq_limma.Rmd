@@ -1,0 +1,224 @@
+---
+title: "caudaEVs_both_runs_miRNAs_only_analysis"
+author: "anar alshanbayeva"
+date: "5/26/2021"
+output: html_document
+---
+
+```{r , message=FALSE, warning=FALSE }
+library(biomaRt) 
+library(dplyr)
+library(tximport)
+library(tximeta)
+library(SingleCellExperiment)
+library(edgeR)
+library(ggplot2)
+library(msigdbr)
+library(Rsubread) 
+library(limma)
+library(ggplot2)
+library(DESeq2)
+library(org.Mm.eg.db)
+library(pheatmap)
+library(edgeR)
+library(reshape2)
+library(plotly)
+library(viridis)
+library(cqn)
+library(scales)
+library(pheatmap)
+library(gplots)
+library(RColorBrewer) 
+library (grDevices)
+library(plyr)
+library(biomaRt) 
+library(dplyr)
+library(tximport)
+library(tximeta)
+library(edgeR)
+library(ggplot2)
+library(msigdbr)
+library(Rsubread) 
+library(limma)
+library(ggplot2)
+library(DESeq2)
+library(org.Mm.eg.db )
+library(pheatmap)
+library(edgeR)
+library(reshape2)
+library(plotly)
+library(viridis)
+library(cqn)
+library(scales)
+library(pheatmap)
+library(gplots)
+library(RColorBrewer) 
+library (grDevices)
+library(variancePartition)
+library(edgeR)
+library(BiocParallel)
+library(readxl)
+library(plotly)
+library(EnhancedVolcano)
+library(biomaRt) 
+library(dplyr)
+library(tximport)
+library(tximeta)
+library(SingleCellExperiment)
+library(edgeR)
+library(ggplot2)
+library(msigdbr)
+library(Rsubread) 
+library(limma)
+library(ggplot2)
+library(DESeq2)
+library(org.Mm.eg.db )
+library(pheatmap)
+library(edgeR)
+library(reshape2)
+library(plotly)
+library(viridis)
+library(cqn)
+library(scales)
+library(pheatmap)
+library(gplots)
+library(RColorBrewer) 
+library (grDevices)
+library(readr)
+library(readxl)
+
+
+counts_total_run3<- read.table(file="run3_excerpt_counts/exceRpt_miRNA_ReadCounts.txt", header=TRUE, sep="", row.names=1) # Loading the counts table for each run 
+counts_total_run4<- read.table(file="run4_excerpt_counts_/exceRpt_miRNA_ReadCounts.txt", header=TRUE, sep="", row.names=1) # Loading the counts table for each run 
+
+colnames(counts_total_run4)=c("MS28F1_sample2_2","MS28F1_sample3_2","MS28F1_sample4_2","MS28F1_sample5_2","MS28F1_sample6_2","MS28F1_sample7_2","MS28F1_sample8_2","MS28F1_sample9_2","MS28F1_sample11_2","MS28F1_sample14_2")
+
+######################## COMBINE THE MATRICES FROM 2 RUNS & ASSIGN FEATURES 1 RUN DOESN'T HAVE IN THE OTHER RUN AS "NA" VALUES  ########################
+######################## COMBINE THE MATRICES FROM 2 RUNS & ASSIGN FEATURES 1 RUN DOESN'T HAVE IN THE OTHER RUN AS "NA" VALUES  ########################
+######################## COMBINE THE MATRICES FROM 2 RUNS & ASSIGN FEATURES 1 RUN DOESN'T HAVE IN THE OTHER RUN AS "NA" VALUES  ########################
+
+mlist<-list(counts_total_run3,counts_total_run4)
+df <- mlist[[1]]
+for (i in 2:length(mlist)) {
+  df <- merge(df, mlist[[i]], by = "row.names", all=T)
+  rownames(df) <- df$Row.names
+  df <- df[ , !(names(df) %in% "Row.names")]  
+}
+
+######################## Specifying the group & batch while filterByExprs() --> & following with DEA analysis ########################
+######################## Specifying the group & batch while filterByExprs() --> & following with DEA analysis ########################
+######################## Specifying the group & batch while filterByExprs() --> & following with DEA analysis ########################
+counts_total<-df
+(d <- data.frame(row.names = colnames(counts_total),group=c("MSUS","CTRL","MSUS","CTRL","MSUS","CTRL","MSUS","CTRL","CTRL","MSUS","MSUS","CTRL","MSUS","CTRL","MSUS","CTRL","MSUS","CTRL","CTRL","MSUS"),batch=c(1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2) ))
+counts_total[is.na(counts_total)] <- 0 ### the "NA" values all the matrix are substituted with 0s. 
+dds <- calcNormFactors(DGEList(counts_total), method="TMM")
+dds$samples$group<-c("MSUS","CTRL","MSUS","CTRL","MSUS","CTRL","MSUS","CTRL","CTRL","MSUS","MSUS","CTRL","MSUS","CTRL","MSUS","CTRL","MSUS","CTRL","CTRL","MSUS")  ### giving the group 
+dds$samples$batch<-c(1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2) ### giving the batch 
+mm <- model.matrix(~batch+group, data=d)
+mm
+dds <- dds[which(filterByExpr(dds, design=mm, min.count=20, min.prop=0.8)),] ### specifying thebatch while filtering by expression 
+
+
+en <- log1p(edgeR::cpm(dds)) # normalization by counts per million 
+
+plgINS::plPCA(en, colorBy = dds$samples$group, add.labels = FALSE, points.size = 15) 
+plgINS::plPCA(en, colorBy = dds$samples$lib.size, add.labels = FALSE, points.size = 15) 
+plgINS::plPCA(en, colorBy = dds$samples$batch, add.labels = FALSE, points.size = 15) 
+
+
+
+### Without RUVSeq: 
+mm <- model.matrix(~dds$samples$batch+dds$samples$group, data=d)
+mm
+dds <- estimateDisp(dds, mm)
+fit <- glmLRT(glmFit(dds, mm), coef = "dds$samples$groupMSUS")
+res_without_ruvseq <- as.data.frame(topTags(fit,Inf))
+head(res_without_ruvseq,n=20)
+
+hist(res_without_ruvseq)
+############################## With RUVSeq (Only with 1 SV)::: ############################## 
+############################## With RUVSeq (Only with 1 SV)::: ############################## 
+############################## With RUVSeq (Only with 1 SV)::: ############################## 
+
+re <- RUVSeq::RUVs(en, cIdx=row.names(en), k=1, scIdx = RUVSeq::makeGroups(d$group), isLog = TRUE)
+### add the variable (suppose I have only one) to the colData dataframe:
+d$SV1 <- re$W[,1]
+d$SV1
+
+mm <- model.matrix(~d$SV1+dds$samples$batch+dds$samples$group, data=d)
+mm
+
+dds <- estimateDisp(dds, mm)
+fit <- glmLRT(glmFit(dds, mm), coef = "dds$samples$groupMSUS")
+res_with_ruvseq1 <- as.data.frame(topTags(fit,Inf))
+head(res_with_ruvseq1,n=20)
+
+plgINS::plPCA(re$normalizedCounts, colorBy = d$group, add.labels = FALSE, points.size = 15)
+plgINS::plPCA(re$normalizedCounts, colorBy = dds$samples$lib.size, add.labels = FALSE, points.size = 15) 
+plgINS::plPCA(re$normalizedCounts, colorBy = dds$samples$batch, add.labels = FALSE, points.size = 15) 
+hist(res_with_ruvseq1)
+
+############################## With RUVSeq (Only with 2 SVs)::: ############################## 
+############################## With RUVSeq (Only with 2 SVs)::: ############################## 
+############################## With RUVSeq (Only with 2 SVs)::: ############################## 
+re <- RUVSeq::RUVs(en, cIdx=row.names(en), k=2, scIdx = RUVSeq::makeGroups(d$group), isLog = TRUE)
+### add the variable (suppose I have only one) to the colData dataframe:
+d$SV1 <- re$W[,1]
+d$SV2 <- re$W[,2]
+
+mm <- model.matrix(~d$SV1+d$SV2+dds$samples$group, data=d)
+dds <- estimateDisp(dds, mm)
+fit <- glmLRT(glmFit(dds, mm), coef = "dds$samples$groupMSUS")
+res_with_ruvseq2 <- as.data.frame(topTags(fit,Inf))
+head(res_with_ruvseq2,n=20)
+
+plgINS::plPCA(re$normalizedCounts, colorBy = d$group, add.labels = FALSE,points.size = 15)
+plgINS::plPCA(re$normalizedCounts, colorBy = dds$samples$lib.size, add.labels = FALSE, points.size = 15) 
+plgINS::plPCA(re$normalizedCounts, colorBy = dds$samples$batch, add.labels = FALSE, points.size = 15) 
+
+hist(res_with_ruvseq2)
+res_with_ruvseq2$LR<-rownames(res_with_ruvseq2)
+
+write_csv(res_with_ruvseq2,path="/Users/alshanbayeva/Desktop/caudaEVs_story_manuscript/deepak/raw_data_excerpt/the_final_code_for_submission/res_with_ruvseq2.csv")
+
+
+
+############################## Trying Limma on the same ############### ############### 
+##############################  Trying Limma on the same ############### ##############
+############################## Trying Limma on the same ############### ############### 
+
+metadata <- read_excel("/Users/alshanbayeva/data_analysis_september/metadata_caudaEVs.xlsx")
+# apply duplicateCorrelation is two rounds
+(design = model.matrix( ~batch+group, metadata))
+vobj_tmp = voom(dds, design, plot=TRUE)
+dupcor <- duplicateCorrelation(vobj_tmp,design,block=metadata$Individual)
+
+# run voom considering the duplicateCorrelation results
+# in order to compute more accurate precision weights
+# Otherwise, use the results from the first voom run
+vobj = voom(dds, design, plot=TRUE, block=metadata$Individual, correlation=dupcor$consensus.correlation)
+
+# Estimate linear mixed model with a single variance component
+# Fit the model for each gene, 
+dupcor <- duplicateCorrelation(vobj, design, block=metadata$Individual) #here the original vobj_tmp was used instead of vobj
+
+# But this step uses only the genome-wide average for the random effect
+fitDupCor <- lmFit(vobj, design, block=metadata$Individual, correlation=dupcor$consensus.correlation)
+
+# Fit Empirical Bayes for moderated t-statistics
+fitDupCor <- eBayes( fitDupCor )
+dealimma <- topTable(fitDupCor, number=50)
+dealimma 
+
+dealimma$P.Value<-rownames(dealimma)
+write_csv(dealimma,path="/Users/alshanbayeva/Desktop/caudaEVs_story_manuscript/deepak/raw_data_excerpt/the_final_code_for_submission/dealimma_2runs_miRNAsonly.csv")
+#EnhancedVolcano(dealimma,  lab = rownames(dealimma),  x = 'F',  y = 'adj.P.Val')
+
+
+
+
+
+
+
+```
+

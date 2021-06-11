@@ -1,0 +1,47 @@
+sushi_app	ExceRptApp
+cores	8
+ram	30
+scratch	100
+node	""
+queue	""
+process_mode	SAMPLE
+samples	MS28F1_sample2,MS28F1_sample3,MS28F1_sample4,MS28F1_sample5,MS28F1_sample6,MS28F1_sample7,MS28F1_sample8,MS28F1_sample9,MS28F1_sample11,MS28F1_sample14
+refBuild	Mus_musculus/UCSC/mm10
+ENDOGENOUS_LIB_PRIORITY	miRNA,tRNA,piRNA,gencode,circRNA
+TRIM_N_BASES_5p	0
+TRIM_N_BASES_3p	0
+MIN_READ_LENGTH	18
+QFILTER_MIN_QUAL	20
+QFILTER_MIN_READ_FRAC	80
+RANDOM_BARCODE_LENGTH	0
+RANDOM_BARCODE_LOCATION	-5p -3p
+KEEP_RANDOM_BARCODE_STATS	false
+STAR_alignEndsType	Local
+STAR_outFilterMatchNmin	18
+STAR_outFilterMatchNminOverLread	0.9
+STAR_outFilterMismatchNmax	1
+REMOVE_LARGE_INTERMEDIATE_FILES	true
+cmdOptions	JAVA_RAM=10G
+mail	""
+ExcerptVersion	Tools/exceRpt/5.0.0
+starVersion	Aligner/STAR/2.6.1e
+
+
+
+
+
+
+Name	Condition [Factor]	Read1 [File]	Species	FragmentSize [Characteristic]	SampleConc [Characteristic]	Tube [Characteristic]	Sample Id [B-Fabric]	PlatePosition [Characteristic]	LibConc_100_800bp [Characteristic]	LibConc_qPCR [Characteristic]	RIN [Characteristic]	Adapter1	strandMode	LibraryPrepKit	EnrichmentMethod	InputAmount [Characteristic]	Order Id [B-Fabric]	PlateName [Characteristic]	Read Count
+MS28F1_sample2	NA	p2981/HiSeq2500_20190308_RUN510_o5134_DataDelivery/20190308.A-MS28F1_sample2_R1.fastq.gz	Mus musculus (house mouse)	28	0.5	p2981_5134/1	bfs_189490	NA	2.68	0	0	GATCGGAAGAGCACACGTCTGAACTCCAGTCAC	NA	NEBnext smRNA	None	NA	5134	p2981_o5134	5787054
+MS28F1_sample3	NA	p2981/HiSeq2500_20190308_RUN510_o5134_DataDelivery/20190308.A-MS28F1_sample3_R1.fastq.gz	Mus musculus (house mouse)	28	0.5	p2981_5134/2	bfs_189491	NA	8.77	0	0	GATCGGAAGAGCACACGTCTGAACTCCAGTCAC	NA	NEBnext smRNA	None	NA	5134	p2981_o5134	4669919
+MS28F1_sample4	NA	p2981/HiSeq2500_20190308_RUN510_o5134_DataDelivery/20190308.A-MS28F1_sample4_R1.fastq.gz	Mus musculus (house mouse)	28	0.5	p2981_5134/3	bfs_189492	NA	1.8	0	0	GATCGGAAGAGCACACGTCTGAACTCCAGTCAC	NA	NEBnext smRNA	None	NA	5134	p2981_o5134	6813301
+MS28F1_sample5	NA	p2981/HiSeq2500_20190308_RUN510_o5134_DataDelivery/20190308.A-MS28F1_sample5_R1.fastq.gz	Mus musculus (house mouse)	28	0.5	p2981_5134/4	bfs_189493	NA	8.27	0	0	GATCGGAAGAGCACACGTCTGAACTCCAGTCAC	NA	NEBnext smRNA	None	NA	5134	p2981_o5134	3012027
+MS28F1_sample6	NA	p2981/HiSeq2500_20190308_RUN510_o5134_DataDelivery/20190308.A-MS28F1_sample6_R1.fastq.gz	Mus musculus (house mouse)	28	0.5	p2981_5134/5	bfs_189494	NA	3.5	0	0	GATCGGAAGAGCACACGTCTGAACTCCAGTCAC	NA	NEBnext smRNA	None	NA	5134	p2981_o5134	3178349
+MS28F1_sample7	NA	p2981/HiSeq2500_20190308_RUN510_o5134_DataDelivery/20190308.A-MS28F1_sample7_R1.fastq.gz	Mus musculus (house mouse)	28	0.5	p2981_5134/6	bfs_189495	NA	6.5	0	0	GATCGGAAGAGCACACGTCTGAACTCCAGTCAC	NA	NEBnext smRNA	None	NA	5134	p2981_o5134	5443078
+MS28F1_sample8	NA	p2981/HiSeq2500_20190308_RUN510_o5134_DataDelivery/20190308.A-MS28F1_sample8_R1.fastq.gz	Mus musculus (house mouse)	28	0.5	p2981_5134/7	bfs_189496	NA	3.57	0	0	GATCGGAAGAGCACACGTCTGAACTCCAGTCAC	NA	NEBnext smRNA	None	NA	5134	p2981_o5134	7247536
+MS28F1_sample9	NA	p2981/HiSeq2500_20190308_RUN510_o5134_DataDelivery/20190308.A-MS28F1_sample9_R1.fastq.gz	Mus musculus (house mouse)	28	0.5	p2981_5134/8	bfs_189497	NA	6.86	0	0	GATCGGAAGAGCACACGTCTGAACTCCAGTCAC	NA	NEBnext smRNA	None	NA	5134	p2981_o5134	5004006
+MS28F1_sample11	NA	p2981/HiSeq2500_20190308_RUN510_o5134_DataDelivery/20190308.A-MS28F1_sample11_R1.fastq.gz	Mus musculus (house mouse)	28	0.5	p2981_5134/9	bfs_189498	NA	9.34	0	0	GATCGGAAGAGCACACGTCTGAACTCCAGTCAC	NA	NEBnext smRNA	None	NA	5134	p2981_o5134	1875580
+MS28F1_sample14	NA	p2981/HiSeq2500_20190308_RUN510_o5134_DataDelivery/20190308.A-MS28F1_sample14_R1.fastq.gz	Mus musculus (house mouse)	28	0.5	p2981_5134/10	bfs_189499	NA	6.4	0	0	GATCGGAAGAGCACACGTCTGAACTCCAGTCAC	NA	NEBnext smRNA	None	NA	5134	p2981_o5134	3759910
+
+
+

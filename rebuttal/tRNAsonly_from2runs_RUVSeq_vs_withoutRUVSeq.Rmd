@@ -1,0 +1,162 @@
+---
+title: "tRNAs only analysis - MSUS vs Control cauda EV small RNA-seq analysis"
+author: "Anar Alshanbayeva"
+date: "5/26/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+```{r, message=FALSE, warning=FALSE }
+
+######################## LOAD LIBRARIES ########################
+######################## LOAD LIBRARIES ########################
+######################## LOAD LIBRARIES ########################
+
+library(variancePartition)
+library(synapser)
+library(Biobase)
+library(GEOquery)
+library(GenomicRanges)
+library(RcppRoll)
+library(biomaRt)
+library(data.table)
+library(doParallel)
+library(foreach)
+library(genomation)
+library(grid)
+library(gridExtra)
+library(knitr)
+library(limma)
+library(qvalue)
+library(scales)
+
+library('variancePartition')
+library('edgeR')
+library('BiocParallel')
+library(biomaRt) 
+library(dplyr)
+library(tximport)
+library(tximeta)
+library(edgeR)
+library(ggplot2)
+library(msigdbr)
+library(Rsubread) 
+library(limma)
+library(ggplot2)
+library(DESeq2)
+library(org.Mm.eg.db )
+library(pheatmap)
+library(edgeR)
+library(reshape2)
+library(plotly)
+library(viridis)
+library(cqn)
+library(scales)
+library(pheatmap)
+library(gplots)
+library(RColorBrewer) 
+library (grDevices)
+
+
+
+######################## LOAD SAMPLES & COMBINE THE BIOTYPES COUNTS INTO 1 COUNT MATRIX ########################
+######################## LOAD SAMPLES & COMBINE THE BIOTYPES COUNTS INTO 1 COUNT MATRIX ########################
+######################## LOAD SAMPLES & COMBINE THE BIOTYPES COUNTS INTO 1 COUNT MATRIX ########################
+
+setwd("/Users/alshanbayeva/Desktop/caudaEVs_story_manuscript/deepak/raw_data_excerpt/")
+
+tRNAs_3<- read.table(file="/Users/alshanbayeva/data_analysis_september/caudaEVs_run3_ExceRpt_size_selected/caudaEVs_run3_miRNAsfirst_ExceRpt/exceRpt_tRNA_ReadCounts.txt", header=TRUE, sep="", row.names=1) # Loading the raw count matrices for each RNA biotype
+tRNAs_3 <- as.data.frame(tRNAs_3)
+counts_total_run3<-tRNAs_3
+
+
+
+tRNAs_4<- read.table(file="/Users/alshanbayeva/data_analysis_september/caudaEVs_run4_miRNAsfirst_ExceRpt/exceRpt_tRNA_ReadCounts.txt", header=TRUE, sep="", row.names=1) # Loading the raw count matrices for each RNA biotype
+tRNAs_4 <- as.data.frame(tRNAs_4)
+
+
+counts_total_run3<-tRNAs_3
+counts_total_run4<-tRNAs_4
+
+colnames(counts_total_run3)=c("MS28F1_sample11","MS28F1_sample14","MS28F1_sample2","MS28F1_sample3","MS28F1_sample4","MS28F1_sample5","MS28F1_sample6","MS28F1_sample7","MS28F1_sample8","MS28F1_sample9")
+colnames(counts_total_run4)=c("MS28F1_sample11_2","MS28F1_sample14_2","MS28F1_sample2_2","MS28F1_sample3_2","MS28F1_sample4_2","MS28F1_sample5_2","MS28F1_sample6_2","MS28F1_sample7_2","MS28F1_sample8_2","MS28F1_sample9_2")
+
+
+
+mlist<-list(counts_total_run3,counts_total_run4)
+df <- mlist[[1]]
+for (i in 2:length(mlist)) {
+  df <- merge(df, mlist[[i]], by = "row.names", all=T)
+  rownames(df) <- df$Row.names
+  df <- df[ , !(names(df) %in% "Row.names")]  
+}
+
+
+counts_total<-df
+(d <- data.frame(row.names = colnames(counts_total),group=c("G2","G1","G2","G1","G2","G1","G2","G1","G1","G2","G1","G2","G2","G1","G2","G1","G2","G1","G2","G1"),batch=c(1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2) ))
+counts_total[is.na(counts_total)] <- 0 ### the "NA" values all the matrix are substituted with 0s. 
+dds <- calcNormFactors(DGEList(counts_total), method="TMM")
+dds$samples$group<-c("G2","G1","G2","G1","G2","G1","G2","G1","G1","G2","G1","G2","G2","G1","G2","G1","G2","G1","G2","G1")  ### giving the group 
+dds$samples$batch<-c(1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2) ### giving the batch 
+mm <- model.matrix(~batch+group, data=d)
+mm
+dds <- dds[which(filterByExpr(dds, design=mm, min.count=10, min.prop=0.8)),] ### specifying thebatch while filtering by expression 
+
+
+en <- log1p(edgeR::cpm(dds)) # normalization by counts per million 
+
+
+### Differential Expression analysis without Surrogate Variable analysis ### 
+### Differential Expression analysis without Surrogate Variable analysis ### 
+### Differential Expression analysis without Surrogate Variable analysis ### 
+dds <- estimateDisp(dds, mm)
+fit <- glmLRT(glmFit(dds, mm), coef = "groupG2")
+res_without_ruvseq <- as.data.frame(topTags(fit,Inf))
+head(res_without_ruvseq,n=20)
+
+
+### This is the PCA plot of all the samples, normalized by counts-per-million, colored by treatment group ###
+plgINS::plPCA(en, colorBy = dds$samples$group, add.labels = FALSE, points.size = 15) 
+
+### This is the PCA plot of all the samples, normalized by counts-per-million, colored by library size ###
+### Note: Even after the normalization, the libraries are separated based on lib.size, without surrogate variable analysis### 
+### Therefore, Surrogate variable analysis is necessary ### 
+plgINS::plPCA(en, colorBy = dds$samples$lib.size, add.labels = FALSE, points.size = 15) 
+
+### This is the PCA plot of all the samples, normalized by counts-per-million, colored by sequencing batch ###
+### Note: Even after the normalization, the libraries are separated based on the sequencing batch, without surrogate variable analysis ###
+### Therefore, Surrogate variable analysis is necessary ### 
+plgINS::plPCA(en, colorBy = dds$samples$batch, add.labels = FALSE, points.size = 15) 
+
+
+
+
+### Differential Expression analysis with Surrogate Variable analysis, SV=1 ### 
+### Differential Expression analysis with Surrogate Variable analysis, SV=1 ### 
+### Differential Expression analysis with Surrogate Variable analysis, SV=1 ### 
+re <- RUVSeq::RUVs(en, cIdx=row.names(en), k=1, scIdx = RUVSeq::makeGroups(d$group), isLog = TRUE)
+d$SV1 <- re$W[,1] # add the variable (suppose I have only one) to the colData dataframe 
+mm <- model.matrix(~SV1+batch+group, data=d)
+dds <- estimateDisp(dds, mm)
+fit <- glmLRT(glmFit(dds, mm), coef = "groupG2")
+res_with_ruvseq1 <- as.data.frame(topTags(fit,Inf))
+head(res_with_ruvseq1,n=20)
+
+### This is the PCA plot of all the samples with Surrogate variable correction (SV=1) colored by treatment group ###
+plgINS::plPCA(re$normalizedCounts, colorBy = d$group, add.labels = FALSE)
+
+### This is the PCA plot of all the samples with Surrogate variable correction (SV=1) colored by library size ###
+### Note: We can observe that the samples are clustering more by groups & spread by counts. Libraries with high/low counts are not clustered together anymore. No effect of library size, keeping the group effect: 
+plgINS::plPCA(re$normalizedCounts, colorBy = dds$samples$lib.size, add.labels = FALSE) 
+
+### This is the PCA plot of all the samples with Surrogate variable correction (SV=1) colored by sequencing batch ###
+### Note: We can observe that the samples are corrected for sequencing batch effect:
+plgINS::plPCA(re$normalizedCounts, colorBy = dds$samples$batch, add.labels = FALSE) 
+# hist(res_with_ruvseq1)
+
+```

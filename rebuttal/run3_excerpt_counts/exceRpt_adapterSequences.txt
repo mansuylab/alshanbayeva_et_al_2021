@@ -1,0 +1,11 @@
+	adapterSeq
+MS28F1_sample2	NA
+MS28F1_sample3	NA
+MS28F1_sample4	NA
+MS28F1_sample5	NA
+MS28F1_sample6	NA
+MS28F1_sample7	NA
+MS28F1_sample8	NA
+MS28F1_sample9	NA
+MS28F1_sample11	NA
+MS28F1_sample14	NA

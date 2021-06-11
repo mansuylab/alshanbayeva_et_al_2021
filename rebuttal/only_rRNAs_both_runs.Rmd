@@ -1,0 +1,211 @@
+---
+title: "rRNAs only analysis - MSUS vs Control cauda EV small RNA-seq analysis (2 sequencing runs combined & batch-corrected with Surrogate-variable analysis)"
+"
+author: "Anar Alshanbayeva"
+date: "5/26/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+```{r, warning=FALSE, message=FALSE}
+
+######################## LOAD LIBRARIES ########################
+######################## LOAD LIBRARIES ########################
+######################## LOAD LIBRARIES ########################
+
+library(variancePartition)
+library(synapser)
+library(Biobase)
+library(GEOquery)
+library(GenomicRanges)
+library(RcppRoll)
+library(biomaRt)
+library(data.table)
+library(doParallel)
+library(foreach)
+library(genomation)
+library(grid)
+library(gridExtra)
+library(knitr)
+library(limma)
+library(qvalue)
+library(scales)
+
+library('variancePartition')
+library('edgeR')
+library('BiocParallel')
+library(biomaRt) 
+library(dplyr)
+library(tximport)
+library(tximeta)
+library(edgeR)
+library(ggplot2)
+library(msigdbr)
+library(Rsubread) 
+library(limma)
+library(ggplot2)
+library(DESeq2)
+library(org.Mm.eg.db )
+library(pheatmap)
+library(edgeR)
+library(reshape2)
+library(plotly)
+library(viridis)
+library(cqn)
+library(scales)
+library(pheatmap)
+library(gplots)
+library(RColorBrewer) 
+library (grDevices)
+library(readr)
+library(readxl)
+
+
+### Get the rRNA counts of all samples & merge them to get 1 table with all counts (in the same order as all other biotype counts):###
+### Get the rRNA counts of all samples & merge them to get 1 table with all counts (in the same order as all other biotype counts):###
+### Get the rRNA counts of all samples & merge them to get 1 table with all counts (in the same order as all other biotype counts):###
+rRNAs_2<- read.table(file="/Users/alshanbayeva/Desktop/caudaEVs_story_manuscript/deepak/counts/rRNA_counts/20190308_sample2_rrna_counts.txt", header=TRUE, sep="", row.names=1)
+rRNAs_3<- read.table(file="/Users/alshanbayeva/Desktop/caudaEVs_story_manuscript/deepak/counts/rRNA_counts/20190308_sample3_rrna_counts.txt", header=TRUE, sep="", row.names=1)
+rRNAs_4<- read.table(file="/Users/alshanbayeva/Desktop/caudaEVs_story_manuscript/deepak/counts/rRNA_counts/20190308_sample4_rrna_counts.txt", header=TRUE, sep="", row.names=1)
+rRNAs_5<- read.table(file="/Users/alshanbayeva/Desktop/caudaEVs_story_manuscript/deepak/counts/rRNA_counts/20190308_sample5_rrna_counts.txt", header=TRUE, sep="", row.names=1)
+rRNAs_6<- read.table(file="/Users/alshanbayeva/Desktop/caudaEVs_story_manuscript/deepak/counts/rRNA_counts/20190308_sample6_rrna_counts.txt", header=TRUE, sep="", row.names=1)
+rRNAs_7<- read.table(file="/Users/alshanbayeva/Desktop/caudaEVs_story_manuscript/deepak/counts/rRNA_counts/20190308_sample7_rrna_counts.txt", header=TRUE, sep="", row.names=1)
+rRNAs_8<- read.table(file="/Users/alshanbayeva/Desktop/caudaEVs_story_manuscript/deepak/counts/rRNA_counts/20190308_sample8_rrna_counts.txt", header=TRUE, sep="", row.names=1)
+rRNAs_9<- read.table(file="/Users/alshanbayeva/Desktop/caudaEVs_story_manuscript/deepak/counts/rRNA_counts/20190308_sample9_rrna_counts.txt", header=TRUE, sep="", row.names=1)
+rRNAs_11<- read.table(file="/Users/alshanbayeva/Desktop/caudaEVs_story_manuscript/deepak/counts/rRNA_counts/20190308_sample11_rrna_counts.txt", header=TRUE, sep="", row.names=1)
+rRNAs_14<- read.table(file="/Users/alshanbayeva/Desktop/caudaEVs_story_manuscript/deepak/counts/rRNA_counts/20190308_sample14_rrna_counts.txt", header=TRUE, sep="", row.names=1)
+
+merged_rrna_counts_run3 <- cbind(rRNAs_2, rRNAs_3,rRNAs_4,rRNAs_5,rRNAs_6,rRNAs_7,rRNAs_8,rRNAs_9,rRNAs_11,rRNAs_14)
+colnames(merged_rrna_counts_run3)<-c("MS28F1_sample2",  "MS28F1_sample3" , "MS28F1_sample4" , "MS28F1_sample5" , "MS28F1_sample6" , "MS28F1_sample7",  "MS28F1_sample8" , "MS28F1_sample9" , "MS28F1_sample11", "MS28F1_sample14")
+
+
+
+
+### Get the rRNA counts of all samples & merge them to get 1 table with all counts (in the same order as all other biotype counts):###
+### Get the rRNA counts of all samples & merge them to get 1 table with all counts (in the same order as all other biotype counts):###
+### Get the rRNA counts of all samples & merge them to get 1 table with all counts (in the same order as all other biotype counts):###
+rRNAs_2<- read.table(file="/Users/alshanbayeva/Desktop/caudaEVs_story_manuscript/deepak/counts/rRNA_counts/20190110_sample2_rrna_counts.txt", header=TRUE, sep="", row.names=1)
+rRNAs_3<- read.table(file="/Users/alshanbayeva/Desktop/caudaEVs_story_manuscript/deepak/counts/rRNA_counts/20190110_sample3_rrna_counts.txt", header=TRUE, sep="", row.names=1)
+rRNAs_4<- read.table(file="/Users/alshanbayeva/Desktop/caudaEVs_story_manuscript/deepak/counts/rRNA_counts/20190110_sample4_rrna_counts.txt", header=TRUE, sep="", row.names=1)
+rRNAs_5<- read.table(file="/Users/alshanbayeva/Desktop/caudaEVs_story_manuscript/deepak/counts/rRNA_counts/20190110_sample5_rrna_counts.txt", header=TRUE, sep="", row.names=1)
+rRNAs_6<- read.table(file="/Users/alshanbayeva/Desktop/caudaEVs_story_manuscript/deepak/counts/rRNA_counts/20190110_sample6_rrna_counts.txt", header=TRUE, sep="", row.names=1)
+rRNAs_7<- read.table(file="/Users/alshanbayeva/Desktop/caudaEVs_story_manuscript/deepak/counts/rRNA_counts/20190110_sample7_rrna_counts.txt", header=TRUE, sep="", row.names=1)
+rRNAs_8<- read.table(file="/Users/alshanbayeva/Desktop/caudaEVs_story_manuscript/deepak/counts/rRNA_counts/20190110_sample8_rrna_counts.txt", header=TRUE, sep="", row.names=1)
+rRNAs_9<- read.table(file="/Users/alshanbayeva/Desktop/caudaEVs_story_manuscript/deepak/counts/rRNA_counts/20190110_sample9_rrna_counts.txt", header=TRUE, sep="", row.names=1)
+rRNAs_11<- read.table(file="/Users/alshanbayeva/Desktop/caudaEVs_story_manuscript/deepak/counts/rRNA_counts/20190110_sample11_rrna_counts.txt", header=TRUE, sep="", row.names=1)
+rRNAs_14<- read.table(file="/Users/alshanbayeva/Desktop/caudaEVs_story_manuscript/deepak/counts/rRNA_counts/20190110_sample14_rrna_counts.txt", header=TRUE, sep="", row.names=1)
+
+merged_rrna_counts_run4 <- cbind(rRNAs_2, rRNAs_3,rRNAs_4,rRNAs_5,rRNAs_6,rRNAs_7,rRNAs_8,rRNAs_9,rRNAs_11,rRNAs_14)
+colnames(merged_rrna_counts_run4)<-c("MS28F1_sample2",  "MS28F1_sample3" , "MS28F1_sample4" , "MS28F1_sample5" , "MS28F1_sample6" , "MS28F1_sample7",  "MS28F1_sample8" , "MS28F1_sample9" , "MS28F1_sample11", "MS28F1_sample14")
+
+
+
+
+
+### COMBINE THE MATRICES FROM 2 RUNS & ASSIGN FEATURES 1 RUN DOESN'T HAVE IN THE OTHER RUN AS "NA" VALUES  ###
+### COMBINE THE MATRICES FROM 2 RUNS & ASSIGN FEATURES 1 RUN DOESN'T HAVE IN THE OTHER RUN AS "NA" VALUES  ###
+### COMBINE THE MATRICES FROM 2 RUNS & ASSIGN FEATURES 1 RUN DOESN'T HAVE IN THE OTHER RUN AS "NA" VALUES  ###
+mlist<-list(merged_rrna_counts_run3,merged_rrna_counts_run4)
+df <- mlist[[1]]
+for (i in 2:length(mlist)) {
+  df <- merge(df, mlist[[i]], by = "row.names", all=T)
+  rownames(df) <- df$Row.names
+  df <- df[ , !(names(df) %in% "Row.names")]  
+}
+
+### Specify the group & batch while filterByExprs() --> & following with DEA analysis ###
+### Specify the group & batch while filterByExprs() --> & following with DEA analysis ###
+### Specify the group & batch while filterByExprs() --> & following with DEA analysis ###
+counts_total<-df
+(d <- data.frame(row.names = colnames(counts_total),group=c("MSUS","Control","MSUS","Control","MSUS","Control","MSUS","Control","Control","MSUS","MSUS","Control","MSUS","Control","MSUS","Control","MSUS","Control","Control","MSUS") ))
+counts_total[is.na(counts_total)] <- 0 ### the "NA" values all the matrix are substituted with 0s. 
+dds <- edgeR::calcNormFactors(DGEList(counts_total), method="TMM")
+dds$samples$group<-c("MSUS","Control","MSUS","Control","MSUS","Control","MSUS","Control","Control","MSUS","MSUS","Control","MSUS","Control","MSUS","Control","MSUS","Control","Control","MSUS")  ### giving the group 
+dds$samples$batch<-c(1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2)
+mm <- model.matrix(~dds$samples$batch+dds$samples$group, data=d)
+mm
+dds <- dds[which(filterByExpr(dds, design=mm, min.count=10, min.prop=0.9)),] ### specifying thebatch while filtering by expression 
+
+
+en <- log1p(edgeR::cpm(dds)) # normalization by counts per million 
+
+### This is the PCA plot of all the samples, normalized by counts-per-million, colored by treatment group ###
+plgINS::plPCA(en, colorBy = dds$samples$group, add.labels = FALSE, points.size = 20)
+### This is the PCA plot of all the samples, normalized by counts-per-million, colored by library size ###
+
+plgINS::plPCA(en, colorBy = dds$samples$lib.size, add.labels = FALSE,points.size = 20) 
+### This is the PCA plot of all the samples, normalized by counts-per-million, colored by batch ###
+### Note: that the samples are clearly separated by sequencing batch and therefore batch correction is required ### 
+plgINS::plPCA(en, colorBy = dds$samples$batch, add.labels = FALSE,points.size = 20) 
+
+dds <- estimateDisp(dds, mm)
+fit <- glmLRT(glmFit(dds, mm), coef = "dds$samples$groupMSUS")
+res_without_ruvseq <- as.data.frame(topTags(fit,Inf))
+head(res_without_ruvseq,n=30)
+hist(res_without_ruvseq)
+write_csv(res_without_ruvseq,path="/Users/alshanbayeva/Desktop/caudaEVs_story_manuscript/deepak/raw_data_excerpt/the_final_code_for_submission/caudaEVs_only_rRNAs//res_without_ruvseq.csv")
+
+
+
+### Differential Expression analysis with RUVSeq (With 1 Surrogate Variable)::: ###
+### Differential Expression analysis with RUVSeq (With 1 Surrogate Variable)::: ###
+### Differential Expression analysis with RUVSeq (With 1 Surrogate Variable)::: ###
+re <- RUVSeq::RUVs(en, cIdx=row.names(en), k=1, scIdx = RUVSeq::makeGroups(d$group), isLog = TRUE)
+d$SV1 <- re$W[,1]
+mm <- model.matrix(~SV1+dds$samples$batch + dds$samples$group, data=d)
+mm
+
+### This is the PCA plot of all the samples, normalized by counts-per-million, colored by treatment group, after batch correction with SV=1 ###
+plgINS::plPCA(re$normalizedCounts, colorBy = d$group, add.labels = FALSE, points.size = 20)
+### This is the PCA plot of all the samples, normalized by counts-per-million, colored by library size, after batch correction with SV=1 ###
+plgINS::plPCA(re$normalizedCounts, colorBy = dds$samples$lib.size, add.labels = FALSE, points.size = 20) 
+### This is the PCA plot of all the samples, normalized by counts-per-million, colored by sequencing batch, after batch correction with SV=1 ###
+### Note, samples are still separated on PCA by batch, therefore additional SV is necessary and run for the analysis below. 
+plgINS::plPCA(re$normalizedCounts, colorBy = dds$samples$batch, add.labels = FALSE, points.size = 20) 
+
+
+dds <- estimateDisp(dds, mm)
+fit <- glmLRT(glmFit(dds, mm), coef = "dds$samples$groupMSUS")
+res_with_ruvseq1 <- as.data.frame(topTags(fit,Inf))
+head(res_with_ruvseq1,n=100)
+hist(res_with_ruvseq1)
+
+write_csv(res_with_ruvseq1,path="/Users/alshanbayeva/Desktop/caudaEVs_story_manuscript/deepak/raw_data_excerpt/the_final_code_for_submission/caudaEVs_only_rRNAs//res_with_ruvseq1.csv")
+
+
+
+### Differential Expression analysis with RUVSeq (With 1 Surrogate Variables)::: ###
+### Differential Expression analysis with RUVSeq (With 1 Surrogate Variables)::: ###
+### Differential Expression analysis with RUVSeq (With 1 Surrogate Variables)::: ###
+re <- RUVSeq::RUVs(en, cIdx=row.names(en), k=2, scIdx = RUVSeq::makeGroups(d$group), isLog = TRUE)
+### add the variable (suppose I have only one) to the colData dataframe:
+d$SV1 <- re$W[,1]
+d$SV2 <- re$W[,2]
+mm <- model.matrix(~SV1+d$SV2+dds$samples$batch + dds$samples$group, data=d)
+mm
+
+### This is the PCA plot of all the samples, normalized by counts-per-million, colored by treatment group, after batch correction with SV=2 ###
+plgINS::plPCA(re$normalizedCounts, colorBy = d$group, add.labels = FALSE, points.size = 20)
+### This is the PCA plot of all the samples, normalized by counts-per-million, colored by library size, after batch correction with SV=2 ###
+plgINS::plPCA(re$normalizedCounts, colorBy = dds$samples$lib.size, add.labels = FALSE, points.size = 20) 
+### This is the PCA plot of all the samples, normalized by counts-per-million, colored by sequencing run, after batch correction with SV=2 ###
+### Note: The batch effect is corrected and the samples are not separated by sequencing batch.
+### Thefore, The results of this differentially expression analysis are used for final conclusions:
+
+plgINS::plPCA(re$normalizedCounts, colorBy = dds$samples$batch, add.labels = FALSE, points.size = 20) 
+
+
+dds <- estimateDisp(dds, mm)
+fit <- glmLRT(glmFit(dds, mm), coef = "dds$samples$groupMSUS")
+res_with_ruvseq2 <- as.data.frame(topTags(fit,Inf))
+head(res_with_ruvseq2,n=80)
+hist(res_with_ruvseq2)
+
+write_csv(res_with_ruvseq2,path="/Users/alshanbayeva/Desktop/caudaEVs_story_manuscript/deepak/raw_data_excerpt/the_final_code_for_submission/caudaEVs_only_rRNAs//res_with_ruvseq2.csv")
+
+```

@@ -1,0 +1,120 @@
+---
+title: "Differential expression analysis of cauda EV small RNAs - first sequencing batch (without size-selection)" 
+author: "Anar Alshanbayeva"
+date: "9/2/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+
+```{r ,message=FALSE, warning=FALSE}
+### Upload necessary packages: 
+suppressPackageStartupMessages({
+  library(biomaRt) 
+  library(dplyr)
+  library(tximport)
+  library(tximeta)
+  library(SingleCellExperiment)
+  library(edgeR)
+  library(ggplot2)
+  library(msigdbr)
+  library(Rsubread) 
+ library(limma)
+ library(ggplot2)
+ library(DESeq2)
+  library(org.Mm.eg.db )
+  library(pheatmap)
+  
+  
+  library(edgeR)
+library(reshape2)
+library(plotly)
+library(viridis)
+library(cqn)
+library(scales)
+library(pheatmap)
+  library(gplots)
+  
+  library(RColorBrewer) 
+library (grDevices)
+
+})
+
+```
+
+
+```{r }
+######################## LOAD SAMPLES & COMBINE THE BIOTYPES COUNTS INTO 1 COUNT MATRIX ########################
+######################## LOAD SAMPLES & COMBINE THE BIOTYPES COUNTS INTO 1 COUNT MATRIX ########################
+######################## LOAD SAMPLES & COMBINE THE BIOTYPES COUNTS INTO 1 COUNT MATRIX ########################
+tRNAs<- read.table(file="/Users/alshanbayeva/data_analysis_september/caudaEVs_run3_ExceRpt_size_selected/caudaEVs_run3_miRNAsfirst_ExceRpt/exceRpt_tRNA_ReadCounts.txt", header=TRUE, sep="", row.names=1) # Loading the raw count matrices for each RNA biotype
+piRNAs<- read.table(file="/Users/alshanbayeva/data_analysis_september/caudaEVs_run3_ExceRpt_size_selected/caudaEVs_run3_miRNAsfirst_ExceRpt/exceRpt_piRNA_ReadCounts.txt", header=TRUE, sep="", row.names=1)
+miRNAs<- read.table(file="/Users/alshanbayeva/data_analysis_september/caudaEVs_run3_ExceRpt_size_selected/caudaEVs_run3_miRNAsfirst_ExceRpt/exceRpt_miRNA_ReadCounts.txt", header=TRUE, sep="", row.names=1)
+gencode<- read.table(file="/Users/alshanbayeva/data_analysis_september/caudaEVs_run3_ExceRpt_size_selected/caudaEVs_run3_miRNAsfirst_ExceRpt/exceRpt_gencode_ReadCounts.txt" , header=TRUE, sep="", row.names=1)
+circularRNAs<- read.table(file="/Users/alshanbayeva/data_analysis_september/caudaEVs_run3_ExceRpt_size_selected/caudaEVs_run3_miRNAsfirst_ExceRpt/exceRpt_circularRNA_ReadCounts.txt", header=TRUE, sep="", row.names=1)
+
+tRNAs <- as.data.frame(tRNAs)
+ piRNAs<- as.data.frame(piRNAs)
+miRNAs <- as.data.frame(miRNAs)
+gencode <- as.data.frame(gencode)
+circularRNAs <- as.data.frame(circularRNAs)
+ 
+```
+
+
+
+```{r }
+### Differential expression analysis of all biotypes included (No surrogate variable analysis done) ###
+### Differential expression analysis of all biotypes included (No surrogate variable analysis done) ###
+### Differential expression analysis of all biotypes included (No surrogate variable analysis done) ###
+
+counts_total<-rbind(tRNAs,piRNAs,miRNAs,gencode,circularRNAs) 
+d <- data.frame(row.names = colnames(counts_total),group=(c("G2","G1","G2","G1","G2","G1","G2","G1","G1","G2"))) # grouping the samples 
+dds <- calcNormFactors(DGEList(counts_total), method="TMM")
+dds$samples$group<-c("G2","G1","G2","G1","G2","G1","G2","G1","G1","G2")
+dds <- dds[which(filterByExpr(dds, min.count=20, min.prop=0.7)),] # model matrix is ignored if group is not null. In the above line of code, we added group names to dds object. 
+en <- log1p(edgeR::cpm(dds)) # normalization by counts per million 
+
+mm <- model.matrix(~group, data=d)
+dds <- estimateDisp(dds, mm)
+fit <- glmLRT(glmFit(dds, mm), coef = "groupG2")
+res_without_ruvseq <- as.data.frame(topTags(fit,Inf))
+
+### This is the PCA plot of all the samples without Surrogate variable correction colored by treatment group ###
+plgINS::plPCA(en, colorBy = dds$samples$group, add.labels = FALSE) 
+
+### This is the PCA plot of all the samples without Surrogate variable correction colored by library size of the samples ###
+### Note: We can observe a separation of the samples due to library size ###
+plgINS::plPCA(en, colorBy = dds$samples$lib.size, add.labels = FALSE) 
+
+### Top differentially expressed RNAs without surrogate variable correction ### 
+head(res_without_ruvseq,n=20)
+
+
+
+
+### Differential expression analysis of all biotypes included with Surrogate variable analysis (SV=1) ###
+### Differential expression analysis of all biotypes included with Surrogate variable analysis (SV=1) ###
+### Differential expression analysis of all biotypes included with Surrogate variable analysis (SV=1) ###
+
+re <- RUVSeq::RUVs(en, cIdx=row.names(en), k=1, scIdx = RUVSeq::makeGroups(d$group), isLog = TRUE)
+d$SV1 <- re$W[,1]
+mm <- model.matrix(~SV1+group, data=d)
+dds <- estimateDisp(dds, mm)
+fit <- glmLRT(glmFit(dds, mm), coef = "groupG2")
+res_with_ruvseq1 <- as.data.frame(topTags(fit,Inf))
+
+### This is the PCA plot of all the samples after Surrogate variable correction (SV=1) colored by treatment group ###
+plgINS::plPCA(re$normalizedCounts, colorBy = d$group, add.labels = FALSE)
+
+### This is the PCA plot of all the samples after Surrogate variable correction (SV=1) colored by library size of the samples ###
+### Note: We can observe that the distinct clustering of the samples by library size was corrected by surrogate variable analysis (SV=1):
+plgINS::plPCA(re$normalizedCounts, colorBy = dds$samples$lib.size, add.labels = FALSE) 
+head(res_with_ruvseq1, n=20)
+
+
+```
