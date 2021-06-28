@@ -3,6 +3,9 @@ title: "Alshanbayeva <i>et. al.</i> 2021"
 output: html_document
 ---
 
+
+![](Graphical_Abstract_June27.png)
+
 # Files
 
 ## [Cauda EVs small RNA-seq analysis (only 1 run - non size-selected)](file1_first_sequencing_runs_DEA_all_biotypes.html)
