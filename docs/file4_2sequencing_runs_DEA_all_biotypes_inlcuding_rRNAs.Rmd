@@ -1,0 +1,286 @@
+---
+title: "Cauda EVs small RNA-seq analysis using data from both runs (all biotypes combined)"
+author: "Anar Alshanbayeva & Deepak Tanwar"
+date: "`r Sys.Date()`"
+output:
+  rmdformats::readthedown:
+    highlight: tango
+    self_contained: true
+    thumbnails: true
+    lightbox: true
+    gallery: false
+    keep_md: no
+    number_sections: no
+    fig_width: 8
+    fig_height: 8
+    fig_caption: true
+    df_print: paged
+    code_folding: show
+  fontsize: 12pt
+  geometry: margin=1in
+  documentclass: article
+# bibliography: references.bib
+link-citations: yes
+---
+
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(message = FALSE, warning = FALSE)
+```
+
+
+# Libraries required for data analysis
+```{r, message=FALSE, warning=FALSE}
+source("src.R")
+```
+
+# Data: read counts table from both runs
+```{r, message=FALSE, warning=FALSE}
+rRNAs_2 <- read.table(
+  file = "./rRNA_counts/20190308_sample2_rrna_counts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+rRNAs_3 <- read.table(
+  file = "./rRNA_counts/20190308_sample3_rrna_counts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+rRNAs_4 <- read.table(
+  file = "./rRNA_counts/20190308_sample4_rrna_counts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+rRNAs_5 <- read.table(
+  file = "./rRNA_counts/20190308_sample5_rrna_counts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+rRNAs_6 <- read.table(
+  file = "./rRNA_counts/20190308_sample6_rrna_counts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+rRNAs_7 <- read.table(
+  file = "./rRNA_counts/20190308_sample7_rrna_counts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+rRNAs_8 <- read.table(
+  file = "./rRNA_counts/20190308_sample8_rrna_counts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+rRNAs_9 <- read.table(
+  file = "./rRNA_counts/20190308_sample9_rrna_counts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+rRNAs_11 <- read.table(
+  file = "./rRNA_counts/20190308_sample11_rrna_counts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+rRNAs_14 <- read.table(
+  file = "./rRNA_counts/20190308_sample14_rrna_counts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+
+merged_rrna_counts <- cbind(
+  rRNAs_2, rRNAs_3, rRNAs_4, rRNAs_5, rRNAs_6,
+  rRNAs_7, rRNAs_8, rRNAs_9, rRNAs_11, rRNAs_14
+)
+colnames(merged_rrna_counts) <- c(
+  "MS28F1_sample2", "MS28F1_sample3",
+  "MS28F1_sample4", "MS28F1_sample5",
+  "MS28F1_sample6", "MS28F1_sample7",
+  "MS28F1_sample8", "MS28F1_sample9",
+  "MS28F1_sample11", "MS28F1_sample14"
+)
+
+tRNAs <- read.table(
+  file = "run3_excerpt_counts/exceRpt_tRNA_ReadCounts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+piRNAs <- read.table(
+  file = "run3_excerpt_counts/exceRpt_piRNA_ReadCounts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+miRNAs <- read.table(
+  file = "run3_excerpt_counts/exceRpt_miRNA_ReadCounts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+gencode <- read.table(
+  file = "run3_excerpt_counts/exceRpt_gencode_ReadCounts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+circularRNAs <- read.table(
+  file = "run3_excerpt_counts//exceRpt_circularRNA_ReadCounts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+
+
+tRNAs <- as.data.frame(tRNAs)
+piRNAs <- as.data.frame(piRNAs)
+miRNAs <- as.data.frame(miRNAs)
+gencode <- as.data.frame(gencode)
+circularRNAs <- as.data.frame(circularRNAs)
+rRNAs <- as.data.frame(merged_rrna_counts)
+counts_total_run3 <- rbind(tRNAs, piRNAs, miRNAs, gencode, circularRNAs, rRNAs)
+```
+
+
+```{r, message=FALSE, warning=FALSE}
+rRNAs_2_2 <- read.table(
+  file = "./rRNA_counts/20190110_sample2_rrna_counts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+rRNAs_3_2 <- read.table(
+  file = "./rRNA_counts/20190110_sample3_rrna_counts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+rRNAs_4_2 <- read.table(
+  file = "./rRNA_counts/20190110_sample4_rrna_counts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+rRNAs_5_2 <- read.table(
+  file = "./rRNA_counts/20190110_sample5_rrna_counts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+rRNAs_6_2 <- read.table(
+  file = "./rRNA_counts/20190110_sample6_rrna_counts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+rRNAs_7_2 <- read.table(
+  file = "./rRNA_counts/20190110_sample7_rrna_counts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+rRNAs_8_2 <- read.table(
+  file = "./rRNA_counts/20190110_sample8_rrna_counts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+rRNAs_9_2 <- read.table(
+  file = "./rRNA_counts/20190110_sample9_rrna_counts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+rRNAs_11_2 <- read.table(
+  file = "./rRNA_counts/20190110_sample11_rrna_counts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+rRNAs_14_2 <- read.table(
+  file = "./rRNA_counts/20190110_sample14_rrna_counts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+
+merged_rrna_counts_2 <- cbind(
+  rRNAs_2_2, rRNAs_3_2, rRNAs_4_2, rRNAs_5_2,
+  rRNAs_6_2, rRNAs_7_2, rRNAs_8_2, rRNAs_9_2,
+  rRNAs_11_2, rRNAs_14_2
+)
+colnames(merged_rrna_counts_2) <- c(
+  "MS28F1_sample2", "MS28F1_sample3",
+  "MS28F1_sample4", "MS28F1_sample5",
+  "MS28F1_sample6", "MS28F1_sample7",
+  "MS28F1_sample8", "MS28F1_sample9",
+  "MS28F1_sample11", "MS28F1_sample14"
+)
+
+tRNAs_2 <- read.table(
+  file = "run4_excerpt_counts_/exceRpt_tRNA_ReadCounts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+piRNAs_2 <- read.table(
+  file = "run4_excerpt_counts_/exceRpt_piRNA_ReadCounts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+miRNAs_2 <- read.table(
+  file = "run4_excerpt_counts_/exceRpt_miRNA_ReadCounts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+gencode_2 <- read.table(
+  file = "run4_excerpt_counts_/exceRpt_gencode_ReadCounts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+circularRNAs_2 <- read.table(
+  file = "run4_excerpt_counts_/exceRpt_circularRNA_ReadCounts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+
+
+tRNAs_2 <- as.data.frame(tRNAs_2)
+piRNAs_2 <- as.data.frame(piRNAs_2)
+miRNAs_2 <- as.data.frame(miRNAs_2)
+gencode_2 <- as.data.frame(gencode_2)
+circularRNAs_2 <- as.data.frame(circularRNAs_2)
+rRNAs_2 <- as.data.frame(merged_rrna_counts_2)
+counts_total_run4 <- rbind(
+  tRNAs_2, piRNAs_2, miRNAs_2, gencode_2,
+  circularRNAs_2, rRNAs_2
+)
+
+
+df <- merge(counts_total_run3, counts_total_run4, by = "row.names")
+rownames(df) <- df$Row.names
+df <- df[, !(names(df) %in% "Row.names")]
+knitr::kable(head(df))
+```
+ 
+ 
+ 
+ # Differential expression analysis of all biotypes included (No surrogate variable analysis done)
+  Note: The surrogate variable analysis was not used, since it did not affect the distribution of the samples/separation of the samples by sequencing batch 
+
+```{r, message=FALSE, warning=FALSE}
+counts_total <- df
+
+d <- data.frame(
+  row.names = colnames(counts_total),
+  group = c(
+    "MSUS", "Control", "MSUS", "Control", "MSUS",
+    "Control", "MSUS", "Control", "Control", "MSUS",
+    "MSUS", "Control", "MSUS", "Control", "MSUS",
+    "Control", "MSUS", "Control", "Control", "MSUS"
+  )
+)
+
+counts_total[is.na(counts_total)] <- 0
+
+dds <- edgeR::calcNormFactors(DGEList(counts_total), method = "TMM")
+
+dds$samples$group <- c(
+  "MSUS", "Control", "MSUS", "Control", "MSUS",
+  "Control", "MSUS", "Control", "Control", "MSUS",
+  "MSUS", "Control", "MSUS", "Control", "MSUS",
+  "Control", "MSUS", "Control", "Control", "MSUS"
+)
+dds$samples$batch <- c(
+  1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+  2, 2, 2, 2, 2, 2, 2, 2, 2, 2
+)
+
+mm <- model.matrix(~ dds$samples$batch + dds$samples$group, data = d)
+
+dds <- dds[which(filterByExpr(dds,
+  design = mm,
+  min.count = 20, min.prop = 0.9
+)), ]
+
+en <- log1p(edgeR::cpm(dds))
+
+dds <- estimateDisp(dds, mm)
+fit <- glmLRT(glmFit(dds, mm), coef = "dds$samples$groupMSUS")
+res_without_ruvseq <- as.data.frame(topTags(fit, Inf))
+knitr::kable(head(res_without_ruvseq, n = 30))
+
+write_csv(res_without_ruvseq, file = "res_without_ruvseq.csv")
+
+DT::datatable(res_without_ruvseq,
+  class = "cell-border stripe",
+  options = list(dom = "t"),
+  filter = "top", selection = "multiple",
+  escape = FALSE
+)
+```
+
+
+# References
+```{r}
+report::cite_packages(sessionInfo())
+```
+
+# SessionInfo
+```{r}
+devtools::session_info() %>%
+  details::details()
+```

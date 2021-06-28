@@ -1,0 +1,307 @@
+---
+title: "Cauda EVs rRNAs analysis using data from both runs"
+author: "Anar Alshanbayeva & Deepak Tanwar"
+date: "`r Sys.Date()`"
+output:
+  rmdformats::readthedown:
+    highlight: tango
+    self_contained: true
+    thumbnails: true
+    lightbox: true
+    gallery: false
+    keep_md: no
+    number_sections: no
+    fig_width: 8
+    fig_height: 8
+    fig_caption: true
+    df_print: paged
+    code_folding: show
+  fontsize: 12pt
+  geometry: margin=1in
+  documentclass: article
+# bibliography: references.bib
+link-citations: yes
+---
+
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(message = FALSE, warning = FALSE)
+```
+
+
+# Libraries required for data analysis
+```{r, message=FALSE, warning=FALSE}
+source("src.R")
+```
+
+# Data: read counts table from both runs
+```{r, warning=FALSE, message=FALSE}
+rRNAs_2 <- read.table(
+  file = "rRNA_counts/20190308_sample2_rrna_counts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+rRNAs_3 <- read.table(
+  file = "rRNA_counts/20190308_sample3_rrna_counts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+rRNAs_4 <- read.table(
+  file = "rRNA_counts/20190308_sample4_rrna_counts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+rRNAs_5 <- read.table(
+  file = "rRNA_counts/20190308_sample5_rrna_counts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+rRNAs_6 <- read.table(
+  file = "rRNA_counts/20190308_sample6_rrna_counts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+rRNAs_7 <- read.table(
+  file = "rRNA_counts/20190308_sample7_rrna_counts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+rRNAs_8 <- read.table(
+  file = "rRNA_counts/20190308_sample8_rrna_counts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+rRNAs_9 <- read.table(
+  file = "rRNA_counts/20190308_sample9_rrna_counts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+rRNAs_11 <- read.table(
+  file = "rRNA_counts/20190308_sample11_rrna_counts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+rRNAs_14 <- read.table(
+  file = "rRNA_counts/20190308_sample14_rrna_counts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+merged_rrna_counts_run3 <- cbind(rRNAs_2, rRNAs_3, rRNAs_4, rRNAs_5, rRNAs_6, rRNAs_7, rRNAs_8, rRNAs_9, rRNAs_11, rRNAs_14)
+colnames(merged_rrna_counts_run3) <- c(
+  "MS28F1_sample2", "MS28F1_sample3",
+  "MS28F1_sample4", "MS28F1_sample5",
+  "MS28F1_sample6", "MS28F1_sample7",
+  "MS28F1_sample8", "MS28F1_sample9",
+  "MS28F1_sample11", "MS28F1_sample14"
+)
+
+rRNAs_2 <- read.table(
+  file = "rRNA_counts/20190110_sample2_rrna_counts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+rRNAs_3 <- read.table(
+  file = "rRNA_counts/20190110_sample3_rrna_counts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+rRNAs_4 <- read.table(
+  file = "rRNA_counts/20190110_sample4_rrna_counts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+rRNAs_5 <- read.table(
+  file = "rRNA_counts/20190110_sample5_rrna_counts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+rRNAs_6 <- read.table(
+  file = "rRNA_counts/20190110_sample6_rrna_counts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+rRNAs_7 <- read.table(
+  file = "rRNA_counts/20190110_sample7_rrna_counts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+rRNAs_8 <- read.table(
+  file = "rRNA_counts/20190110_sample8_rrna_counts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+rRNAs_9 <- read.table(
+  file = "rRNA_counts/20190110_sample9_rrna_counts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+rRNAs_11 <- read.table(
+  file = "rRNA_counts/20190110_sample11_rrna_counts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+rRNAs_14 <- read.table(
+  file = "rRNA_counts/20190110_sample14_rrna_counts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+
+merged_rrna_counts_run4 <- cbind(rRNAs_2, rRNAs_3, rRNAs_4, rRNAs_5, rRNAs_6, rRNAs_7, rRNAs_8, rRNAs_9, rRNAs_11, rRNAs_14)
+colnames(merged_rrna_counts_run4) <- c(
+  "MS28F1_sample2", "MS28F1_sample3",
+  "MS28F1_sample4", "MS28F1_sample5",
+  "MS28F1_sample6", "MS28F1_sample7",
+  "MS28F1_sample8", "MS28F1_sample9",
+  "MS28F1_sample11", "MS28F1_sample14"
+)
+
+df <- merge(merged_rrna_counts_run3, merged_rrna_counts_run4, by = "row.names")
+rownames(df) <- df$Row.names
+df <- df[, !(names(df) %in% "Row.names")]
+knitr::kable(head(df))
+```
+
+
+## Specifying the group & batch while filterByExprs()
+```{r, warning=FALSE, message=FALSE}
+
+counts_total <- df
+d <- data.frame(
+  row.names = colnames(counts_total),
+  group = c(
+    "MSUS", "Control", "MSUS", "Control", "MSUS", "Control",
+    "MSUS", "Control", "Control", "MSUS", "MSUS", "Control",
+    "MSUS", "Control", "MSUS", "Control", "MSUS", "Control",
+    "Control", "MSUS"
+  )
+)
+counts_total[is.na(counts_total)] <- 0
+dds <- edgeR::calcNormFactors(DGEList(counts_total), method = "TMM")
+dds$samples$group <- c(
+  "MSUS", "Control", "MSUS", "Control", "MSUS", "Control",
+  "MSUS", "Control", "Control", "MSUS", "MSUS", "Control",
+  "MSUS", "Control", "MSUS", "Control", "MSUS", "Control",
+  "Control", "MSUS"
+)
+dds$samples$batch <- c(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2)
+mm <- model.matrix(~ dds$samples$batch + dds$samples$group, data = d)
+dds <- dds[which(filterByExpr(dds, design = mm, min.count = 10, min.prop = 0.9)), ]
+en <- log1p(edgeR::cpm(dds)) # normalization by counts per million
+```
+
+## PCA plots of normalized counts-per-million {.tabset .tabset-pills}
+
+### All samples (normalized by counts-per-million),  colored by group and shaped by batched
+```{r, warning=FALSE, message=FALSE}
+plgINS::plPCA(en,
+  colorBy = dds$samples$group, add.labels = FALSE,
+  points.size = 12, shapeBy = paste0("Batch", dds$samples$batch)
+)
+```
+
+### All samples (normalized by counts-per-million), colored by library size and shaped by group
+```{r, warning=FALSE, message=FALSE}
+plgINS::plPCA(en,
+  colorBy = dds$samples$lib.size, add.labels = FALSE,
+  points.size = 12, shapeBy = dds$samples$group
+)
+```
+
+### All samples (normalized by counts-per-million), colored by batch
+Note: the samples are clearly separated by sequencing batch & therefore batch correction is required. 
+```{r, warning=FALSE, message=FALSE}
+plgINS::plPCA(en,
+  colorBy = dds$samples$batch,
+  add.labels = FALSE, points.size = 20
+)
+```
+
+## Differential expression analysis without batch-correction 
+```{r, warning=FALSE, message=FALSE}
+dds <- estimateDisp(dds, mm)
+fit <- glmLRT(glmFit(dds, mm), coef = "dds$samples$groupMSUS")
+res_without_ruvseq <- as.data.frame(topTags(fit, Inf))
+knitr::kable(head(res_without_ruvseq, n = 30))
+write_csv(res_without_ruvseq, path = "res_without_ruvseq.csv")
+```
+
+
+## Differential expression analysis with RUVSeq, SV=2 (batch correction with Surrogate Variable analysis)
+```{r, warning=FALSE, message=FALSE}
+re <- RUVSeq::RUVs(en,
+  cIdx = row.names(en), k = 1,
+  scIdx = RUVSeq::makeGroups(d$group), isLog = TRUE
+)
+d$SV1 <- re$W[, 1]
+mm <- model.matrix(~ SV1 + dds$samples$batch + dds$samples$group, data = d)
+
+dds <- estimateDisp(dds, mm)
+fit <- glmLRT(glmFit(dds, mm), coef = "dds$samples$groupMSUS")
+res_with_ruvseq1 <- as.data.frame(topTags(fit, Inf))
+knitr::kable(head(res_with_ruvseq1, n = 100))
+write_csv(res_with_ruvseq1, path = "res_with_ruvseq1.csv")
+```
+
+
+
+## PCA plots after correction with 1 Surrogate Variable {.tabset .tabset-pills} 
+### All samples, colored by treatment group
+```{r, warning=FALSE, message=FALSE}
+plgINS::plPCA(re$normalizedCounts,
+  colorBy = d$group,
+  add.labels = FALSE, points.size = 20
+)
+```
+
+### All samples, colored by library size
+```{r, warning=FALSE, message=FALSE}
+plgINS::plPCA(re$normalizedCounts,
+  colorBy = dds$samples$lib.size,
+  add.labels = FALSE, points.size = 20
+)
+```
+
+### All samples, colored by sequencing batch
+Note: samples are still separated on PCA by batch, therefore additional SV is necessary and run for the analysis below. 
+```{r, warning=FALSE, message=FALSE}
+plgINS::plPCA(re$normalizedCounts,
+  colorBy = dds$samples$batch,
+  add.labels = FALSE, points.size = 20
+)
+```
+
+
+## PCA plots correction with 2 Surrogate Variables  {.tabset .tabset-pills}
+
+### All samples, colored by treatment group
+```{r, warning=FALSE, message=FALSE}
+re <- RUVSeq::RUVs(en,
+  cIdx = row.names(en), k = 2,
+  scIdx = RUVSeq::makeGroups(d$group), isLog = TRUE
+)
+d$SV1 <- re$W[, 1]
+d$SV2 <- re$W[, 2]
+mm <- model.matrix(~ SV1 + d$SV2 + dds$samples$batch + dds$samples$group, data = d)
+plgINS::plPCA(re$normalizedCounts,
+  colorBy = d$group,
+  add.labels = FALSE, points.size = 20
+)
+```
+
+### All samples, colored by library size
+```{r, warning=FALSE, message=FALSE}
+plgINS::plPCA(re$normalizedCounts,
+  colorBy = dds$samples$lib.size,
+  add.labels = FALSE, points.size = 20
+)
+```
+
+### All samples, colored by sequencing run
+Note: The batch effect is corrected and the samples are not separated by sequencing batch. 
+Thefore, The results of this differentially expression analysis are used for final conclusions:
+```{r, warning=FALSE, message=FALSE}
+plgINS::plPCA(re$normalizedCounts,
+  colorBy = dds$samples$batch,
+  add.labels = FALSE, points.size = 20
+)
+```
+
+## Differential expression analysis with RUVSeq, SV=2 (batch correction with Surrogate Variable analysis)
+```{r, warning=FALSE, message=FALSE}
+dds <- estimateDisp(dds, mm)
+fit <- glmLRT(glmFit(dds, mm), coef = "dds$samples$groupMSUS")
+res_with_ruvseq2 <- as.data.frame(topTags(fit, Inf))
+knitr::kable(head(res_with_ruvseq2, n = 80))
+write_csv(res_with_ruvseq2, path = "res_with_ruvseq2.csv")
+```
+
+# References
+```{r}
+report::cite_packages(sessionInfo())
+```
+
+# SessionInfo
+```{r}
+devtools::session_info() %>%
+  details::details()
+```

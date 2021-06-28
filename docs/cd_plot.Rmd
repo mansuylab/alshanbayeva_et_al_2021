@@ -1,0 +1,84 @@
+---
+title: "CD plot genes list"
+author: "Anar Alshanbayeva & Deepak Tanwar"
+date: "`r Sys.Date()`"
+output:
+  rmdformats::readthedown:
+    highlight: tango
+    self_contained: true
+    thumbnails: true
+    lightbox: true
+    gallery: false
+    keep_md: no
+    number_sections: no
+    fig_width: 8
+    fig_height: 8
+    fig_caption: true
+    df_print: paged
+    code_folding: show
+  fontsize: 12pt
+  geometry: margin=1in
+  documentclass: article
+# bibliography: references.bib
+link-citations: yes
+---
+
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(message = FALSE, warning = FALSE)
+```
+
+# Libraries required
+```{r}
+library(dplyr)
+library(DT)
+```
+
+# Data
+```{r}
+genes <- readRDS("candidate_targets.rds")
+```
+
+# Table
+
+## Sperm
+```{r}
+datatable(genes$sperm,
+  class = "cell-border stripe",
+  options = list(dom = "t"),
+  filter = "top", selection = "multiple",
+  escape = FALSE
+)
+```
+
+## Zygote
+```{r}
+datatable(genes$zygote,
+  class = "cell-border stripe",
+  options = list(dom = "t"),
+  filter = "top", selection = "multiple",
+  escape = FALSE
+)
+```
+
+## Embryo
+```{r}
+datatable(genes$embryo,
+  class = "cell-border stripe",
+  options = list(dom = "t"),
+  filter = "top", selection = "multiple",
+  escape = FALSE
+)
+```
+
+
+# References
+```{r}
+report::cite_packages(sessionInfo())
+```
+
+# SessionInfo
+```{r}
+devtools::session_info() %>%
+  details::details()
+```

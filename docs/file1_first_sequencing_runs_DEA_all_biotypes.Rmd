@@ -1,0 +1,181 @@
+---
+title: "Cauda EVs small RNA-seq analysis (only 1 run - non size-selected)"
+author: "Anar Alshanbayeva & Deepak Tanwar"
+date: "`r Sys.Date()`"
+output:
+  rmdformats::readthedown:
+    highlight: tango
+    self_contained: true
+    thumbnails: true
+    lightbox: true
+    gallery: false
+    keep_md: no
+    number_sections: no
+    fig_width: 8
+    fig_height: 8
+    fig_caption: true
+    df_print: paged
+    code_folding: show
+  fontsize: 12pt
+  geometry: margin=1in
+  documentclass: article
+# bibliography: references.bib
+link-citations: yes
+---
+
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(message = FALSE, warning = FALSE)
+```
+
+# Libraries required for data analysis
+```{r, message=FALSE, warning=FALSE}
+source("src.R")
+```
+
+
+
+# Data: read counts table from both runs
+```{r, warning=FALSE, message=FALSE}
+rRNAs_2 <- read.table(
+  file = "./rRNA_counts/20190308_sample2_rrna_counts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+rRNAs_3 <- read.table(
+  file = "./rRNA_counts/20190308_sample3_rrna_counts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+rRNAs_4 <- read.table(
+  file = "./rRNA_counts/20190308_sample4_rrna_counts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+rRNAs_5 <- read.table(
+  file = "./rRNA_counts/20190308_sample5_rrna_counts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+rRNAs_6 <- read.table(
+  file = "./rRNA_counts/20190308_sample6_rrna_counts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+rRNAs_7 <- read.table(
+  file = "./rRNA_counts/20190308_sample7_rrna_counts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+rRNAs_8 <- read.table(
+  file = "./rRNA_counts/20190308_sample8_rrna_counts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+rRNAs_9 <- read.table(
+  file = "./rRNA_counts/20190308_sample9_rrna_counts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+rRNAs_11 <- read.table(
+  file = "./rRNA_counts/20190308_sample11_rrna_counts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+rRNAs_14 <- read.table(
+  file = "./rRNA_counts/20190308_sample14_rrna_counts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+
+merged_rrna_counts <- cbind(
+  rRNAs_2, rRNAs_3, rRNAs_4, rRNAs_5, rRNAs_6, rRNAs_7,
+  rRNAs_8, rRNAs_9, rRNAs_11, rRNAs_14
+)
+colnames(merged_rrna_counts) <- c(
+  "MS28F1_sample2", "MS28F1_sample3",
+  "MS28F1_sample4", "MS28F1_sample5",
+  "MS28F1_sample6", "MS28F1_sample7",
+  "MS28F1_sample8", "MS28F1_sample9",
+  "MS28F1_sample11", "MS28F1_sample14"
+)
+
+
+
+tRNAs <- read.table(
+  file = "./run3_excerpt_counts/exceRpt_tRNA_ReadCounts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+
+piRNAs <- read.table(
+  file = "./run3_excerpt_counts/exceRpt_piRNA_ReadCounts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+miRNAs <- read.table(
+  file = "./run3_excerpt_counts/exceRpt_miRNA_ReadCounts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+gencode <- read.table(
+  file = "./run3_excerpt_counts/exceRpt_gencode_ReadCounts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+circularRNAs <- read.table(
+  file = "./run3_excerpt_counts/exceRpt_circularRNA_ReadCounts.txt",
+  header = TRUE, sep = "", row.names = 1
+)
+
+
+tRNAs <- as.data.frame(tRNAs)
+piRNAs <- as.data.frame(piRNAs)
+miRNAs <- as.data.frame(miRNAs)
+gencode <- as.data.frame(gencode)
+circularRNAs <- as.data.frame(circularRNAs)
+rRNAs <- as.data.frame(merged_rrna_counts)
+counts_total_run3 <- rbind(tRNAs, piRNAs, miRNAs, gencode, circularRNAs, rRNAs)
+```
+
+
+## Differential expression analysis of all biotypes included (without surrogate variable analysis)
+```{r, warning=FALSE, message=FALSE}
+counts_total <- counts_total_run3
+d <- data.frame(
+  row.names = colnames(counts_total),
+  group = (c(
+    "G2", "G1", "G2", "G1", "G2",
+    "G1", "G2", "G1", "G1", "G2"
+  ))
+)
+
+dds <- calcNormFactors(DGEList(counts_total), method = "TMM")
+dds$samples$group <- c(
+  "G2", "G1", "G2", "G1", "G2",
+  "G1", "G2", "G1", "G1", "G2"
+)
+
+dds <- dds[which(filterByExpr(dds, min.count = 20, min.prop = 0.7)), ]
+en <- log1p(edgeR::cpm(dds))
+
+mm <- model.matrix(~group, data = d)
+dds <- estimateDisp(dds, mm)
+fit <- glmLRT(glmFit(dds, mm), coef = "groupG2")
+res_without_ruvseq <- as.data.frame(topTags(fit, Inf))
+knitr::kable(head(res_without_ruvseq, n = 20))
+```
+
+
+## Differential expression analysis of all biotypes included with Surrogate variable analysis (SV=1) 
+```{r, warning=FALSE, message=FALSE}
+re <- RUVSeq::RUVs(en,
+  cIdx = row.names(en), k = 1,
+  scIdx = RUVSeq::makeGroups(d$group), isLog = TRUE
+)
+d$SV1 <- re$W[, 1]
+mm <- model.matrix(~ SV1 + group, data = d)
+dds <- estimateDisp(dds, mm)
+fit <- glmLRT(glmFit(dds, mm), coef = "groupG2")
+res_with_ruvseq1 <- as.data.frame(topTags(fit, Inf))
+knitr::kable(head(res_with_ruvseq1, n = 20))
+```
+
+
+
+# References
+```{r}
+report::cite_packages(sessionInfo())
+```
+
+# SessionInfo
+```{r}
+devtools::session_info() %>%
+  details::details()
+```
